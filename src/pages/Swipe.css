@@ -36,3 +36,20 @@
     background-color: wheat;
     padding-bottom: 2em;
 }
+
+.card {
+  padding: 2em;
+  margin: 3em;
+  background: whitesmoke;
+  border-radius: 15px;
+}
+
+.headerLink {
+  border: 1px solid blue;
+  margin: 1em;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgb(11, 53, 131);
+  color: whitesmoke;
+  
+}
