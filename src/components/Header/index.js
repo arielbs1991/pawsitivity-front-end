@@ -1,5 +1,6 @@
 import React from 'react'
 import { PageHeader, Button } from 'antd';
+import {Link} from "react-router-dom"
 
 export default function HeaderComp() {
     return (
@@ -9,11 +10,14 @@ export default function HeaderComp() {
             title="Pawsitivity"
             subTitle="This is a subtitle"
             extra={[
-                <Button onClick={() => { window.location.href = "/Login" }} key="3">Login</Button>,
-                <Button onClick={() => { window.location.href = "/Swipe" }} key="2">Swipe</Button>,
-                <Button onClick={() => { window.location.href = "/Profile" }} key="1">Profile</Button>,
+                <Link class="headerLink" to="/login">Login</Link>,
+                <Link class="headerLink" to="/swipe">Swipe</Link>,
+                <Link class="headerLink" to="/profile">Profile</Link>
             ]}
         />
 
     )
 }
+
+
+// TODO:internal links are linktag from LinkTO routerDOM
