@@ -1,40 +1,35 @@
 .animalCard {
-    width: 300px;
-    border: 1px solid lightgray;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+  width: 300px;
+  border: 1px solid lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 }
 .animalCard>img {
-    width: 280px;
+  width: 280px;
 }
 
 .site-layout-sub-header-background {
-    background: rgb(8, 40, 142);
-  }
-  
+  background: rgb(8, 40, 142);
+}
+
 .site-layout-background {
-    background: white;
-    border-radius: 25px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  background: white;
+  border-radius: 25px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .pupCardOptions {
-      display: flex;
-      justify-content: space-between;
-      width: 100px;
-  }
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
 
 .ant-layout {
-    height: 100vh;
-  }
-
-.pawTitle {
-    color: whitesmoke;
-    font-size: xx-large;
-    padding: 2px;
+    background-color: wheat;
+    padding-bottom: 2em;
 }

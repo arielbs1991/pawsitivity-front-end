@@ -2,12 +2,15 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/Login"
-import Profile from './pages/Profile';
 import Swipe from './pages/Swipe';
+import Profile from './pages/Profile';
+import HeaderComp from "./components/Header"
+import FooterComp from "./components/Footer"
 
 function App() {
   return (
     <Router> 
+      <HeaderComp/>
     <Switch>
       <Route path="/login">
         <Login/>
@@ -22,10 +25,9 @@ function App() {
         <Login/>
       </Route>
     </Switch>
+    <FooterComp />
   </Router>
   );
 }
-
-// TODO: make navbar in components to put on each page
 
 export default App;
