@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button} from 'antd';
+import { CloseOutlined, CheckOutlined, InfoOutlined } from '@ant-design/icons';
 
 
 export default function AnimalCardComp(props) {
@@ -8,10 +10,10 @@ export default function AnimalCardComp(props) {
             <img src={props.imageSrc}/>
             <h1 align="center">{props.name}</h1>
             <div className="pupCardOptions">
-                <h1>yes</h1>
-                <h1>no</h1>
+            <Button type="primary" shape="circle" icon={<CloseOutlined />}></Button>
+            <Button type="primary" danger shape="circle" icon={<CheckOutlined />}></Button>
             </div>
-            <h1 align="center">Info</h1>
+            <Button align="center" shape="circle" icon={<InfoOutlined />}></Button>
         </div>
     )
 }
