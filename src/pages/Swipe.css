@@ -1,6 +1,8 @@
 .animalCard {
   width: 300px;
   border: 1px solid lightgray;
+  background: whitesmoke;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,7 +17,8 @@
 }
 
 .site-layout-background {
-  background: white;
+  background-color: #2b1331;
+  background-image: linear-gradient(315deg, #0a0576 0%, #2a5683 74%);
   border-radius: 25px;
   height: 100%;
   display: flex;
