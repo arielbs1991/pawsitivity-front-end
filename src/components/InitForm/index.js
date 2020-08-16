@@ -47,7 +47,7 @@ class InitForm extends Component {
 
         <form className="form">
             <h1 align="center">Welcome To Pawsitivity</h1>
-             <h3>Let's Learn A Little More About You</h3>
+             <h3>Let's Learn A Little More About You - (CLASS AND EXTENDS) - will delete if not needed</h3>
              <br/>
           <input
             value={this.state.firstName}

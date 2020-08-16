@@ -13,7 +13,9 @@ export default function HeaderComp() {
                 <Link class="headerLink" to="/login">Login</Link>,
                 <Link class="headerLink" to="/swipe">Swipe</Link>,
                 <Link class="headerLink" to="/profile">Profile</Link>,
-                <Link class="headerLink" to="/profile2">Profile2</Link>
+                <Link class="headerLink" to="/profile2">Profile2</Link>,
+                <Link class="headerLink" to="/updateprofile">UpdateProfile</Link>,
+
             ]}
         />
 
