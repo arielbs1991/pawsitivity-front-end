@@ -73,3 +73,9 @@
 .ant-modal-title {
   font-size: x-large;
 }
+
+.ant-card, .ant-card-bordered {
+  padding: 1em;
+  background: whitesmoke;
+  border-radius: 15px;
+}

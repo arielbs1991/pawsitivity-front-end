@@ -3,5 +3,16 @@
     border: 1px solid lightgray;
     background: whitesmoke;
     border-radius: 15px;
-    padding: 10px;
+    padding: 2em;
   }
+
+
+.loginBtns {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.signUpBtn {
+  margin-top: 1em;
+}

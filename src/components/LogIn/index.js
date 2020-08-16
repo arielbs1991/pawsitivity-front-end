@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./style.css";
 
 class LogInComp extends Component {
@@ -40,6 +40,8 @@ class LogInComp extends Component {
     return (
       <div className="logInForm">
         <form >
+          <h1>Welcome to Pawsitivity</h1>
+          <h5>Please Login or Sign Up</h5>
           <input
             value={this.state.userName}
             name="userName"
@@ -54,10 +56,16 @@ class LogInComp extends Component {
             type="password"
             placeholder="Password"
           />
-          <button onClick={this.handleFormSubmit}>Login</button>
+          <br />
+          <br />
+          <div className="loginBtns">
+            <button onClick={this.handleFormSubmit}>Login</button>
+            <br/><br/>
+            <Link className="signUpBtn" to="/profile">Sign Up</Link>
+          </div>
         </form>
-        <br/><br/>
-        <Link class="headerLink" to="/profile">Sign Up</Link>
+
+
 
       </div>
     );
