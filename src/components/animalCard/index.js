@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button} from 'antd';
 import { CloseOutlined, CheckOutlined, InfoOutlined } from '@ant-design/icons';
+import ModalComp from '../Modal';
 
 
 export default function AnimalCardComp(props) {
@@ -13,7 +14,7 @@ export default function AnimalCardComp(props) {
             <Button type="primary" shape="circle" icon={<CloseOutlined />}></Button>
             <Button type="primary" danger shape="circle" icon={<CheckOutlined />}></Button>
             </div>
-            <Button align="center" shape="circle" icon={<InfoOutlined />}></Button>
+            <ModalComp align="center" shape="circle" icon={<InfoOutlined />}></ModalComp>
         </div>
     )
 }
