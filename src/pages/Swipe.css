@@ -19,7 +19,6 @@
 .site-layout-background {
   background-color: #2b1331;
   background-image: linear-gradient(315deg, #0a0576 0%, #2a5683 74%);
-  border-radius: 25px;
   height: 100%;
   display: flex;
   justify-content: center;
@@ -33,23 +32,34 @@
 }
 
 .ant-layout {
-    background-color: wheat;
-    padding-bottom: 2em;
+    background-color: rgb(146, 164, 198);
 }
 
 .card {
   padding: 2em;
-  margin: 3em;
   background: whitesmoke;
   border-radius: 15px;
 }
 
 .headerLink {
-  border: 1px solid blue;
+  border: 1px solid rgb(213, 213, 213);
   margin: 1em;
   padding: 10px;
   border-radius: 10px;
   background: rgb(11, 53, 131);
-  color: whitesmoke;
+  color: rgb(213, 213, 213);
   
+}
+
+.ant-page-header, .site-page-header-responsive, .ant-page-header-ghost, .ant-layout-footer {
+  background: rgb(8, 0, 48);
+  padding: 2em
+}
+
+.ant-page-header-heading-title ,.ant-page-header-heading-sub-title {
+  color: rgb(213, 213, 213);
+}
+
+.ant-page-header-heading-left, .ant-page-header-heading-extra {
+  padding: 5px;
 }
