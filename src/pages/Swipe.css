@@ -53,6 +53,7 @@
 
 .ant-page-header, .site-page-header-responsive, .ant-page-header-ghost, .ant-layout-footer {
   background: rgb(8, 0, 48);
+  color: whitesmoke;
   padding: 2em
 }
 
@@ -62,4 +63,13 @@
 
 .ant-page-header-heading-left, .ant-page-header-heading-extra {
   padding: 5px;
+}
+
+
+.ant-modal-header, .ant-modal-footer {
+  background: rgb(232, 232, 233);
+}
+
+.ant-modal-title {
+  font-size: x-large;
 }
