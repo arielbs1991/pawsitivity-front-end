@@ -12,7 +12,8 @@ export default function HeaderComp() {
             extra={[
                 <Link class="headerLink" to="/login">Login</Link>,
                 <Link class="headerLink" to="/swipe">Swipe</Link>,
-                <Link class="headerLink" to="/profile">Profile</Link>
+                <Link class="headerLink" to="/profile">Profile</Link>,
+                <Link class="headerLink" to="/profile2">Profile2</Link>
             ]}
         />
 
@@ -20,4 +21,3 @@ export default function HeaderComp() {
 }
 
 
-// TODO:internal links are linktag from LinkTO routerDOM
