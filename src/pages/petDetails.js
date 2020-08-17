@@ -19,7 +19,7 @@ render(){
             <Content>
                 <div className="site-layout-background">
                     <PetDetailsComp
-                        name={""}
+                        name={"Mochi"}
                         imageSrc={""}
                         breed={""}
                         age={""}
