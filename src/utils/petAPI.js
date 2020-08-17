@@ -1,10 +1,20 @@
 import axios from "axios"
-const BASEURL = 'http://localhost:3001/api/petAPI';
+const baseURL = 'http://localhost:3001'
 
-export default {
-  search: function() {
-    return axios.get(`${BASEURL}/pets/`, {
+
+const petAPI = {
+
+  petSearch: () => {
+    return axios.get(`${baseURL}/api/petAPI/pets/`, {
       withCredentials: true,
     });
-  }
-};
+  },
+
+  byId: (petId) => {
+    return axios.get(`${baseURL}/api/petAPI/pets/${petId}`, {
+      withCredentials: true,
+    })
+  },
+}
+
+export default petAPI;
