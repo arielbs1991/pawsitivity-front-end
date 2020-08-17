@@ -8,11 +8,11 @@ const matchAPI = {
     },
 
     getMatchbyId: (petfinderId) => {
-        return axios.get(`${baseURL}/api/petfinderId/${petfinderId}`)
+        return axios.get(`${baseURL}/api/matches/petfinderId/${petfinderId}`)
     },
 
     getMatchesbyId: (userId) => {
-        return axios.get(`${baseURL}/api/matches/${userId}`)
+        return axios.get(`${baseURL}/api/matches/userId/${userId}`)
     },
 
     updateMatch: (id, isLiked) => {
