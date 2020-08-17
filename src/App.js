@@ -3,14 +3,13 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/Login"
 import Swipe from './pages/Swipe';
-import petDetails from "./pages/petDetails"
+import PetDetails from "./pages/PetDetails"
 import Profile from './pages/Profile';
 import Profile2 from './pages/Profile2';
 import UpdateProfile from './pages/UpdateProfile';
 import HeaderComp from "./components/Header"
 import FooterComp from "./components/Footer"
-
-
+import Matches from "./pages/Matches"
 function App() {
   return (
     <Router> 
@@ -22,8 +21,11 @@ function App() {
       <Route path = "/swipe">
         <Swipe/>
       </Route>
-      <Route path ="/petDetails">
-        <petDetails/>
+      <Route path ="/petdetails">
+        <PetDetails/>
+      </Route>
+      <Route path ="/matches">
+        <Matches/>
       </Route>
       <Route path = "/profile">
         <Profile/>
@@ -42,5 +44,4 @@ function App() {
   </Router>
   );
 }
-
 export default App;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Row, Col } from 'antd';
 
 
@@ -36,7 +36,6 @@ export default function PetDetailsComp(props){
                             </ul>
                     </Col>
                 </Row>
-
             </div>
         </div>
         

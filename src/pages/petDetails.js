@@ -6,7 +6,7 @@ import { render } from "@testing-library/react";
 
 const { Content } = Layout;
 
-class petDetails extends Component{
+class PetDetails extends Component{
     state={
         dogs:[],
         cats:[]
@@ -39,4 +39,4 @@ render(){
     );}
 }
 
-export default petDetails;
+export default PetDetails;

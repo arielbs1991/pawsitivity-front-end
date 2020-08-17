@@ -15,7 +15,7 @@ export default function HeaderComp() {
                 <Link class="headerLink" to="/profile">Profile</Link>,
                 <Link class="headerLink" to="/profile2">Profile2</Link>,
                 <Link class="headerLink" to="/updateprofile">UpdateProfile</Link>,
-
+                <Link class="headerLink" to="/matches">Matches</Link>
             ]}
         />
 
