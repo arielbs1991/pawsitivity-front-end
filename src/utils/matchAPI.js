@@ -7,7 +7,11 @@ const matchAPI = {
         return axios.post(`${baseURL}/api/matches/newMatch/`, matchData, { withCredentials: true })
     },
 
-    getMatchbyId: (userId) => {
+    getMatchbyId: (petfinderId) => {
+        return axios.get(`${baseURL}/api/petfinderId/${petfinderId}`)
+    },
+
+    getMatchesbyId: (userId) => {
         return axios.get(`${baseURL}/api/matches/${userId}`)
     },
 
