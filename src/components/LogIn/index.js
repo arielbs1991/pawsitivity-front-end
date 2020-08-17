@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
 import "./style.css";
+import userAPI from '../../utils/userAPI.js'
 
 class LogInComp extends Component {
   state = {
-    userName: "",
+    email: "",
     password: ""
   };
 
@@ -22,16 +23,21 @@ class LogInComp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (!this.state.userName) {
-      alert("Please create a user name!");
-    } else if (this.state.password.length < 6) {
+    if (!this.state.email) {
+      alert("Please create an account!");
+    } else if (
+      !this.state.password
+      // this.state.password.length < 6
+      ) {
       alert(
         `Choose a more secure password`
       );
     }
-
+    userAPI.login(this.state).then(res => {
+      console.log(res.data)
+    })
     this.setState({
-      userName: "",
+      email: "",
       password: ""
     });
   };
@@ -44,7 +50,7 @@ class LogInComp extends Component {
           <h5>Please Login or Sign Up</h5>
           <input
             value={this.state.userName}
-            name="userName"
+            name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="User Name"
@@ -60,7 +66,7 @@ class LogInComp extends Component {
           <br />
           <div className="loginBtns">
             <button onClick={this.handleFormSubmit}>Login</button>
-            <br/><br/>
+            <br /><br />
             <Link className="signUpBtn" to="/profile">Sign Up</Link>
           </div>
         </form>
