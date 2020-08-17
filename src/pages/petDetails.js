@@ -20,15 +20,15 @@ render(){
                 <div className="site-layout-background">
                     <PetDetailsComp
                         name={"Mochi"}
-                        imageSrc={""}
-                        breed={""}
-                        age={""}
-                        size={""}
-                        bio={""}
-                        likesCats={""}
-                        likesDogs={""}
-                        likesKids={""}
-                        shelterName={""}
+                        imageSrc={"https://post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/02/322868_1100-1100x628.jpg"}
+                        breed={"Retriever"}
+                        age={"2"}
+                        size={"Large"}
+                        bio={"A fun, playful doggo"}
+                        likesCats={"Yes"}
+                        likesDogs={"Yes"}
+                        likesKids={"No"}
+                        shelterName={"PAWS"}
                         shelterAddress={""}
                         shelterPhone={""}
                         shelterEmail={""}
