@@ -18,7 +18,11 @@ const matchAPI = {
 
     updateMatch: (id, isLiked) => {
         return axios.put(`${baseURL}/api/matches/isLiked/${id}`, isLiked, { withCredentials: true })
-    }
+    },
+
+    getMatchInfo: (id) => {
+        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    },
 }
 
 export default matchAPI
