@@ -21,7 +21,7 @@ function App() {
       <Route path = "/swipe">
         <Swipe/>
       </Route>
-      <Route path ="/Petdetails">
+      <Route path ="/petdetails">
         <PetDetails/>
       </Route>
       <Route path ="/matches">

@@ -1,6 +1,6 @@
 const axios = require("axios")
 // const baseURL = 'http://localhost:3001'
-const baseURL = "https://pawsitivity-atack-api.herokuapp.com/"
+const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
 
 
 const matchAPI = {
@@ -18,7 +18,11 @@ const matchAPI = {
 
     updateMatch: (id, isLiked) => {
         return axios.put(`${baseURL}/api/matches/isLiked/${id}`, isLiked, { withCredentials: true })
-    }
+    },
+
+    getMatchInfo: (id) => {
+        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    },
 }
 
 export default matchAPI
