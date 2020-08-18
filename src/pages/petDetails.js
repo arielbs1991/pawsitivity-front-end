@@ -1,7 +1,7 @@
 import React, { Component, useState } from "react";
 import { Layout} from 'antd';
 import './Swipe.css'
-import PetDetailsComp from "../components/petDetails"
+import PetDetailsComp from "../components/PetDetails"
 import { render } from "@testing-library/react";
 
 const { Content } = Layout;
