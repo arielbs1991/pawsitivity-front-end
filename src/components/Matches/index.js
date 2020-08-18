@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd'
 // import matchAPI from '../../utils/matchAPI'
 
-export default function MatchesComp(props) {
+export default function MatchesComp({imgSrc, name}) {
   return(
 
     <div className="animalCard">
-      <img src={props.imageSrc}/>
-      <h1 align="center">name</h1>
+      <img src={imgSrc}/>
+      <h1 align="center">{name}</h1>
       <Button><Link to="../petDetails/:{petId}">View Details</Link></Button>
     </div>
   )
