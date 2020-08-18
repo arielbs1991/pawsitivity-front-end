@@ -32,8 +32,8 @@ export default function PetDetailsComp(props){
         
         <div className="petDetails">
             <Row>
-                <Col span={12} offset={6}>
-                    <img src={props.imageSrc}/> 
+                <Col >
+                    <img className="detailsImg" src={props.imageSrc}/> 
                 </Col>
             </Row>
             <Row>
@@ -43,7 +43,7 @@ export default function PetDetailsComp(props){
             </Row>
             <div className="allPetDetails">
                 <Row>
-                    <Col span={12} offset={6}>
+                    <Col >
                         {/* <h4 align="center"><strong>Details</strong></h4>
                         <p align="center"><strong>Breed:</strong> {this.props.dog.breed.primary} {this.props.dog.breed.secondary}</p>
                         <p align="center"><strong>Age:</strong> {this.props.dog.age}</p>
