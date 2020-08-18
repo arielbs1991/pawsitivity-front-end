@@ -45,12 +45,20 @@ class Matches extends Component {
     });
   }
 
+  renderPets = () => {
+    return this.state.queryResult.map(pet => <MatchesComp
+      key={pet.animal.id}
+      imgSrc={pet.animal.photos[0].small}
+      name={pet.animal.name}
+      />)
+  }
+
   render() {
     return (
       <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <MatchesComp />
+            <div>{this.renderPets()}</div>
           </div>
         </Content>
       </Layout>
