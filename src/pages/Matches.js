@@ -9,8 +9,6 @@ import petAPI from "../utils/petAPI";
 
 const { Content } = Layout;
 
-
-
 class Matches extends Component {
 
   state = {
@@ -45,7 +43,6 @@ class Matches extends Component {
     });
   }
 
-  // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
   handleClick = (e) => {
     const queryResultCopy = [... this.state.queryResult]
     const selectedPet = queryResultCopy.filter(pet => {
@@ -73,11 +70,8 @@ class Matches extends Component {
         age={pet.animal.age}
         gender={pet.animal.gender}
         size={pet.animal.size}
-        // UNCOMMENT FOR TESTING PURPOSES.
         handleClick={this.handleClick}
       />)
-
-
   }
 
   render() {
