@@ -2,15 +2,11 @@ import React from 'react'
 import { PageHeader, Button, Avatar } from 'antd';
 import {Link} from "react-router-dom"
 import logo3Jpeg from '../Header/logo3.jpeg';
-
-
-
 export default function HeaderComp() {
     return (
         <PageHeader
             className="site-page-header-responsive"
             title={<img className="logo" alt="logo" src={logo3Jpeg} />}
-            
             extra={[
                 <Link class="headerLink" to="/login">Login</Link>,
                 <Link class="headerLink" to="/swipe">Swipe</Link>,
@@ -21,6 +17,5 @@ export default function HeaderComp() {
                 <Link class="headerLink" to="/petdetails">Pet Details</Link>
             ]}
         />
-
     )
 }
