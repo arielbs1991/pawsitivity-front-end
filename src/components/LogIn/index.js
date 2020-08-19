@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom"
+import { Input } from 'antd';
 import "./style.css";
 import userAPI from '../../utils/userAPI.js'
 
@@ -48,14 +49,14 @@ class LogInComp extends Component {
         <form >
           <h1>Welcome to Pawsitivity</h1>
           <h5>Please Login or Sign Up</h5>
-          <input
+          <Input
             value={this.state.userName}
             name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="User Name"
           />
-          <input
+          <Input
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
@@ -65,7 +66,7 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <button onClick={this.handleFormSubmit}>Login</button>
+            <button className="loginButton" onClick={this.handleFormSubmit}>Login</button>
             <br /><br />
             <Link className="signUpBtn" to="/profile">Sign Up</Link>
           </div>

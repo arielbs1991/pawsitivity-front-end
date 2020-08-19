@@ -13,6 +13,10 @@
 
 }
 
+.loginButton {
+  width: 40%;
+}
+
 .signUpBtn {
   margin-top: 1em;
 }
