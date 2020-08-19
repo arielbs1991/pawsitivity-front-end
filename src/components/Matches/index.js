@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd'
 // import matchAPI from '../../utils/matchAPI'
 
-export default function MatchesComp({imgSrc, name, breed, breedTwo, age, gender, size}) {
+export default function MatchesComp({imgSrc, name, breed, breedTwo, age, gender, size, handleClick, id}) {
   return(
 
     <div className="animalCard">
@@ -13,7 +13,10 @@ export default function MatchesComp({imgSrc, name, breed, breedTwo, age, gender,
       <p>Age: {age}</p>
       <p>Gender: {gender}</p>
       <p>Size: {size}</p>
-      <Button>Contact Shelter</Button>
+      
+
+      {/* FOR SOME REASON I CAN'T USE THE ANT BUTTON OR ELSE IT WON'T WORK AS INTENDED, LOL */}
+      <button id={id}onClick={handleClick}>Contact Shelter</button>
     </div>
   )
 }
