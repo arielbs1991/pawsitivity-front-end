@@ -6,7 +6,7 @@ import userAPI from '../../utils/userAPI.js'
 class LogInComp extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
   };
 
   handleInputChange = event => {
@@ -53,7 +53,7 @@ class LogInComp extends Component {
             name="email"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="User Name"
+            placeholder="Email"
           />
           <input
             value={this.state.password}

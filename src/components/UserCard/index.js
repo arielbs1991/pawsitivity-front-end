@@ -4,6 +4,7 @@ import { Input } from 'antd'
 // const { Option } = Select;
 // import { Switch } from 'antd';
 import { Checkbox } from 'antd';
+import { Select } from 'antd';
 export default function UserCardComp() {
     const[firstName, setFirstName]=useState("");
     const[lastName, setLastName]=useState("");
@@ -88,6 +89,11 @@ export default function UserCardComp() {
                  <Checkbox value={hasKids} onChange={e=>setHasKids(true)} >I have children at home.</Checkbox><br></br>
                  <Checkbox value={hasCats} onChange={e=>setHasCats(true)}>I have cats at home.</Checkbox><br></br>
                  <Checkbox value={hasDogs} onChange={e=>setHasDogs(true)}>I have dogs at home.</Checkbox><br></br> 
+                 <Select>
+                     <Select.Option value={hasKids} onChange={e=>setHasKids(true)}>Yes</Select.Option>
+                     <Select.Option value={hasKids} onChange={e=>setHasKids(false)}>No</Select.Option>
+                 </Select>
+
                 <button type="submit">Submit</button>
             </form>
         </div>

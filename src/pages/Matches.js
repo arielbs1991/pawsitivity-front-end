@@ -6,6 +6,7 @@ import MatchesComp from "../components/Matches";
 import userAPI from "../utils/userAPI";
 import matchAPI from "../utils/matchAPI";
 import petAPI from "../utils/petAPI";
+import LogoutCompt from "../components/Logout"
 
 const { Content } = Layout;
 
@@ -46,14 +47,14 @@ class Matches extends Component {
   }
 
   // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
-  // handleClick = (e) => {
-  //   console.log(e.target.id)
-  //   const petObject = {
-  //     petName: e.target.name,
-  //     shelterEmail: e.target.contact
-  //   }
-  //   userAPI.sendEmail(petObject).catch(err=> console.log(err))
-  // }
+  handleClick = (e) => {
+    console.log(e.target.id)
+    const petObject = {
+      petName: e.target.name,
+      shelterEmail: e.target.contact
+    }
+    userAPI.sendEmail(petObject).catch(err=> console.log(err))
+  }
 
   renderPets = () => {
     return this.state.queryResult.map(pet => 
@@ -68,7 +69,7 @@ class Matches extends Component {
       gender={pet.animal.gender}
       size={pet.animal.size}
       // UNCOMMENT FOR TESTING PURPOSES.
-      // handleClick={this.handleClick}
+      handleClick={this.handleClick}
       />)
 
 
