@@ -59,7 +59,10 @@ const userAPI = {
     getCurrentUserInfo: () => {
         return axios.get(`${baseURL}/api/users/readsessions`, { withCredentials: true })
     },
-
+    
+    sendEmail: (petObject) => {
+        return axios.post(`${baseURL}/sendemail/`, petObject, { withCredentials: true })
+    },
 }
 
 export default userAPI
