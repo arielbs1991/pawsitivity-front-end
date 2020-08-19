@@ -1,8 +1,6 @@
 import React from 'react'
 import { PageHeader, Button, Avatar } from 'antd';
 import {Link} from "react-router-dom"
-import { UserOutlined } from '@ant-design/icons';
-import { logDOM } from '@testing-library/react';
 import logo3Jpeg from '../Header/logo3.jpeg';
 export default function HeaderComp() {
     return (
