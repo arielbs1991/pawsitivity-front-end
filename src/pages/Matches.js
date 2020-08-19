@@ -85,7 +85,9 @@ class Matches extends Component {
       <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <div>{this.renderPets()}</div>
+            <div className="matchMe"
+            >{this.renderPets()}
+            </div>
           </div>
         </Content>
       </Layout>
