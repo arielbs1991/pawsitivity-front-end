@@ -6,7 +6,6 @@ import MatchesComp from "../components/Matches";
 import userAPI from "../utils/userAPI";
 import matchAPI from "../utils/matchAPI";
 import petAPI from "../utils/petAPI";
-import LogoutCompt from "../components/Logout"
 
 const { Content } = Layout;
 
@@ -48,13 +47,6 @@ class Matches extends Component {
 
   // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
   handleClick = (e) => {
-<<<<<<< HEAD
-    console.log(e.target.id)
-    const petObject = {
-      petName: e.target.name,
-      shelterEmail: e.target.contact
-    }
-=======
     const queryResultCopy = [... this.state.queryResult]
     const selectedPet = queryResultCopy.filter(pet => {
       if (e.target.id !== pet.animal.id) return true
@@ -66,26 +58,10 @@ class Matches extends Component {
       shelterEmail: selectedPet[0].animal.contact.email
     }
     console.log(petObject)
->>>>>>> dev
     userAPI.sendEmail(petObject).catch(err=> console.log(err))
   }
 
   renderPets = () => {
-<<<<<<< HEAD
-    return this.state.queryResult.map(pet => 
-    <MatchesComp
-      key={pet.animal.id}
-      id={pet.animal.id}
-      imgSrc={pet.animal.photos[0].full}
-      name={pet.animal.name}
-      breed={pet.animal.breeds.primary}
-      breedTwo={pet.animal.breeds.secondary}
-      age={pet.animal.age}
-      gender={pet.animal.gender}
-      size={pet.animal.size}
-      // UNCOMMENT FOR TESTING PURPOSES.
-      handleClick={this.handleClick}
-=======
     return this.state.queryResult.map(pet =>
       <MatchesComp
         key={pet.animal.id}
@@ -99,7 +75,6 @@ class Matches extends Component {
         size={pet.animal.size}
         // UNCOMMENT FOR TESTING PURPOSES.
         handleClick={this.handleClick}
->>>>>>> dev
       />)
 
 
