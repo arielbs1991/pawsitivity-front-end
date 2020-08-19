@@ -45,12 +45,41 @@ class Matches extends Component {
     });
   }
 
+  // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
+  // handleClick = (e) => {
+  //   console.log(e.target.id)
+  //   const petObject = {
+  //     petName: e.target.name,
+  //     shelterEmail: e.target.contact
+  //   }
+  //   userAPI.sendEmail(petObject).catch(err=> console.log(err))
+  // }
+
+  renderPets = () => {
+    return this.state.queryResult.map(pet => 
+    <MatchesComp
+      key={pet.animal.id}
+      id={pet.animal.id}
+      imgSrc={pet.animal.photos[0].full}
+      name={pet.animal.name}
+      breed={pet.animal.breeds.primary}
+      breedTwo={pet.animal.breeds.secondary}
+      age={pet.animal.age}
+      gender={pet.animal.gender}
+      size={pet.animal.size}
+      // UNCOMMENT FOR TESTING PURPOSES.
+      // handleClick={this.handleClick}
+      />)
+
+
+  }
+
   render() {
     return (
       <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <MatchesComp />
+            <div>{this.renderPets()}</div>
           </div>
         </Content>
       </Layout>
