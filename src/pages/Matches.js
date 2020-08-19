@@ -46,29 +46,35 @@ class Matches extends Component {
   }
 
   // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
-  // handleClick = (e) => {
-  //   console.log(e.target.id)
-  //   const petObject = {
-  //     petName: e.target.name,
-  //     shelterEmail: e.target.contact
-  //   }
-  //   userAPI.sendEmail(petObject).catch(err=> console.log(err))
-  // }
+  handleClick = (e) => {
+    const queryResultCopy = [... this.state.queryResult]
+    const selectedPet = queryResultCopy.filter(pet => {
+      if (e.target.id !== pet.animal.id) return true
+    })
+    console.log(e.target.id)
+    
+    const petObject = {
+      petName: selectedPet[0].animal.name,
+      shelterEmail: selectedPet[0].animal.contact.email
+    }
+    console.log(petObject)
+    userAPI.sendEmail(petObject).catch(err=> console.log(err))
+  }
 
   renderPets = () => {
-    return this.state.queryResult.map(pet => 
-    <MatchesComp
-      key={pet.animal.id}
-      id={pet.animal.id}
-      imgSrc={pet.animal.photos[0].full}
-      name={pet.animal.name}
-      breed={pet.animal.breeds.primary}
-      breedTwo={pet.animal.breeds.secondary}
-      age={pet.animal.age}
-      gender={pet.animal.gender}
-      size={pet.animal.size}
-      // UNCOMMENT FOR TESTING PURPOSES.
-      // handleClick={this.handleClick}
+    return this.state.queryResult.map(pet =>
+      <MatchesComp
+        key={pet.animal.id}
+        id={pet.animal.id}
+        imgSrc={pet.animal.photos[0].full}
+        name={pet.animal.name}
+        breed={pet.animal.breeds.primary}
+        breedTwo={pet.animal.breeds.secondary}
+        age={pet.animal.age}
+        gender={pet.animal.gender}
+        size={pet.animal.size}
+        // UNCOMMENT FOR TESTING PURPOSES.
+        handleClick={this.handleClick}
       />)
 
 
@@ -79,7 +85,9 @@ class Matches extends Component {
       <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            <div>{this.renderPets()}</div>
+            <div className="matchMe"
+            >{this.renderPets()}
+            </div>
           </div>
         </Content>
       </Layout>
