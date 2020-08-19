@@ -50,6 +50,11 @@ class Matches extends Component {
       key={pet.animal.id}
       imgSrc={pet.animal.photos[0].small}
       name={pet.animal.name}
+      breed={pet.animal.breeds.primary}
+      breedTwo={pet.animal.breeds.secondary}
+      age={pet.animal.age}
+      gender={pet.animal.gender}
+      size={pet.animal.size}
       />)
   }
 
