@@ -22,7 +22,7 @@ class Matches extends Component {
       matchAPI.getMatchInfo(res.data.userId).then(res => {
         console.log(res.data)
         this.setState({
-          matchesResult: res.data.userMatches
+          matchesResult: res.data.userData.Matches
         })
         this.queryPetFinder()
       }).catch(err => {
