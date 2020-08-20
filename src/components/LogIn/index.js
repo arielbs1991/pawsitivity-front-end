@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
 import userAPI from '../../utils/userAPI.js'
+import { Button } from 'antd'
+
 
 class LogInComp extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
   };
 
   handleInputChange = event => {
@@ -54,7 +56,7 @@ class LogInComp extends Component {
             name="email"
             onChange={this.handleInputChange}
             type="text"
-            placeholder="User Name"
+            placeholder="Email"
           />
           <Input
             value={this.state.password}
@@ -66,9 +68,9 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <button className="loginButton" onClick={this.handleFormSubmit}>Login</button>
+            <Button className="loginButton" onClick={this.handleFormSubmit}><Link to="/swipe">Login</Link></Button>
             <br /><br />
-            <Link className="signUpBtn" to="/profile">Sign Up</Link>
+            <Button><Link className="signUpBtn" to="/profile">Sign Up</Link></Button>
           </div>
         </form>
 

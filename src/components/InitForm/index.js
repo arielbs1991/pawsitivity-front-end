@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Input, Select, Form, Checkbox } from 'antd'
+import { Redirect } from 'react-router-dom'
 import "./style.css";
 
 class InitForm extends Component {
@@ -32,6 +33,7 @@ class InitForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    return <Redirect to ="/Swipe"/>
 
     // this.setState({
     //   firstName: "",

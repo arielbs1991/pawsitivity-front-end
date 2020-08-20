@@ -13,7 +13,8 @@ class Swipe extends Component {
 state={
   dogs:[],
   cats:[],
-  userId:""
+  userId:"",
+  likedPets:[]
 }
 
 // petAPI.petSearch().then(res =>{
