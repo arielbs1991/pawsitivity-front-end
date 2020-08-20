@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/Login"
 import Swipe from './pages/Swipe';
 import PetDetails from "./pages/PetDetails"
-import Profile from './pages/Profile';
 import Profile2 from './pages/Profile2';
 import UpdateProfile from './pages/UpdateProfile';
 import HeaderComp from "./components/Header"

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'antd'
 import userAPI from "../../utils/userAPI"
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class LogoutComp extends Component {
 
@@ -18,13 +18,15 @@ Logout = event => {
         sessionToken:''
     });
     localStorage.clear();
-    return <Redirect to="/Login"/>
+    // return <Redirect to="/Login"/>
 }
 
 render(){
     return(
         <div>
-            <Button onClick={this.Logout}>Logout</Button>
+            <Button onClick={this.Logout}>
+                <Link to="/login">Logout</Link>
+            </Button>
         </div>
     )
 }
