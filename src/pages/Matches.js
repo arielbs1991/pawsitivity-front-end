@@ -9,8 +9,6 @@ import petAPI from "../utils/petAPI";
 
 const { Content } = Layout;
 
-
-
 class Matches extends Component {
 
   state = {
@@ -75,8 +73,6 @@ class Matches extends Component {
         size={pet.animal.size}
         handleClick={this.handleClick}
       />)
-
-
   }
 
   render() {
