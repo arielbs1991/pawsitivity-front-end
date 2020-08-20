@@ -9,8 +9,6 @@ import petAPI from "../utils/petAPI";
 
 const { Content } = Layout;
 
-
-
 class Matches extends Component {
 
   state = {
@@ -24,7 +22,7 @@ class Matches extends Component {
       matchAPI.getMatchInfo(res.data.userId).then(res => {
         console.log(res.data)
         this.setState({
-          matchesResult: res.data.userMatches
+          matchesResult: res.data.userData.Matches
         })
         this.queryPetFinder()
       }).catch(err => {
@@ -75,8 +73,6 @@ class Matches extends Component {
         size={pet.animal.size}
         handleClick={this.handleClick}
       />)
-
-
   }
 
   render() {
