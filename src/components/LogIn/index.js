@@ -43,6 +43,7 @@ class LogInComp extends Component {
       email: "",
       password: ""
     });
+    return <Link to="/swipe"/>
   };
 
   render() {
@@ -73,9 +74,6 @@ class LogInComp extends Component {
             <Button><Link className="signUpBtn" to="/profile">Sign Up</Link></Button>
           </div>
         </form>
-
-
-
       </div>
     );
   }
