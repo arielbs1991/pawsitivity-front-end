@@ -27,9 +27,6 @@ function App() {
       <Route path ="/matches">
         <Matches/>
       </Route>
-      <Route path = "/profile">
-        <Profile/>
-      </Route>
       <Route path = "/profile2">
         <Profile2/>
       </Route>
