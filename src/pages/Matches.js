@@ -45,21 +45,21 @@ class Matches extends Component {
     });
   }
 
-  // THIS IS THE CODE TO SEND AN EMAIL. IT MAY OR MAY NOT WORK
   handleClick = (e) => {
     const queryResultCopy = [... this.state.queryResult]
     const selectedPet = queryResultCopy.filter(pet => {
-      if (e.target.id !== pet.animal.id) return true
+      if (parseInt(e.target.id) === parseInt(pet.animal.id)) return true
     })
-    console.log(e.target.id)
-    
+
     const petObject = {
       petName: selectedPet[0].animal.name,
       shelterEmail: selectedPet[0].animal.contact.email
     }
-    console.log(petObject)
+
     userAPI.sendEmail(petObject).catch(err=> console.log(err))
   }
+
+  
 
   renderPets = () => {
     return this.state.queryResult.map(pet =>
@@ -73,7 +73,6 @@ class Matches extends Component {
         age={pet.animal.age}
         gender={pet.animal.gender}
         size={pet.animal.size}
-        // UNCOMMENT FOR TESTING PURPOSES.
         handleClick={this.handleClick}
       />)
 
