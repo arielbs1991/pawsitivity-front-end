@@ -43,7 +43,6 @@ onLikeButtonClick = () => {
   const dogObject = {
     petfinderId:newDogArray[0].id,
     isLiked:true,
-    shelterId: newDogArray[0].organization_id
   }
   matchAPI.saveMatch(dogObject)
   newDogArray.shift()
