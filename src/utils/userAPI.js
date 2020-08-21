@@ -1,68 +1,57 @@
 const axios = require("axios")
 // const baseURL = "http://localhost:3001"
 const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
-
-
 const userAPI = {
     createUser: (userData) => {
         return axios.post(`${baseURL}/api/users/`, userData, { withCredentials: true })
     },
-
-    editUserName: (id, userName) => {
-        return axios.put(`${baseURL}/api/users/userName/${id}`, userName, { withCredentials: true })
+    editUserName: (userData) => {
+        return axios.put(`${baseURL}/api/users/userName/`, userData, { withCredentials: true })
     },
-
-    editUserCity: (id, userCity) => {
-        return axios.put(`${baseURL}/api/users/city/${id}`, userCity, { withCredentials: true })
+    editUserCity: (userData) => {
+        return axios.put(`${baseURL}/api/users/city/`, userData, { withCredentials: true })
     },
-
-    editUserState: (id, userState) => {
-        return axios.put(`${baseURL}/api/users/state/${id}`, userState, { withCredentials: true })
+    editUserFirstName: (userData) => {
+        return axios.put(`${baseURL}/api/users/firstName/`, userData, { withCredentials: true })
     },
-
-    editUserPostcode: (id, postCode) => {
-        return axios.put(`${baseURL}/api/users/postcode/${id}`, postCode, { withCredentials: true })
+    editUserLastName: (userData) => {
+        return axios.put(`${baseURL}/api/users/lastName/`, userData, { withCredentials: true })
     },
-
-    editUserPhoneNumber: (id, phoneNumber) => {
-        return axios.put(`${baseURL}/api/users/phoneNumber/${id}`, phoneNumber, { withCredentials: true })
+    editUserState: (userData) => {
+        return axios.put(`${baseURL}/api/users/state/`, userData, { withCredentials: true })
     },
-
-    editUserHasKids: (id, hasKids) => {
-        return axios.put(`${baseURL}/api/users/hasKids/${id}`, hasKids, { withCredentials: true })
+    editUserPostcode: (userData) => {
+        return axios.put(`${baseURL}/api/users/postcode/`, userData, { withCredentials: true })
     },
-
-    editUserHasDogs: (id, hasDogs) => {
-        return axios.put(`${baseURL}/api/users/hasDogs/${id}`, hasDogs, { withCredentials: true })
+    editUserPhoneNumber: (userData) => {
+        return axios.put(`${baseURL}/api/users/phoneNumber/`, userData, { withCredentials: true })
     },
-
-    editUserHasCats: (id, hasCats) => {
-        return axios.put(`${baseURL}/api/users/hasCats/${id}`, hasCats, { withCredentials: true })
+    editUserHasKids: (userData) => {
+        return axios.put(`${baseURL}/api/users/hasKids/`, userData, { withCredentials: true })
     },
-
-    editUserWhichSpecies: (id, whichSpecies) => {
-        return axios.put(`${baseURL}/api/users/whichSpecies/${id}`, whichSpecies, { withCredentials: true })
+    editUserHasDogs: (userData) => {
+        return axios.put(`${baseURL}/api/users/hasDogs/`, userData, { withCredentials: true })
     },
-
-    deleteUser: (id) => {
-        return axios.delete(`${baseURL}/api/users/${id}`, { withCredentials: true })
+    editUserHasCats: (userData) => {
+        return axios.put(`${baseURL}/api/users/hasCats/`, userData, { withCredentials: true })
     },
-
+    editUserWhichSpecies: (userData) => {
+        return axios.put(`${baseURL}/api/users/whichSpecies/`, userData, { withCredentials: true })
+    },
+    deleteUser: (userData) => {
+        return axios.delete(`${baseURL}/api/users/`, userData,{ withCredentials: true })
+    },
     login: (userData) => {
         return axios.post(`${baseURL}/api/users/login`, userData, { withCredentials: true })
     },
-
     logout: () => {
         return axios.get(`${baseURL}/api/users/logout`, { withCredentials: true })
     },
-
     getCurrentUserInfo: () => {
         return axios.get(`${baseURL}/api/users/readsessions`, { withCredentials: true })
     },
-    
     sendEmail: (petObject) => {
         return axios.post(`${baseURL}/sendemail/`, petObject, { withCredentials: true })
     },
 }
-
 export default userAPI

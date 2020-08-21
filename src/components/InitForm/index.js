@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Input, Select, Form, Checkbox } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
+import userAPI from "../../utils/userAPI";
 
 class InitForm extends Component {
   state = {
@@ -33,6 +34,7 @@ class InitForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    // userAPI.createUser(this.{state})
     return <Redirect to ="/Swipe"/>
 
     // this.setState({
@@ -62,7 +64,7 @@ class InitForm extends Component {
           name="firstName"
           onChange={this.handleInputChange}
           type="text"
-          placeholder="First Name"
+          placeholder={"First Name"}
         />
         <Input
           value={this.state.lastName}

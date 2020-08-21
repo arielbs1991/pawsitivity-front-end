@@ -14,7 +14,6 @@ export default function Login() {
       <Content>
         <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
           <LogInComp/>
-          <LogoutComp></LogoutComp>
         </div>
       </Content>
   </Layout>
