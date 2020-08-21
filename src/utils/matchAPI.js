@@ -20,14 +20,15 @@ const matchAPI = {
         return axios.put(`${baseURL}/api/matches/isLiked/${id}`, isLiked, { withCredentials: true })
     },
 
-    getMatchInfo: (id) => {
-        return axios.get(`${baseURL}/api/matches/${id}`, { withCredentials: true })
-    },
+    // NEW
+    // getMatchInfo: (id) => {
+    //     return axios.get(`${baseURL}/api/matches/${id}`, { withCredentials: true })
+    // },
 
     // OLD -----------------------------
-    // getMatchInfo: (id) => {
-    //     return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
-    // },
+    getMatchInfo: (id) => {
+        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    },
 }
 
 export default matchAPI

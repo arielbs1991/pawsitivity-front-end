@@ -6,13 +6,13 @@ import Swipe from './pages/Swipe';
 import PetDetails from "./pages/PetDetails"
 import Profile2 from './pages/Profile2';
 import UpdateProfile from './pages/UpdateProfile';
-import HeaderComp from "./components/Header"
+// import HeaderComp from "./components/Header"
 import FooterComp from "./components/Footer"
 import Matches from "./pages/Matches"
 function App() {
   return (
     <Router> 
-      <HeaderComp/>
+      {/* <HeaderComp/> */}
     <Switch>
       <Route path="/login">
         <Login/>

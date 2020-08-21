@@ -2,6 +2,11 @@ const axios = require("axios")
 // const baseURL = "http://localhost:3001"
 const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
 const userAPI = {
+
+    findUser: (id) => {
+        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    },
+
     createUser: (userData) => {
         return axios.post(`${baseURL}/api/users/`, userData, { withCredentials: true })
     },

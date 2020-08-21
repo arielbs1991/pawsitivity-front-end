@@ -44,12 +44,10 @@
 
 .headerLink {
   border: 1px solid rgb(213, 213, 213);
-  margin: 1em;
   padding: 10px;
   border-radius: 10px;
   background: rgb(11, 53, 131);
-  color: rgb(213, 213, 213);
-  
+  color: rgb(213, 213, 213)!important;
 }
 
 .ant-page-header, .site-page-header-responsive, .ant-page-header-ghost, .ant-layout-footer {
@@ -62,9 +60,7 @@
   color: rgb(213, 213, 213);
 }
 
-.ant-page-header-heading-left, .ant-page-header-heading-extra {
-  padding: 5px;
-}
+
 
 
 .ant-modal-header, .ant-modal-footer {
@@ -105,17 +101,9 @@
 }
 
 .logo {
-  width: 80%;
+  width: 100%;
 }
 
-
-.ant-page-header-heading {
-  align-items: center;
-}
-
-.ant-checkbox-wrapper {
-  margin-left: 0em;
-}
 
 .matchMe {
   max-height: 500px;
@@ -126,4 +114,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+a {
+  color: #D5D5D5;
+}
+a:hover {
+  color: #D5D5D5
 }
