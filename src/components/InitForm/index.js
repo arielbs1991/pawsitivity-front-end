@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Select, Form, Checkbox } from 'antd'
+import { Input, Select, Form, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
 import userAPI from "../../utils/userAPI";
@@ -9,14 +9,22 @@ class InitForm extends Component {
     firstName: "",
     lastName: "",
     email: "",
+    password: '',
     city: "",
     state: "",
     postcode: "",
     phoneNumber: "",
+<<<<<<< HEAD
     hasKids: false,
     hasCats: false,
     hasDogs: false,
     species: "dog"
+=======
+    hasKids: 'false',
+    hasCats: 'false',
+    hasDogs: 'false',
+    whichSpecies: "dog"
+>>>>>>> dev
   };
 
   handleCheckboxInput = e => {
@@ -35,6 +43,7 @@ class InitForm extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     userAPI.createUser({
+<<<<<<< HEAD
       firstName:this.state.firstName,
       lastName:this.state.lastName,
       email:this.state.email,
@@ -48,6 +57,34 @@ class InitForm extends Component {
       whichSpecies:"dogs"
     })
     return <Redirect to ="/Swipe"/>
+=======
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      city: this.state.city,
+      state: this.state.state,
+      postcode: this.state.postcode,
+      phoneNumber: this.state.phoneNumber,
+      hasKids: this.state.hasKids,
+      hasCats: this.state.hasCats,
+      hasDogs: this.state.hasDogs,
+      whichSpecies: 'dog'
+    }).then(this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      city: "",
+      state: "",
+      postalCode: "",
+      phoneNumber: "",
+      hasKids: "",
+      hasCats: "",
+      hasDogs: "",
+      whichSpecies: ""
+    }))
+    return <Redirect to="/Swipe" />
+>>>>>>> dev
   };
 
   render() {
@@ -79,6 +116,13 @@ class InitForm extends Component {
           placeholder="E-mail"
         />
         <Input
+          value={this.state.password}
+          name="password"
+          onChange={this.handleInputChange}
+          type="password"
+          placeholder="Password"
+        />
+        <Input
           value={this.state.city}
           name="city"
           onChange={this.handleInputChange}
@@ -106,24 +150,24 @@ class InitForm extends Component {
           type="text"
           placeholder="Phone Number"
         />
-        <br/>
+        <br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasKids}
+          // checked={this.state.hasKids}
           name="hasKids"
           onChange={this.handleCheckboxInput}
         >I have children at home.
-        </Checkbox> <br/>
+        </Checkbox> <br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasCats}
+          // checked={this.state.hasCats}
           name="hasCats"
           onChange={this.handleCheckboxInput}
         >I have cats at home.
-        </Checkbox><br/>
+        </Checkbox><br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasDogs}
+          // checked={this.state.hasDogs}
           name="hasDogs"
           onChange={this.handleCheckboxInput}
         >I have dogs at home.
@@ -138,7 +182,10 @@ class InitForm extends Component {
 
         <br />
         <br />
+        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-cat"></i></Button></div> */}
+        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-dog"></i></Button></div> */}
         <button onClick={this.handleFormSubmit}>Submit</button>
+
       </form>
 
     );
