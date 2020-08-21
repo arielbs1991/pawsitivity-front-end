@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom"
+import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
 import userAPI from '../../utils/userAPI.js'
@@ -10,6 +10,7 @@ class LogInComp extends Component {
   state = {
     email: "",
     password: "",
+    errorSpan: '',
   };
 
   handleInputChange = event => {
@@ -24,30 +25,21 @@ class LogInComp extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (!this.state.email) {
-      alert("Please create an account!");
-    } else if (
-      !this.state.password
-      // this.state.password.length < 6
-      ) {
-      alert(
-        `Choose a more secure password`
-      );
-    }
-    userAPI.login(this.state).then(res => {
-      console.log(res.data)
-    })
-    this.setState({
-      email: "",
-      password: ""
-    });
-    return <Link to="/swipe"/>
-  };
+    if (!this.state.email) this.setState({errorSpan:'Please enter an email.'});
+    if (!this.state.password) this.setState({errorSpan:'Please enter a password.'});
+
+    await userAPI.login(this.state)
+    this.setState({ redirect: '/swipe' })
+  }
 
   render() {
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
     return (
+      
       <div className="logInForm">
         <form >
           <h1>Welcome to Pawsitivity</h1>
@@ -66,12 +58,13 @@ class LogInComp extends Component {
             type="password"
             placeholder="Password"
           />
+          <span>{this.state.errorSpan}</span>
           <br />
           <br />
           <div className="loginBtns">
-            <Button className="loginButton" onClick={this.handleFormSubmit}><Link to="/swipe">Login</Link></Button>
+            <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
             <br /><br />
-            <Button><Link className="signUpBtn" to="/profile">Sign Up</Link></Button>
+            <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
           </div>
         </form>
       </div>
