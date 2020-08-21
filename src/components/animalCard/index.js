@@ -10,12 +10,12 @@ export default function AnimalCardComp(props) {
         
         <div className="animalCard">
             <img src={props.imageSrc}/>
-            <h1 align="center">{props.dog.name}</h1>
+            <h1 align="center">{props.pet.name}</h1>
             <div className="pupCardOptions">
             <Button onClick={props.dislike} type="primary" danger shape="circle" icon={<CloseOutlined />}></Button>
             <Button onClick={props.like} type="primary" shape="circle" icon={<CheckOutlined />}></Button>
             </div>
-            <ModalComp dog={props.dog}></ModalComp>
+            <ModalComp pet={props.pet}></ModalComp>
         </div>
     )
 }

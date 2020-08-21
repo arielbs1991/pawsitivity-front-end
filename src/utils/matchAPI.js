@@ -20,6 +20,7 @@ const matchAPI = {
         return axios.put(`${baseURL}/api/matches/isLiked/${id}`, isLiked, { withCredentials: true })
     },
 
+    // NEW
     // getMatchInfo: (id) => {
     //     return axios.get(`${baseURL}/api/matches/${id}`, { withCredentials: true })
     // },

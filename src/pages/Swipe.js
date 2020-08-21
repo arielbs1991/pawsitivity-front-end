@@ -11,21 +11,13 @@ const { Content } = Layout;
 
 class Swipe extends Component {
   state = {
-    dogs: [],
-    cats: [],
+    pets: [],
     userId: "",
     likedPets: []
   }
 
-  // petAPI.petSearch().then(res =>{
-  //   this.setState({
-  //     dogs:res
-  //   })
-  // })
-
   componentDidMount() {
     userAPI.getCurrentUserInfo().then(res => {
-      console.log(res.data)
       this.setState({
         userId: res.data.userId
       })
@@ -33,27 +25,27 @@ class Swipe extends Component {
 
     petAPI.petSearch().then(res => {
       this.setState({
-        dogs: res.data
+        pets: res.data
       })
     })
   }
 
   onLikeButtonClick = () => {
-    let newDogArray = [... this.state.dogs]
-    const dogObject = {
-      petfinderId: newDogArray[0].id,
+    let newPetArray = [... this.state.pets]
+    const petObject = {
+      petfinderId: newPetArray[0].id,
       isLiked: true
     }
-    matchAPI.saveMatch(dogObject)
-    newDogArray.shift()
-    this.setState({ dogs: newDogArray })
+    matchAPI.saveMatch(petObject)
+    newPetArray.shift()
+    this.setState({ pets: newPetArray })
   }
 
   onDislikeButtonClick = () => {
-    let newDogArray = [... this.state.dogs]
-    newDogArray.shift()
-    this.setState({ dogs: newDogArray })
-    console.log(newDogArray)
+    let newPetArray = [... this.state.pets]
+    newPetArray.shift()
+    this.setState({ pets: newPetArray })
+    console.log(newPetArray)
   }
 
   render() {
@@ -62,13 +54,13 @@ class Swipe extends Component {
       <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-            {this.state.dogs.length > 0 ? <AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} dog={this.state.dogs[0]}
-              imageSrc={this.state.dogs[0].photos && this.state.dogs[0].photos.length && this.state.dogs[0].photos[0] && this.state.dogs[0].photos[0].small
+            {this.state.pets.length > 0 ? <AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} pet={this.state.pets[0]}
+              imageSrc={this.state.pets[0].photos && this.state.pets[0].photos.length && this.state.pets[0].photos[0] && this.state.pets[0].photos[0].small
                 ?
                 (
-                  this.state.dogs[0].primary_photo_cropped.full
+                  this.state.pets[0].primary_photo_cropped.full
                     ?
-                    this.state.dogs[0].primary_photo_cropped.full
+                    this.state.pets[0].primary_photo_cropped.full
                     :
                     "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"
                 )
@@ -76,7 +68,6 @@ class Swipe extends Component {
                 "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
 
             /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" />}
-            {/* <AnimalCardComp  name={"this.state.dogs[0].name"} imageSrc = {"this.state.dogs[0].primary_photo_cropped.small"}   /> */}
           </div>
         </Content>
       </Layout>

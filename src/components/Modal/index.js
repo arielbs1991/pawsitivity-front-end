@@ -26,17 +26,17 @@ class ModalComp extends React.Component {
       <>
         <Button onClick={this.showModal} align="center" shape="circle" icon={<InfoOutlined />}></Button>
         <Modal
-          title={this.props.dog.name}
+          title={this.props.pet.name}
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
         >
-          <p>Age: {this.props.dog.age}</p>
-          <p>Breed: {this.props.dog.breeds.primary} {this.props.dog.breeds.secondary}</p>
-          <p>Bio: {this.props.dog.description} </p>
-          {/* <p>Good with Kids: {this.props.dog.environment.children} </p>
-          <p>Good with Cats: {this.props.dog.environment.cats}  </p>
-          <p>Good with Dogs: {this.props.dog.environment.dogs} </p> */}
+          <p>Age: {this.props.pet.age}</p>
+          <p>Breed: {this.props.pet.breeds.primary} {this.props.pet.breeds.secondary}</p>
+          <p>Bio: {this.props.pet.description} </p>
+          {/* <p>Good with Kids: {this.props.pet.environment.children} </p>
+          <p>Good with Cats: {this.props.pet.environment.cats}  </p>
+          <p>Good with pets: {this.props.pet.environment.pets} </p> */}
         </Modal>
       </>
     );
