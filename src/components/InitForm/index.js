@@ -9,14 +9,15 @@ class InitForm extends Component {
     firstName: "",
     lastName: "",
     email: "",
+    password: '',
     city: "",
     state: "",
-    postalCode: "",
+    postcode: "",
     phoneNumber: "",
-    hasKids: false,
-    hasCats: false,
-    hasDogs: false,
-    species: ""
+    hasKids: 'false',
+    hasCats: 'false',
+    hasDogs: 'false',
+    whichSpecies: "dog"
   };
 
   handleCheckboxInput = e => {
@@ -34,22 +35,33 @@ class InitForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // userAPI.createUser(this.{state})
-    return <Redirect to ="/Swipe"/>
-
-    // this.setState({
-    //   firstName: "",
-    //   lastName: "",
-    //   email:"",
-    //   city:"",
-    //   state:"",
-    //   postalCode:"",
-    //   phoneNumber:"",
-    //   hasKids:"",
-    //   hasCats:"",
-    //   hasDogs:"",
-    //   species:""
-    // });
+    userAPI.createUser({
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      city: this.state.city,
+      state: this.state.state,
+      postcode: this.state.postcode,
+      phoneNumber: this.state.phoneNumber,
+      hasKids: 'false',
+      hasCats: 'false',
+      hasDogs: 'false',
+      whichSpecies: 'dog'
+    }).then(this.setState({
+      firstName: "",
+      lastName: "",
+      email:"",
+      city:"",
+      state:"",
+      postalCode:"",
+      phoneNumber:"",
+      hasKids:"",
+      hasCats:"",
+      hasDogs:"",
+      whichSpecies:""
+    }))
+    return <Redirect to="/Swipe" />
   };
 
   render() {
@@ -81,6 +93,13 @@ class InitForm extends Component {
           placeholder="E-mail"
         />
         <Input
+          value={this.state.password}
+          name="password"
+          onChange={this.handleInputChange}
+          type="password"
+          placeholder="Password"
+        />
+        <Input
           value={this.state.city}
           name="city"
           onChange={this.handleInputChange}
@@ -95,8 +114,8 @@ class InitForm extends Component {
           placeholder="State"
         />
         <Input
-          value={this.state.postalCode}
-          name="postalCode"
+          value={this.state.postcode}
+          name="postcode"
           onChange={this.handleInputChange}
           type="text"
           placeholder="Postal Code"
@@ -108,21 +127,21 @@ class InitForm extends Component {
           type="text"
           placeholder="Phone Number"
         />
-        <br/>
+        <br />
         <Checkbox
           type="checkbox"
           checked={this.state.hasKids}
           name="hasKids"
           onChange={this.handleCheckboxInput}
         >I have children at home.
-        </Checkbox> <br/>
+        </Checkbox> <br />
         <Checkbox
           type="checkbox"
           checked={this.state.hasCats}
           name="hasCats"
           onChange={this.handleCheckboxInput}
         >I have cats at home.
-        </Checkbox><br/>
+        </Checkbox><br />
         <Checkbox
           type="checkbox"
           checked={this.state.hasDogs}
