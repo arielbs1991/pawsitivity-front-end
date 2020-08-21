@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Select, Form, Checkbox } from 'antd'
+import { Input, Select, Form, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
 import userAPI from "../../utils/userAPI";
@@ -44,22 +44,22 @@ class InitForm extends Component {
       state: this.state.state,
       postcode: this.state.postcode,
       phoneNumber: this.state.phoneNumber,
-      hasKids: 'false',
-      hasCats: 'false',
-      hasDogs: 'false',
+      hasKids: this.state.hasKids,
+      hasCats: this.state.hasCats,
+      hasDogs: this.state.hasDogs,
       whichSpecies: 'dog'
     }).then(this.setState({
       firstName: "",
       lastName: "",
-      email:"",
-      city:"",
-      state:"",
-      postalCode:"",
-      phoneNumber:"",
-      hasKids:"",
-      hasCats:"",
-      hasDogs:"",
-      whichSpecies:""
+      email: "",
+      city: "",
+      state: "",
+      postalCode: "",
+      phoneNumber: "",
+      hasKids: "",
+      hasCats: "",
+      hasDogs: "",
+      whichSpecies: ""
     }))
     return <Redirect to="/Swipe" />
   };
@@ -130,21 +130,21 @@ class InitForm extends Component {
         <br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasKids}
+          // checked={this.state.hasKids}
           name="hasKids"
           onChange={this.handleCheckboxInput}
         >I have children at home.
         </Checkbox> <br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasCats}
+          // checked={this.state.hasCats}
           name="hasCats"
           onChange={this.handleCheckboxInput}
         >I have cats at home.
         </Checkbox><br />
         <Checkbox
           type="checkbox"
-          checked={this.state.hasDogs}
+          // checked={this.state.hasDogs}
           name="hasDogs"
           onChange={this.handleCheckboxInput}
         >I have dogs at home.
@@ -152,7 +152,11 @@ class InitForm extends Component {
 
         <br />
         <br />
+        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-cat"></i></Button></div> */}
+        <br />
+        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-dog"></i></Button></div> */}
         <button onClick={this.handleFormSubmit}>Submit</button>
+
       </form>
 
     );
