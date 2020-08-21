@@ -8,21 +8,26 @@ const matchAPI = {
         return axios.post(`${baseURL}/api/matches/newMatch/`, matchData, { withCredentials: true })
     },
 
-    getMatchbyId: (petfinderId) => {
-        return axios.get(`${baseURL}/api/matches/petfinderId/${petfinderId}`)
-    },
+    // getMatchbyId: (petfinderId) => {
+    //     return axios.get(`${baseURL}/api/matches/petfinderId/${petfinderId}`)
+    // },
 
-    getMatchesbyId: (userId) => {
-        return axios.get(`${baseURL}/api/matches/userId/${userId}`)
-    },
+    // getMatchesbyId: (userId) => {
+    //     return axios.get(`${baseURL}/api/matches/userId/${userId}`)
+    // },
 
     updateMatch: (id, isLiked) => {
         return axios.put(`${baseURL}/api/matches/isLiked/${id}`, isLiked, { withCredentials: true })
     },
 
     getMatchInfo: (id) => {
-        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+        return axios.get(`${baseURL}/api/matches/${id}`, { withCredentials: true })
     },
+
+    // OLD -----------------------------
+    // getMatchInfo: (id) => {
+    //     return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    // },
 }
 
 export default matchAPI
