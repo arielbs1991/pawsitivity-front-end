@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Button } from 'antd'
 import userAPI from "../../utils/userAPI"
 import { Link } from 'react-router-dom'
+import "./style.css";
+
 
 class LogoutComp extends Component {
 
@@ -24,9 +26,9 @@ Logout = event => {
 render(){
     return(
         <div>
-            <Button onClick={this.Logout}>
+            <button className="headerLink" onClick={this.Logout}>
                 <Link to="/login">Logout</Link>
-            </Button>
+            </button>
         </div>
     )
 }

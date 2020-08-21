@@ -5,6 +5,7 @@ import './Swipe.css'
 import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
 import userAPI from "../utils/userAPI";
+import HeaderComp from "../components/Header"
 
 const { Content } = Layout;
 
@@ -50,8 +51,8 @@ class Swipe extends Component {
 
   render() {
     return (
-
       <Layout>
+        <HeaderComp/>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
             {this.state.pets.length > 0 ? <AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} pet={this.state.pets[0]}
