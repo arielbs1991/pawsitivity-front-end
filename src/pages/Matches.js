@@ -1,6 +1,5 @@
 import React, { Component, useState } from "react";
 import { Layout } from 'antd';
-import UserCardComp from "../components/UserCard"
 import './Swipe.css'
 import MatchesComp from "../components/Matches";
 import userAPI from "../utils/userAPI";
