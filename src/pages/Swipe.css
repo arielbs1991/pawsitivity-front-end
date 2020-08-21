@@ -117,5 +117,8 @@
 }
 
 a {
-  color: whitesmoke;
+  color: #D5D5D5;
+}
+a:hover {
+  color: #D5D5D5
 }

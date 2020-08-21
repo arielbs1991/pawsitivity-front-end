@@ -7,7 +7,7 @@ export default function HeaderComp() {
     return (
             <PageHeader
                 className="site-page-header-responsive"
-                title={<img className="logo" alt="logo" src={logo3Jpeg} />}
+                title={<a href="/swipe"><img className="logo" Link="/swipe" alt="logo" src={logo3Jpeg} /></a>}
                 extra={[
                     // <Link key={1} className="headerLink" to="/login">Login</Link>,
                     <Link key={2} className="headerLink" to="/swipe">Swipe</Link>,

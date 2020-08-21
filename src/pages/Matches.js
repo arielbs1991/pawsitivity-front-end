@@ -17,10 +17,11 @@ class Matches extends Component {
   }
 
   componentDidMount() {
+    // let results;
     userAPI.getCurrentUserInfo().then(res => {
-      console.log(res.data)
       matchAPI.getMatchInfo(res.data.userId).then(res => {
-        console.log(res.data)
+        // results = res.data
+        // console.log(res.data)
         this.setState({
           matchesResult: res.data.userData.Matches
         })
@@ -33,6 +34,7 @@ class Matches extends Component {
 
   queryPetFinder = () => {
     const queryResultCopy = [... this.state.queryResult]
+    const arrayIWant = [... this.state.matchesResult]
     this.state.matchesResult.forEach(match => {
       petAPI.byId(match.petfinderId).then(res => {
         queryResultCopy.push(res.data)
@@ -40,8 +42,10 @@ class Matches extends Component {
           queryResult: queryResultCopy
         })
       })
-    });
+    })
   }
+
+
 
   handleClick = (e) => {
     const queryResultCopy = [... this.state.queryResult]
@@ -54,17 +58,31 @@ class Matches extends Component {
       shelterEmail: selectedPet[0].animal.contact.email
     }
 
-    userAPI.sendEmail(petObject).catch(err=> console.log(err))
+    userAPI.sendEmail(petObject).catch(err => console.log(err))
   }
 
-  
+  unmatch = async (event) => {
+    // let results = await userAPI.getCurrentUserInfo();
+    // results = await userAPI.findUser(results.data.userId)
+    console.log('click')
+    // console.log(results.data.userData.Matches)
+    // event.preventDefault();
+    // matchAPI.updateMatch(res.data.userId, res.data.isLiked).then(res => {
+    //     console.log(res.data)
+    //     this.setState({
+    //         isliked: false
+    //     })
+    // })
+  }
+
+
 
   renderPets = () => {
     return this.state.queryResult.map(pet =>
       <MatchesComp
         key={pet.animal.id}
         id={pet.animal.id}
-        imgSrc={pet.animal.photos[0].full}
+        imgSrc={pet.animal.photos[0].full ? pet.animal.primary_photo_cropped.full : "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
         name={pet.animal.name}
         breed={pet.animal.breeds.primary}
         breedTwo={pet.animal.breeds.secondary}
@@ -72,13 +90,15 @@ class Matches extends Component {
         gender={pet.animal.gender}
         size={pet.animal.size}
         handleClick={this.handleClick}
+        unmatch={this.unmatch}
+      // newId={}
       />)
   }
 
   render() {
     return (
       <Layout>
-        <HeaderComp/>
+        <HeaderComp />
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
             <div className="matchMe"
