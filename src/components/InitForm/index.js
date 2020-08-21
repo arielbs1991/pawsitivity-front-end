@@ -11,12 +11,12 @@ class InitForm extends Component {
     email: "",
     city: "",
     state: "",
-    postalCode: "",
+    postcode: "",
     phoneNumber: "",
     hasKids: false,
     hasCats: false,
     hasDogs: false,
-    species: ""
+    species: "dog"
   };
 
   handleCheckboxInput = e => {
@@ -34,22 +34,20 @@ class InitForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    // userAPI.createUser(this.{state})
+    userAPI.createUser({
+      firstName:this.state.firstName,
+      lastName:this.state.lastName,
+      email:this.state.email,
+      city:this.state.city,
+      state:this.state.state,
+      postcode:this.state.postcode,
+      phoneNumber:this.state.phoneNumber,
+      hasKids:this.state.hasKids,
+      hasCats:this.state.hasCats,
+      hasDogs:this.state.hasDogs,
+      whichSpecies:"dogs"
+    })
     return <Redirect to ="/Swipe"/>
-
-    // this.setState({
-    //   firstName: "",
-    //   lastName: "",
-    //   email:"",
-    //   city:"",
-    //   state:"",
-    //   postalCode:"",
-    //   phoneNumber:"",
-    //   hasKids:"",
-    //   hasCats:"",
-    //   hasDogs:"",
-    //   species:""
-    // });
   };
 
   render() {
@@ -95,8 +93,8 @@ class InitForm extends Component {
           placeholder="State"
         />
         <Input
-          value={this.state.postalCode}
-          name="postalCode"
+          value={this.state.postcode}
+          name="postcode"
           onChange={this.handleInputChange}
           type="text"
           placeholder="Postal Code"
@@ -130,6 +128,13 @@ class InitForm extends Component {
           onChange={this.handleCheckboxInput}
         >I have dogs at home.
         </Checkbox>
+        {/* <Checkbox
+          type="checkbox"
+          checked={this.state.species}
+          name="species"
+          onChange={this.handleCheckboxInput}
+        >I'm looking for a dog.
+        </Checkbox> */}
 
         <br />
         <br />
