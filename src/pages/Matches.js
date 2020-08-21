@@ -5,6 +5,7 @@ import MatchesComp from "../components/Matches";
 import userAPI from "../utils/userAPI";
 import matchAPI from "../utils/matchAPI";
 import petAPI from "../utils/petAPI";
+import HeaderComp from "../components/Header";
 
 const { Content } = Layout;
 
@@ -77,6 +78,7 @@ class Matches extends Component {
   render() {
     return (
       <Layout>
+        <HeaderComp/>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
             <div className="matchMe"
