@@ -153,7 +153,6 @@ class InitForm extends Component {
         <br />
         <br />
         {/* <div align='center'><Button>I am looking for a: <i className="fas fa-cat"></i></Button></div> */}
-        <br />
         {/* <div align='center'><Button>I am looking for a: <i className="fas fa-dog"></i></Button></div> */}
         <button onClick={this.handleFormSubmit}>Submit</button>
 
