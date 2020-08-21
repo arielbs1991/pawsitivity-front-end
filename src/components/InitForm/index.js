@@ -157,6 +157,7 @@ class InitForm extends Component {
 
         <br />
         <br />
+        <span>{this.state.errorSpan}</span>
         {/* <div align='center'><Button>I am looking for a: <i className="fas fa-cat"></i></Button></div> */}
         {/* <div align='center'><Button>I am looking for a: <i className="fas fa-dog"></i></Button></div> */}
         <button onClick={this.handleFormSubmit}>Submit</button>
