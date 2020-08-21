@@ -20,6 +20,7 @@ class InitForm extends Component {
     whichSpecies: "dog"
   };
 
+
   handleCheckboxInput = e => {
     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
     this.setState({ [e.target.name]: value });
@@ -33,38 +34,35 @@ class InitForm extends Component {
     });
   };
 
-  handleFormSubmit = event => {
+  handleFormSubmit = async (event) => {
     event.preventDefault();
-    userAPI.createUser({
-      firstName: this.state.firstName,
-      lastName: this.state.lastName,
-      email: this.state.email,
-      password: this.state.password,
-      city: this.state.city,
-      state: this.state.state,
-      postcode: this.state.postcode,
-      phoneNumber: this.state.phoneNumber,
-      hasKids: this.state.hasKids,
-      hasCats: this.state.hasCats,
-      hasDogs: this.state.hasDogs,
-      whichSpecies: 'dog'
-    }).then(this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      city: "",
-      state: "",
-      postalCode: "",
-      phoneNumber: "",
-      hasKids: "",
-      hasCats: "",
-      hasDogs: "",
-      whichSpecies: ""
-    }))
-    return <Redirect to="/Swipe" />
+    if (!this.state.firstName) this.setState({errorSpan:'Please enter your first name.'});
+    if (!this.state.lastName) this.setState({errorSpan:'Please enter your last name.'});
+    if (!this.state.email) this.setState({errorSpan:'Please enter a valid email address'});
+    if (!this.state.password) this.setState({errorSpan:'Please enter a valid password'});
+    if (!this.state.city) this.setState({errorSpan:'Please enter your city.'});
+    if (!this.state.state) this.setState({errorSpan:'Please enter a state.'});
+    if (!this.state.postcode) this.setState({errorSpan:'Please enter a valid postal code.'});
+    if (!this.state.phoneNumber) this.setState({errorSpan:'Please enter your phone number.'});
+
+    await userAPI.createUser(this.state)
+      // firstName: this.state.firstName,
+      // lastName: this.state.lastName,
+      // email: this.state.email,
+      // password: this.state.password,
+      // city: this.state.city,
+      // state: this.state.state,
+      // postcode: this.state.postcode,
+      // phoneNumber: this.state.phoneNumber,
+      // hasKids: this.state.hasKids,
+      // hasCats: this.state.hasCats,
+      // hasDogs: this.state.hasDogs,
+      // whichSpecies: 'dog'
+    this.setState({ redirect: '/login' })
   };
 
   render() {
+    if (this.state.redirect) return <Redirect to={this.state.redirect} />
     return (
 
       <form className="form">
@@ -149,6 +147,13 @@ class InitForm extends Component {
           onChange={this.handleCheckboxInput}
         >I have dogs at home.
         </Checkbox>
+        {/* <Checkbox
+          type="checkbox"
+          checked={this.state.species}
+          name="species"
+          onChange={this.handleCheckboxInput}
+        >I'm looking for a dog.
+        </Checkbox> */}
 
         <br />
         <br />
