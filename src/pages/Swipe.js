@@ -62,7 +62,20 @@ render(){
     <Layout>
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-  {this.state.dogs.length>0?<AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} dog={this.state.dogs[0]}  imageSrc = {this.state.dogs[0].photos[0].small?this.state.dogs[0].primary_photo_cropped.full:"https://dogtime.com/assets/uploads/2018/10/puppies-cover-1280x720.jpg"}  />:<img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage"/>}
+  {this.state.dogs.length>0?<AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} dog={this.state.dogs[0]}  
+  imageSrc = {this.state.dogs[0].photos && this.state.dogs[0].photos.length && this.state.dogs[0].photos[0] && this.state.dogs[0].photos[0].small
+    ?
+      (
+      this.state.dogs[0].primary_photo_cropped.full
+      ?
+      this.state.dogs[0].primary_photo_cropped.full
+      :
+      "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"
+      )
+    :
+    "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
+  
+   />:<img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage"/>}
             {/* <AnimalCardComp  name={"this.state.dogs[0].name"} imageSrc = {"this.state.dogs[0].primary_photo_cropped.small"}   /> */}
           </div>
         </Content>
