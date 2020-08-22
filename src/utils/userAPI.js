@@ -3,8 +3,12 @@ const axios = require("axios")
 const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
 const userAPI = {
 
-    findUser: (id) => {
-        return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    // findUser: (id) => {
+    //     return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
+    // },
+
+    findUser: () => {
+        return axios.get(`${baseURL}/api/matches/byUserId/`, { withCredentials: true })
     },
 
     createUser: (userData) => {
@@ -15,52 +19,52 @@ const userAPI = {
         return axios.put(`${baseURL}/api/users/updateAll/`, userData, { withCredentials: true })
     },
 
-    editUserName: (userData) => {
-        return axios.put(`${baseURL}/api/users/userName/`, userData, { withCredentials: true })
-    },
+    // editUserName: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/userName/`, userData, { withCredentials: true })
+    // },
 
-    editUserCity: (userData) => {
-        return axios.put(`${baseURL}/api/users/city/`, userData, { withCredentials: true })
-    },
+    // editUserCity: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/city/`, userData, { withCredentials: true })
+    // },
 
-    editUserFirstName: (userData) => {
-        return axios.put(`${baseURL}/api/users/firstName/`, userData, { withCredentials: true })
-    },
+    // editUserFirstName: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/firstName/`, userData, { withCredentials: true })
+    // },
 
-    editUserLastName: (userData) => {
-        return axios.put(`${baseURL}/api/users/lastName/`, userData, { withCredentials: true })
-    },
+    // editUserLastName: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/lastName/`, userData, { withCredentials: true })
+    // },
 
-    editUserState: (userData) => {
-        return axios.put(`${baseURL}/api/users/state/`, userData, { withCredentials: true })
-    },
+    // editUserState: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/state/`, userData, { withCredentials: true })
+    // },
 
-    editUserPostcode: (userData) => {
-        return axios.put(`${baseURL}/api/users/postcode/`, userData, { withCredentials: true })
-    },
+    // editUserPostcode: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/postcode/`, userData, { withCredentials: true })
+    // },
 
-    editUserPhoneNumber: (userData) => {
-        return axios.put(`${baseURL}/api/users/phoneNumber/`, userData, { withCredentials: true })
-    },
+    // editUserPhoneNumber: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/phoneNumber/`, userData, { withCredentials: true })
+    // },
 
-    editUserHasKids: (userData) => {
-        return axios.put(`${baseURL}/api/users/hasKids/`, userData, { withCredentials: true })
-    },
+    // editUserHasKids: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/hasKids/`, userData, { withCredentials: true })
+    // },
 
-    editUserHasDogs: (userData) => {
-        return axios.put(`${baseURL}/api/users/hasDogs/`, userData, { withCredentials: true })
-    },
+    // editUserHasDogs: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/hasDogs/`, userData, { withCredentials: true })
+    // },
 
-    editUserHasCats: (userData) => {
-        return axios.put(`${baseURL}/api/users/hasCats/`, userData, { withCredentials: true })
-    },
+    // editUserHasCats: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/hasCats/`, userData, { withCredentials: true })
+    // },
 
-    editUserWhichSpecies: (userData) => {
-        return axios.put(`${baseURL}/api/users/whichSpecies/`, userData, { withCredentials: true })
-    },
+    // editUserWhichSpecies: (userData) => {
+    //     return axios.put(`${baseURL}/api/users/whichSpecies/`, userData, { withCredentials: true })
+    // },
 
     deleteUser: (userData) => {
-        return axios.delete(`${baseURL}/api/users/`, userData,{ withCredentials: true })
+        return axios.delete(`${baseURL}/api/users/`, userData, { withCredentials: true })
     },
 
     login: (userData) => {
