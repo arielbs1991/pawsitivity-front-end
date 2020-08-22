@@ -34,6 +34,7 @@ class Matches extends Component {
   unmatch = async (e) => {
     let id = e.target.id
     const isLikedObj = { isLiked: false }
+    console.log('unliked')
     return await matchAPI.updateMatch(id, isLikedObj)
   }
 
