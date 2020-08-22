@@ -4,7 +4,7 @@ import { Button } from 'antd'
 // import matchAPI from '../../utils/matchAPI'
 import UnmatchComp from "../Unmatch"
 
-export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleClick, id, unmatch }) {
+export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId }) {
   return (
 
     <div className="animalCard">
@@ -17,9 +17,9 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
 
 
       {/* FOR SOME REASON I CAN'T USE THE ANT BUTTON OR ELSE IT WON'T WORK AS INTENDED, LOL */}
-      <button id={id} onClick={handleClick}>Contact Shelter</button>
+      <button id={id} onClick={handleContactClick}>Contact Shelter</button>
       <div>
-        <Button onClick={unmatch}>Unmatch</Button>
+        <button id={matchId} onClick={e=>handleDislikeClick(e)}>Unmatch</button>
       </div>
     </div>
   )
