@@ -39,22 +39,26 @@ class Swipe extends Component {
     this.setState({ pets: filteredPets })
   }
 
-  onLikeButtonClick = () => {
+  onLikeButtonClick = async () => {
     let newPetArray = [... this.state.pets]
     const petObject = {
       petfinderId: newPetArray[0].id,
       isLiked: true
     }
-    matchAPI.saveMatch(petObject)
+    await matchAPI.saveMatch(petObject)
     newPetArray.shift()
     this.setState({ pets: newPetArray })
   }
 
-  onDislikeButtonClick = () => {
+  onDislikeButtonClick = async () => {
     let newPetArray = [... this.state.pets]
+    const petObject = {
+      petfinderId: newPetArray[0].id,
+      isLiked: false
+    }
+    await matchAPI.saveMatch(petObject)
     newPetArray.shift()
     this.setState({ pets: newPetArray })
-    console.log(newPetArray)
   }
 
   render() {
