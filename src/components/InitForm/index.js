@@ -34,6 +34,16 @@ class InitForm extends Component {
     });
   };
 
+  catButton = (e) => {
+    e.preventDefault()
+    this.setState({ whichSpecies: 'cat' })
+  }
+
+  dogButton = (e) => {
+    e.preventDefault()
+    this.setState({ whichSpecies: 'dog' })
+  }
+
   handleFormSubmit = async (event) => {
     event.preventDefault();
     if (!this.state.firstName) this.setState({ errorSpan: 'Please enter your first name.' });
@@ -46,7 +56,6 @@ class InitForm extends Component {
     if (!this.state.phoneNumber) this.setState({ errorSpan: 'Please enter your phone number.' });
 
     await userAPI.createUser(this.state)
-    // this.setState({ redirect: '/login' })
     await userAPI.login({
       email: this.state.email,
       password: this.state.password
@@ -150,9 +159,11 @@ class InitForm extends Component {
 
         <br />
         <br />
-        <span>{this.state.errorSpan}</span>
-        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-cat"></i></Button></div> */}
-        {/* <div align='center'><Button>I am looking for a: <i className="fas fa-dog"></i></Button></div> */}
+        <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
+        <span>I am looking for a: </span>
+        <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
+        <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
+        <br />
         <button onClick={this.handleFormSubmit}>Submit</button>
 
       </form>
