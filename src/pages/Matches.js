@@ -25,14 +25,13 @@ class Matches extends Component {
     this.setState({ matchesResult: Matches })
     const queryResultCopy = [... this.state.queryResult]
     const matchesResultCopy = [... this.state.matchesResult]
-    matchesResultCopy.forEach(async ({ id, petfinderId, isLiked }) => {
+    return matchesResultCopy.forEach(async ({ id, petfinderId, isLiked }) => {
       if (isLiked) {
         let { data } = await petAPI.byId(petfinderId)
         queryResultCopy.push({ ...data, id, isLiked })
         this.setState({ queryResult: queryResultCopy })
       }
     })
-
   }
 
   unmatch = async (e) => {
