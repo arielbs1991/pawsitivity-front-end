@@ -3,3 +3,8 @@
     justify-content: center;
   }
 
+.flex {
+  display:flex;
+  justify-content: center;
+  align-items: space-around;
+}
