@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Select, Checkbox } from 'antd';
+import { Redirect } from 'react-router-dom'
 import userAPI from "../../utils/userAPI"
 
 class UpdateForm extends Component {
@@ -19,9 +20,7 @@ class UpdateForm extends Component {
 
     componentDidMount() {
         userAPI.getCurrentUserInfo().then(res => {
-            console.log(res.data)
             userAPI.findUser(res.data.userId).then(res => {
-                console.log(res.data)
                 this.setState({
                     firstName: res.data.userData.firstName,
                     lastName: res.data.userData.lastName,
@@ -47,6 +46,16 @@ class UpdateForm extends Component {
         })
     }
 
+    catButton = (e) => {
+        e.preventDefault()
+        this.setState({ whichSpecies: 'cat' })
+      }
+    
+      dogButton = (e) => {
+        e.preventDefault()
+        this.setState({ whichSpecies: 'dog' })
+      }
+
     handleCheckboxInput = e => {
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
         this.setState({ [e.target.name]: value });
@@ -55,12 +64,11 @@ class UpdateForm extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         userAPI.editAll(this.state);
-        console.log("click")
-        console.log(this.state.firstName)
-
+        this.setState({ redirect: '/swipe'})
     }
 
     render() {
+        if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
             <form className="form">
                 <h1 align="center">Update your Profile</h1>
@@ -138,6 +146,9 @@ class UpdateForm extends Component {
         </Checkbox>
 
                 <br />
+                <span>I am looking for a: </span>
+                <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
+                <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
                 <br />
                 <button onClick={this.handleFormSubmit}>Update</button>
             </form>
