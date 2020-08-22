@@ -58,7 +58,7 @@ class LogInComp extends Component {
             type="password"
             placeholder="Password"
           />
-          <span>{this.state.errorSpan}</span>
+          <span style={{color: 'red'}}>{this.state.errorSpan}</span>
           <br />
           <br />
           <div className="loginBtns">
