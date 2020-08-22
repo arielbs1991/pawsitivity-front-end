@@ -27,8 +27,8 @@ class LogInComp extends Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (!this.state.email) this.setState({errorSpan:'Please enter an email.'});
-    if (!this.state.password) this.setState({errorSpan:'Please enter a password.'});
+    if (!this.state.email) this.setState({ errorSpan: 'Please enter an email.' });
+    if (!this.state.password) this.setState({ errorSpan: 'Please enter a password.' });
 
     await userAPI.login(this.state)
     this.setState({ redirect: '/swipe' })
@@ -39,7 +39,7 @@ class LogInComp extends Component {
       return <Redirect to={this.state.redirect} />
     }
     return (
-      
+
       <div className="logInForm">
         <form >
           <h1>Welcome to Pawsitivity</h1>
@@ -58,7 +58,7 @@ class LogInComp extends Component {
             type="password"
             placeholder="Password"
           />
-          <span style={{color: 'red'}}>{this.state.errorSpan}</span>
+          <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
           <br />
           <br />
           <div className="loginBtns">

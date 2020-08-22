@@ -13,22 +13,30 @@ const { Content } = Layout;
 class Swipe extends Component {
   state = {
     pets: [],
-    userId: "",
-    likedPets: []
+    matchedPets: []
   }
 
   componentDidMount() {
-    userAPI.getCurrentUserInfo().then(res => {
-      this.setState({
-        userId: res.data.userId
-      })
-    })
+    this.gatherUserAndPetfinderInfo()
+  }
 
-    petAPI.petSearch().then(res => {
-      this.setState({
-        pets: res.data
-      })
+  gatherUserAndPetfinderInfo = async () => {
+    const matchArr = []
+
+    let { data: { userId } } = await userAPI.getCurrentUserInfo()
+    let { data: { userData: { Matches } } } = await matchAPI.getMatchInfo(userId)
+    this.setState({ matchedPets: Matches })
+
+    let { data } = await petAPI.petSearch()
+    this.setState({ pets: data })
+
+    const petCopy = [... this.state.pets]
+    const matchedPetsCopy = [... this.state.matchedPets]
+    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.petfinderId)))
+    let filteredPets = petCopy.filter(pet => {
+      if (!matchArr.includes(pet.id)) return true
     })
+    this.setState({ pets: filteredPets })
   }
 
   onLikeButtonClick = () => {
@@ -52,7 +60,7 @@ class Swipe extends Component {
   render() {
     return (
       <Layout>
-        <HeaderComp/>
+        <HeaderComp />
         <Content >
           <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
             {this.state.pets.length > 0 ? <AnimalCardComp like={this.onLikeButtonClick} dislike={this.onDislikeButtonClick} pet={this.state.pets[0]}
