@@ -36,29 +36,22 @@ class InitForm extends Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (!this.state.firstName) this.setState({errorSpan:'Please enter your first name.'});
-    if (!this.state.lastName) this.setState({errorSpan:'Please enter your last name.'});
-    if (!this.state.email) this.setState({errorSpan:'Please enter a valid email address'});
-    if (!this.state.password) this.setState({errorSpan:'Please enter a valid password'});
-    if (!this.state.city) this.setState({errorSpan:'Please enter your city.'});
-    if (!this.state.state) this.setState({errorSpan:'Please enter a state.'});
-    if (!this.state.postcode) this.setState({errorSpan:'Please enter a valid postal code.'});
-    if (!this.state.phoneNumber) this.setState({errorSpan:'Please enter your phone number.'});
+    if (!this.state.firstName) this.setState({ errorSpan: 'Please enter your first name.' });
+    if (!this.state.lastName) this.setState({ errorSpan: 'Please enter your last name.' });
+    if (!this.state.email) this.setState({ errorSpan: 'Please enter a valid email address' });
+    if (!this.state.password) this.setState({ errorSpan: 'Please enter a valid password' });
+    if (!this.state.city) this.setState({ errorSpan: 'Please enter your city.' });
+    if (!this.state.state) this.setState({ errorSpan: 'Please enter a state.' });
+    if (!this.state.postcode) this.setState({ errorSpan: 'Please enter a valid postal code.' });
+    if (!this.state.phoneNumber) this.setState({ errorSpan: 'Please enter your phone number.' });
 
     await userAPI.createUser(this.state)
-      // firstName: this.state.firstName,
-      // lastName: this.state.lastName,
-      // email: this.state.email,
-      // password: this.state.password,
-      // city: this.state.city,
-      // state: this.state.state,
-      // postcode: this.state.postcode,
-      // phoneNumber: this.state.phoneNumber,
-      // hasKids: this.state.hasKids,
-      // hasCats: this.state.hasCats,
-      // hasDogs: this.state.hasDogs,
-      // whichSpecies: 'dog'
-    this.setState({ redirect: '/login' })
+    // this.setState({ redirect: '/login' })
+    await userAPI.login({
+      email: this.state.email,
+      password: this.state.password
+    })
+    this.setState({ redirect: '/swipe' })
   };
 
   render() {

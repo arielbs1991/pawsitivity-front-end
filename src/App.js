@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/Login"
 import Swipe from './pages/Swipe';
-import PetDetails from "./pages/PetDetails"
+// import PetDetails from "./pages/PetDetails"
 import Profile2 from './pages/Profile2';
 import UpdateProfile from './pages/UpdateProfile';
 // import HeaderComp from "./components/Header"
@@ -20,9 +20,9 @@ function App() {
       <Route path = "/swipe">
         <Swipe/>
       </Route>
-      <Route path ="/petdetails">
+      {/* <Route path ="/petdetails">
         <PetDetails/>
-      </Route>
+      </Route> */}
       <Route path ="/matches">
         <Matches/>
       </Route>
