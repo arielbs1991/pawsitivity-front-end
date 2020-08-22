@@ -7,7 +7,9 @@ import matchAPI from "../utils/matchAPI";
 import petAPI from "../utils/petAPI";
 import HeaderComp from "../components/Header";
 const { Content } = Layout;
+
 class Matches extends Component {
+
   state = {
     matchesResult: [],
     queryResult: []
@@ -23,19 +25,25 @@ class Matches extends Component {
     this.setState({ matchesResult: Matches })
     const queryResultCopy = [... this.state.queryResult]
     const matchesResultCopy = [... this.state.matchesResult]
-    matchesResultCopy.forEach(async ({ id, petfinderId }) => {
-      let { data } = await petAPI.byId(petfinderId)
-      queryResultCopy.push({ ...data, id })
-      this.setState({ queryResult: queryResultCopy })
+    matchesResultCopy.forEach(async ({ id, petfinderId, isLiked }) => {
+      if (isLiked) {
+        let { data } = await petAPI.byId(petfinderId)
+        queryResultCopy.push({ ...data, id, isLiked })
+        this.setState({ queryResult: queryResultCopy })
+      }
     })
 
   }
 
   unmatch = async (e) => {
-    let id = e.target.id
+    const queryResultCopy = [... this.state.queryResult]
     const isLikedObj = { isLiked: false }
-    console.log('unliked')
-    return await matchAPI.updateMatch(id, isLikedObj)
+    const id = e.target.id
+    await matchAPI.updateMatch(id, isLikedObj)
+    let filteredResults = queryResultCopy.filter(pet => {
+      if (parseInt(id) !== parseInt(pet.id)) return true
+    })
+    this.setState({queryResult:filteredResults})
   }
 
   contactShelter = async (e) => {
@@ -49,6 +57,7 @@ class Matches extends Component {
     }
     return await userAPI.sendEmail(petObject)
   }
+
   renderPets = () => {
     return this.state.queryResult.map(pet =>
       <MatchesComp
@@ -66,6 +75,7 @@ class Matches extends Component {
         handleDislikeClick={this.unmatch}
       />)
   }
+
   render() {
     return (
       <Layout>
@@ -81,4 +91,5 @@ class Matches extends Component {
     )
   }
 }
+
 export default Matches;
