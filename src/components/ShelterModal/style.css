@@ -1,0 +1,12 @@
+.mapHolder {
+    display: block;
+    position: flex !important;
+    width: 87% !important;
+    height: 400px !important;
+}
+
+
+
+.ant-modal-body {
+    height: 500px;
+}
