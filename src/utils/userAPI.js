@@ -3,9 +3,9 @@ const baseURL = "http://localhost:3001"
 // const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
 const userAPI = {
 
-    // findUser: (id) => {
-    //     return axios.get(`${baseURL}/api/users/finduser/${id}`, { withCredentials: true })
-    // },
+    findUserSettings: () => {
+        return axios.get(`${baseURL}/api/users/finduser/`, { withCredentials: true })
+    },
 
     findUser: () => {
         return axios.get(`${baseURL}/api/matches/byUserId/`, { withCredentials: true })
