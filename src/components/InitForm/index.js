@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Select, Form, Checkbox, Button } from 'antd'
+import { Input, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
 import userAPI from "../../utils/userAPI";

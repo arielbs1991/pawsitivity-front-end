@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Button } from 'antd'
 import userAPI from "../../utils/userAPI"
 import { Link } from 'react-router-dom'
 import "./style.css";

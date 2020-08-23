@@ -1,10 +1,10 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Layout } from 'antd';
 import AnimalCardComp from "../components/animalCard"
 import './Swipe.css'
 import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
-import userAPI from "../utils/userAPI";
+// import userAPI from "../utils/userAPI";
 import HeaderComp from "../components/Header"
 
 const { Content } = Layout;
@@ -29,8 +29,8 @@ class Swipe extends Component {
     let { data } = await petAPI.petSearch()
     this.setState({ pets: data })
 
-    const petCopy = [... this.state.pets]
-    const matchedPetsCopy = [... this.state.matchedPets]
+    const petCopy = [...this.state.pets]
+    const matchedPetsCopy = [...this.state.matchedPets]
     matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
@@ -39,7 +39,7 @@ class Swipe extends Component {
   }
 
   onLikeButtonClick = async () => {
-    let newPetArray = [... this.state.pets]
+    let newPetArray = [...this.state.pets]
     const petObject = {
       PetfinderId: newPetArray[0].id,
       isLiked: true
@@ -50,7 +50,7 @@ class Swipe extends Component {
   }
 
   onDislikeButtonClick = async () => {
-    let newPetArray = [... this.state.pets]
+    let newPetArray = [...this.state.pets]
     const petObject = {
       PetfinderId: newPetArray[0].id,
       isLiked: false
@@ -79,7 +79,7 @@ class Swipe extends Component {
                 :
                 "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
 
-            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" />}
+            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" alt="whoops"/>}
           </div>
         </Content>
       </Layout>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'antd'
-import matchAPI from '../../utils/matchAPI';
+// import matchAPI from '../../utils/matchAPI';
 import userAPI from '../../utils/userAPI';
 
 class UnmatchComp extends Component {

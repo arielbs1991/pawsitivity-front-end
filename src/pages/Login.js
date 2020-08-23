@@ -3,7 +3,6 @@ import { Layout} from 'antd';
 import './Swipe.css'
 import LogInComp from "../components/LogIn";
 import HeaderComp2 from "../components/Header2";
-import MapContainer from "../components/Map"
 
 const { Content } = Layout;
 
