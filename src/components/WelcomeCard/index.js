@@ -16,7 +16,7 @@ export default function WelcomeCardComp() {
             <h3>Are you a shelter?</h3>
             <img className="welcomeimage" src="https://jointanimalservices.org/wp-content/uploads/2015/07/adoptapet.jpg" alt="whoops"/>
             <br/>
-            <Button type="primary"><Link to="/shelterLogin">Shelter Login</Link></Button>
+            <button className="button bottom"><Link to="/shelterLogin">Shelter Login</Link></button>
         </div>
     )
 }
