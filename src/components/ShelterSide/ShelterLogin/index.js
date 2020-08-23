@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
-import shelterAPI from '../../utils/shelterAPI.js'
+import shelterAPI from '../../../utils/shelterAPI.js'
 import { Button } from 'antd'
 
 
-class LogInComp extends Component {
+class ShelterLoginComp extends Component {
   state = {
     email: "",
     password: "",
@@ -63,10 +63,10 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
+            <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
             <br /><br />
             {/* //TODO: don't want to go to profile2. Want to create a page for shelter profile (I think) */}
-            <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
+            <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
           </div>
         </form>
       </div>
@@ -74,4 +74,4 @@ class LogInComp extends Component {
   }
 }
 
-export default LogInComp;
+export default ShelterLoginComp;

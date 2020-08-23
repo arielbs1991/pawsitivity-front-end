@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from "./pages/Login"
+import ShelterLogin from './pages/ShelterLogin';
 import Swipe from './pages/Swipe';
 // import PetDetails from "./pages/PetDetails"
 import Profile2 from './pages/Profile2';
@@ -20,6 +21,9 @@ function App() {
       </Route>
       <Route path="/login">
         <Login/>
+      </Route>
+      <Route path="/shelterlogin">
+        <ShelterLogin/>
       </Route>
       <Route path = "/swipe">
         <Swipe/>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Input, Select, Form, Checkbox, Button } from 'antd'
+import { Input, Checkbox, Button } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
-import animalAPI from "../../utils/animalAPI";
+import animalAPI from "../../../utils/animalAPI";
 
 class InitForm extends Component {
   state = {

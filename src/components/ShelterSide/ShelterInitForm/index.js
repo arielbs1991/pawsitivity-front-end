@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { Input, Select, Form, Checkbox, Button } from 'antd'
+import { Input, } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
-import shelterAPI from "../../utils/shelterAPI";
+import shelterAPI from "../../../utils/shelterAPI";
 
 class ShelterInitForm extends Component {
     state = {
@@ -16,17 +16,7 @@ class ShelterInitForm extends Component {
         state: "",
         postcode: "",
         phoneNumber: "",
-        // hasKids: 'false',
-        // hasCats: 'false',
-        // hasDogs: 'false',
-        // whichSpecies: "dog"
     };
-
-
-    // handleCheckboxInput = e => {
-    //     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-    //     this.setState({ [e.target.name]: value });
-    // };
 
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -35,16 +25,6 @@ class ShelterInitForm extends Component {
             [name]: value
         });
     };
-
-    // catButton = (e) => {
-    //     e.preventDefault()
-    //     this.setState({ whichSpecies: 'cat' })
-    // }
-
-    // dogButton = (e) => {
-    //     e.preventDefault()
-    //     this.setState({ whichSpecies: 'dog' })
-    // }
 
     handleFormSubmit = async (event) => {
         event.preventDefault();
@@ -131,43 +111,7 @@ class ShelterInitForm extends Component {
                     type="text"
                     placeholder="Phone Number"
                 />
-                {/* <br />
-        <Checkbox
-          type="checkbox"
-          // checked={this.state.hasKids}
-          name="hasKids"
-          onChange={this.handleCheckboxInput}
-        >I have children at home.
-        </Checkbox> <br />
-        <Checkbox
-          type="checkbox"
-          // checked={this.state.hasCats}
-          name="hasCats"
-          onChange={this.handleCheckboxInput}
-        >I have cats at home.
-        </Checkbox><br />
-        <Checkbox
-          type="checkbox"
-          // checked={this.state.hasDogs}
-          name="hasDogs"
-          onChange={this.handleCheckboxInput}
-        >I have dogs at home.
-        </Checkbox> */}
-                {/* <Checkbox
-          type="checkbox"
-          checked={this.state.species}
-          name="species"
-          onChange={this.handleCheckboxInput}
-        >I'm looking for a dog.
-        </Checkbox> */}
-
-                {/* <br />
-        <br />
-        <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
-        <span>I am looking for a: </span>
-        <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
-        <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
-        <br /> */}
+                <br />
                 <button onClick={this.handleFormSubmit}>Submit</button>
 
             </form>

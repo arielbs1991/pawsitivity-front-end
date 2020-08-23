@@ -1,8 +1,5 @@
 import React from 'react'
 import { Button } from 'antd';
-import { CloseOutlined, CheckOutlined, InfoOutlined } from '@ant-design/icons';
-// import petAPI from "../../utils/petAPI"
-import animalAPI from "../../utils/animalAPI";
 import AnimalUpdateModal from "../AnimalUpdateModal"
 
 // handleButtonClick = e => {
