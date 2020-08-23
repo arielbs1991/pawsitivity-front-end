@@ -14,3 +14,26 @@
     width: 280px;
     max-height: 400px;
   }
+
+.button {
+    background-color:#1E397E;
+    color:whitesmoke;
+    border-radius:2rem;
+    padding:0.5rem;
+    font-weight:bold;
+}
+
+.h1 {
+    /* padding:1rem; */
+    font-size:30pt;
+}
+
+.image {
+    border-radius:2rem;
+    height:125px;
+    width:200px;
+}
+
+/* .smaller {
+    height:150px
+} */
