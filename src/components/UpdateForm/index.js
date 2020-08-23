@@ -20,21 +20,19 @@ class UpdateForm extends Component {
     }
 
     componentDidMount() {
-        userAPI.getCurrentUserInfo().then(res => {
-            userAPI.findUser(res.data.userId).then(res => {
-                this.setState({
-                    firstName: res.data.userData.firstName,
-                    lastName: res.data.userData.lastName,
-                    city: res.data.userData.city,
-                    state: res.data.userData.state,
-                    postcode: res.data.userData.postcode,
-                    phoneNumber: res.data.userData.phoneNumber,
-                    hasCats: res.data.userData.hasCats,
-                    hasDogs: res.data.userData.hasDogs,
-                    hasKids: res.data.userData.hasKids,
-                    whichSpecies: res.data.userData.whichSpecies,
-                    userId: res.data.userData.id
-                })
+        userAPI.findUserSettings().then(res => {
+            this.setState({
+                firstName: res.data.firstName,
+                lastName: res.data.lastName,
+                city: res.data.city,
+                state: res.data.state,
+                postcode: res.data.postcode,
+                phoneNumber: res.data.phoneNumber,
+                hasCats: res.data.hasCats,
+                hasDogs: res.data.hasDogs,
+                hasKids: res.data.hasKids,
+                whichSpecies: res.data.whichSpecies,
+                userId: res.data.id
             })
         })
     }
@@ -50,12 +48,12 @@ class UpdateForm extends Component {
     catButton = (e) => {
         e.preventDefault()
         this.setState({ whichSpecies: 'cat' })
-      }
-    
-      dogButton = (e) => {
+    }
+
+    dogButton = (e) => {
         e.preventDefault()
         this.setState({ whichSpecies: 'dog' })
-      }
+    }
 
     handleCheckboxInput = e => {
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
@@ -65,7 +63,7 @@ class UpdateForm extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         userAPI.editAll(this.state);
-        this.setState({ redirect: '/swipe'})
+        this.setState({ redirect: '/swipe' })
     }
 
     setActiveButton(whichSpecies){

@@ -23,16 +23,15 @@ class Swipe extends Component {
   gatherUserAndPetfinderInfo = async () => {
     const matchArr = []
 
-    let { data: { userId } } = await userAPI.getCurrentUserInfo()
-    let { data: { userData: { Matches } } } = await matchAPI.getMatchInfo(userId)
-    this.setState({ matchedPets: Matches })
-
+    let results = await matchAPI.getMatchInfo()
+    results.data.petfinderMatches.push(results.data.shelterMatches)
+    this.setState({ matchedPets: results.data.petfinderMatches })
     let { data } = await petAPI.petSearch()
     this.setState({ pets: data })
 
     const petCopy = [... this.state.pets]
     const matchedPetsCopy = [... this.state.matchedPets]
-    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.petfinderId)))
+    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
     })
@@ -42,7 +41,7 @@ class Swipe extends Component {
   onLikeButtonClick = async () => {
     let newPetArray = [... this.state.pets]
     const petObject = {
-      petfinderId: newPetArray[0].id,
+      PetfinderId: newPetArray[0].id,
       isLiked: true
     }
     await matchAPI.saveMatch(petObject)
@@ -53,7 +52,7 @@ class Swipe extends Component {
   onDislikeButtonClick = async () => {
     let newPetArray = [... this.state.pets]
     const petObject = {
-      petfinderId: newPetArray[0].id,
+      PetfinderId: newPetArray[0].id,
       isLiked: false
     }
     await matchAPI.saveMatch(petObject)
