@@ -24,3 +24,7 @@
 button:hover{
     background-color: grey;
 }
+
+.h1 {
+    padding-top:1rem;
+}
