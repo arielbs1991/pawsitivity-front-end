@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
-import userAPI from '../../utils/userAPI.js'
+import shelterAPI from '../../utils/shelterAPI.js'
 import { Button } from 'antd'
 
 
@@ -30,7 +30,8 @@ class LogInComp extends Component {
     if (!this.state.email) this.setState({ errorSpan: 'Please enter an email.' });
     if (!this.state.password) this.setState({ errorSpan: 'Please enter a password.' });
 
-    await userAPI.login(this.state)
+    await shelterAPI.login(this.state)
+    //TODO: decide where to redirect shelter after login
     this.setState({ redirect: '/swipe' })
   }
 
@@ -62,9 +63,10 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-          <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
+            <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
             <br /><br />
-          <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
+            {/* //TODO: don't want to go to profile2. Want to create a page for shelter profile (I think) */}
+            <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
           </div>
         </form>
       </div>
