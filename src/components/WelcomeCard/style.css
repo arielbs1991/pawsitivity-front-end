@@ -1,0 +1,16 @@
+.welcomeCard {
+    width: 300px;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    text-align: center;
+}
+
+.welcomeCard>img {
+    width: 280px;
+    max-height: 400px;
+  }

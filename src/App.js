@@ -5,6 +5,7 @@ import Login from "./pages/Login"
 import Swipe from './pages/Swipe';
 // import PetDetails from "./pages/PetDetails"
 import Profile2 from './pages/Profile2';
+import Welcome from './pages/Welcome';
 import UpdateProfile from './pages/UpdateProfile';
 // import HeaderComp from "./components/Header"
 import FooterComp from "./components/Footer"
@@ -14,6 +15,9 @@ function App() {
     <Router> 
       {/* <HeaderComp/> */}
     <Switch>
+      <Route path="/welcome">
+        <Welcome/>
+      </Route>
       <Route path="/login">
         <Login/>
       </Route>
@@ -33,7 +37,7 @@ function App() {
         <UpdateProfile/>
       </Route>
       <Route exact path="/">
-        <Login/>
+        <Welcome/>
       </Route>
     </Switch>
     <FooterComp />

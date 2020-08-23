@@ -6,7 +6,7 @@ export default function HeaderComp2() {
     return (
             <PageHeader
                 className="site-page-header-responsive"
-                title={<a href="/login"><img className="logo" alt="logo" src={logo3Jpeg} /></a>}
+                title={<a href="/welcome"><img className="logo" alt="logo" src={logo3Jpeg} /></a>}
             />
     )
 }
