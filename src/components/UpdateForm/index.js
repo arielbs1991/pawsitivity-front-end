@@ -15,7 +15,8 @@ class UpdateForm extends Component {
         hasDogs: "",
         hasCats: "",
         whichSpecies: "",
-        userId: ""
+        userId: "",
+        active:false
     }
 
     componentDidMount() {
@@ -65,6 +66,10 @@ class UpdateForm extends Component {
         event.preventDefault();
         userAPI.editAll(this.state);
         this.setState({ redirect: '/swipe'})
+    }
+
+    setActiveButton(whichSpecies){
+        this.setState({ isActive: whichSpecies})
     }
 
     render() {
