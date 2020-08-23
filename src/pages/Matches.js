@@ -20,8 +20,8 @@ class Matches extends Component {
   }
 
   gatherUserAndPetfinderInfo = async () => {
-    let results = await matchAPI.getMatchInfo()
-    this.setState({ matchesResult: results.data.petfinderMatches })
+    let {data:{petfinderMatches}} = await matchAPI.getMatchInfo()
+    this.setState({ matchesResult: petfinderMatches })
     const queryResultCopy = [... this.state.queryResult]
     const matchesResultCopy = [... this.state.matchesResult]
     return matchesResultCopy.forEach(async ({ id, PetfinderId, isLiked }) => {
