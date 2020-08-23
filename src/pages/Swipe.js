@@ -23,9 +23,9 @@ class Swipe extends Component {
   gatherUserAndPetfinderInfo = async () => {
     const matchArr = []
 
-    let results = await matchAPI.getMatchInfo()
-    results.data.petfinderMatches.push(results.data.shelterMatches)
-    this.setState({ matchedPets: results.data.petfinderMatches })
+    let { data: { petfinderMatches, shelterMatches } } = await matchAPI.getMatchInfo()
+    petfinderMatches.push(shelterMatches)
+    this.setState({ matchedPets: petfinderMatches })
     let { data } = await petAPI.petSearch()
     this.setState({ pets: data })
 
