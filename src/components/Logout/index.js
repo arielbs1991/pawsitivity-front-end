@@ -26,7 +26,7 @@ Logout = event => {
 render(){
     return(
         <div>
-            <button className="headerLink" onClick={this.Logout}>
+            <button className="headerLink logOutBtn" onClick={this.Logout}>
                 <Link to="/login">Logout</Link>
             </button>
         </div>

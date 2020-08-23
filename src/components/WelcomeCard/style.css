@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2em;
+    /* padding: 2em; */
     text-align: center;
 }
 
@@ -23,17 +23,17 @@
     font-weight:bold;
 }
 
-.h1 {
+.h1welcome {
     /* padding:1rem; */
     font-size:30pt;
 }
 
-.image {
+.welcomeimage {
     border-radius:2rem;
     height:125px;
     width:200px;
 }
 
-/* .smaller {
-    height:150px
-} */
+.bottom {
+    margin-bottom:1rem;
+}

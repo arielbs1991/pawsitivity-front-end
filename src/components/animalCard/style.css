@@ -2,9 +2,10 @@
     border-radius:1rem;
 }
 
-.h1 {
+.h1AC {
     padding-top:1rem;
     padding-bottom:0.3rem;
+    font-size:20pt
 }
 .logOutBtn {
 
