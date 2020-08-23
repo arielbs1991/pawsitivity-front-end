@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button, Select, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
 import userAPI from "../../utils/userAPI"
+import style from "./style.css"
 
 class UpdateForm extends Component {
     state = {
@@ -74,7 +75,7 @@ class UpdateForm extends Component {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
             <form className="form">
-                <h1 align="center">Update your Profile</h1>
+                <h1 align="center">Update Profile</h1>
                 <br />
                 <Input
                     value={this.state.firstName}
@@ -149,11 +150,15 @@ class UpdateForm extends Component {
         </Checkbox>
 
                 <br />
-                <span>I am looking for a: </span>
+                <br></br>
+                <span>Looking For: </span>
                 <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
                 <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
                 <br />
-                <Button onClick={this.handleFormSubmit}>Update</Button>
+                <br></br>
+                <div className="center">
+                <Button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></Button>
+                </div>
             </form>
         )
     }

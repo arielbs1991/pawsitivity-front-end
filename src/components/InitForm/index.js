@@ -68,9 +68,9 @@ class InitForm extends Component {
     return (
 
       <form className="form">
-        <h1 align="center">Welcome To Pawsitivity</h1>
-        <h3>Let's Learn A Little More About You </h3>
-        <br />
+        {/* <h1 align="center">Welcome To Pawsitivity</h1> */}
+        <h3 className="h3" align="center"><strong>Create Your Profile</strong></h3>
+      
         <Input
           value={this.state.firstName}
           name="firstName"
@@ -160,12 +160,14 @@ class InitForm extends Component {
         <br />
         <br />
         <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
-        <span>I am looking for a: </span>
+        <span>Looking For: </span>
         <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
         <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
         <br />
-        <Button onClick={this.handleFormSubmit}>Submit</Button>
-
+        <br />
+        <div className="center">
+        <Button className="submit" onClick={this.handleFormSubmit}><strong>Submit</strong></Button>
+        </div>
       </form>
 
     );
