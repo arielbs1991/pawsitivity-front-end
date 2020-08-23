@@ -70,6 +70,7 @@ class Matches extends Component {
         age={pet.animal.age}
         gender={pet.animal.gender}
         size={pet.animal.size}
+        address={pet.animal.contact.address.address1}
         handleContactClick={this.contactShelter}
         handleDislikeClick={this.unmatch}
       />)
