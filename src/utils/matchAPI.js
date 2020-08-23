@@ -8,6 +8,10 @@ const matchAPI = {
         return axios.post(`${baseURL}/api/matches/newMatch/`, matchData, { withCredentials: true })
     },
 
+    getMapAPIKey: () => {
+        return axios.get(`${baseURL}/api/matches/mapAPI/`, { withCredentials: true })
+    },
+
     // getMatchbyId: (petfinderId) => {
     //     return axios.get(`${baseURL}/api/matches/petfinderId/${petfinderId}`)
     // },
