@@ -1,0 +1,10 @@
+.update {
+    background-color:#1E397E;
+    color:whitesmoke;
+    border-radius:2rem;
+}
+
+.center {
+display:flex;
+justify-content:center;
+}
