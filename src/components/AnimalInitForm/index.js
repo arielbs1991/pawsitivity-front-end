@@ -110,7 +110,7 @@ class InitForm extends Component {
           name="age"
           onChange={this.handleInputChange}
           type="text"
-          placeholder="age"
+          placeholder="Age"
         />
         <Input
           value={this.state.sex}
