@@ -46,16 +46,6 @@ class AnimalUpdateForm extends Component {
         })
     }
 
-    // catButton = (e) => {
-    //     e.preventDefault()
-    //     this.setState({ whichSpecies: 'cat' })
-    // }
-
-    // dogButton = (e) => {
-    //     e.preventDefault()
-    //     this.setState({ whichSpecies: 'dog' })
-    // }
-
     handleCheckboxInput = e => {
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
         this.setState({ [e.target.name]: value });
@@ -90,14 +80,14 @@ class AnimalUpdateForm extends Component {
                     name="name"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder={"First Name"}
+                    placeholder={"Name"}
                 />
                 <Input
                     value={this.state.type}
                     name="type"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="Animal Type"
                 />
                 <Input
                     value={this.state.imageSrc}
@@ -125,7 +115,7 @@ class AnimalUpdateForm extends Component {
                     name="age"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Phone Number"
+                    placeholder="Animal Age"
                 />
                 <br />
                 <Input
@@ -133,7 +123,7 @@ class AnimalUpdateForm extends Component {
                     name="sex"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Phone Number"
+                    placeholder="Sex"
                 />
                 <br />
                 <Input
@@ -141,7 +131,7 @@ class AnimalUpdateForm extends Component {
                     name="size"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Phone Number"
+                    placeholder="Size"
                 />
                 <br />
                 <Input
@@ -149,7 +139,7 @@ class AnimalUpdateForm extends Component {
                     name="bio"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Phone Number"
+                    placeholder="Brief Bio"
                 />
                 <br />
                 <Checkbox
@@ -174,14 +164,10 @@ class AnimalUpdateForm extends Component {
                 >Animal likes dogs.
         </Checkbox>
                 <br />
-                {/* <span>I am looking for a: </span>
-                <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
-                <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
-                <br /> */}
                 <Button onClick={this.handleFormSubmit}>Update</Button>
                 <br />
                 <br />
-                <Button danger onClick={this.handleDeleteButton}>REMOVE ANIMAL</Button>
+                <Button type="danger" onClick={this.handleDeleteButton}>REMOVE ANIMAL</Button>
             </form>
         )
     }

@@ -14,7 +14,7 @@ class ShelterUpdateForm extends Component {
         postcode: "",
         phoneNumber: "",
         shelterId: "",
-        active:false
+        active: false
     }
 
     componentDidMount() {
@@ -28,10 +28,6 @@ class ShelterUpdateForm extends Component {
                 state: res.data.state,
                 postcode: res.data.postcode,
                 phoneNumber: res.data.phoneNumber,
-                hasCats: res.data.hasCats,
-                hasDogs: res.data.hasDogs,
-                hasKids: res.data.hasKids,
-                whichSpecies: res.data.whichSpecies,
                 shelterId: res.data.id
             })
         })
@@ -45,58 +41,66 @@ class ShelterUpdateForm extends Component {
         })
     }
 
-    catButton = (e) => {
-        e.preventDefault()
-        this.setState({ whichSpecies: 'cat' })
-    }
+    // catButton = (e) => {
+    //     e.preventDefault()
+    //     this.setState({ whichSpecies: 'cat' })
+    // }
 
-    dogButton = (e) => {
-        e.preventDefault()
-        this.setState({ whichSpecies: 'dog' })
-    }
+    // dogButton = (e) => {
+    //     e.preventDefault()
+    //     this.setState({ whichSpecies: 'dog' })
+    // }
 
-    handleCheckboxInput = e => {
-        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
-        this.setState({ [e.target.name]: value });
-    }
+    // handleCheckboxInput = e => {
+    //     const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    //     this.setState({ [e.target.name]: value });
+    // }
 
     handleFormSubmit = event => {
         event.preventDefault();
         shelterAPI.editAll(this.state);
+        //TODO: decide which page to redirect to after update
         this.setState({ redirect: '/swipe' })
     }
 
-    setActiveButton(whichSpecies){
-        this.setState({ isActive: whichSpecies})
-    }
+    // setActiveButton(whichSpecies) {
+    //     this.setState({ isActive: whichSpecies })
+    // }
 
     render() {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
             <form className="form">
-                <h1 align="center">Update your Profile</h1>
+                <h1 align="center">Update Shelter Details</h1>
                 <br />
                 <Input
                     value={this.state.orgId}
                     name="orgId"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder={"First Name"}
+                    placeholder={"Organization ID"}
                 />
                 <Input
                     value={this.state.AnimalshelterName}
                     name="AnimalshelterName"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Last Name"
+                    placeholder="Shelter Name"
                 />
-                {/* <Input
-          value={this.state.email}
-          name="email"
-          onChange={this.handleInputChange}
-          type="text"
-          placeholder="E-mail"
-        /> */}
+                <Input
+                    value={this.state.address1}
+                    name="address1"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Address 1"
+                />
+                <Input
+                    value={this.state.address2}
+                    name="address2"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="Address2"
+                />
                 <Input
                     value={this.state.city}
                     name="city"
@@ -125,7 +129,7 @@ class ShelterUpdateForm extends Component {
                     type="text"
                     placeholder="Phone Number"
                 />
-                <br />
+                {/* <br />
                 <Checkbox
                     type="checkbox"
                     checked={this.state.hasKids}
@@ -152,7 +156,7 @@ class ShelterUpdateForm extends Component {
                 <span>I am looking for a: </span>
                 <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
                 <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
-                <br />
+                <br /> */}
                 <Button onClick={this.handleFormSubmit}>Update</Button>
             </form>
         )
