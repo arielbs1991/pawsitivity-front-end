@@ -15,8 +15,21 @@
 
 .loginButton {
   width: 40%;
+  border-radius:2rem;
+  background-color:#1E397E;
+  color:whitesmoke;
 }
 
 .signUpBtn {
   margin-top: 1em;
+}
+
+.signUp {
+  border-radius:2rem;
+  background-color:#1E397E;
+  color:whitesmoke;
+}
+
+.input {
+  margin-top:1rem;
 }

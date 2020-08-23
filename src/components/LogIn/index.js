@@ -42,16 +42,16 @@ class LogInComp extends Component {
 
       <div className="logInForm">
         <form >
-          <h1>Welcome to Pawsitivity</h1>
-          <h5>Please Login or Sign Up</h5>
-          <Input
+          <h1 align="center">Welcome to Pawsitivity!</h1>
+          <h5 align="center">Please Login or Sign Up</h5>
+          <Input className="input"
             value={this.state.userName}
             name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Email"
           />
-          <Input
+          <Input className="input"
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
@@ -62,9 +62,9 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-          <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
+          <Button className="signUp"><Link className="signUpBtn" to="/profile2"><strong>Sign Up</strong></Link></Button>
             <br /><br />
-          <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
+          <Button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></Button>
           </div>
         </form>
       </div>
