@@ -1,0 +1,22 @@
+.logInForm {
+    width: 300px;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    border-radius: 15px;
+    padding: 2em;
+  }
+
+
+.loginBtns {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.loginButton {
+  width: 40%;
+}
+
+.signUpBtn {
+  margin-top: 1em;
+}

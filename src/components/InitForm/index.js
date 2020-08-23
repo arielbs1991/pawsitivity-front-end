@@ -164,7 +164,7 @@ class InitForm extends Component {
         <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
         <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
         <br />
-        <button onClick={this.handleFormSubmit}>Submit</button>
+        <Button onClick={this.handleFormSubmit}>Submit</Button>
 
       </form>
 
