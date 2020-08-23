@@ -27,7 +27,7 @@ render(){
     return(
         <div>
             <button className="headerLink" onClick={this.Logout}>
-            {/* //want to link to either shelter login or some kind of home page */}
+            {/* //TODO:want to link to either shelter login or some kind of home page */}
                 <Link to="/login">Logout</Link>
             </button>
         </div>
