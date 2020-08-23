@@ -10,10 +10,10 @@ export default function HeaderComp() {
                 title={<a href="/swipe"><img className="logo" Link="/swipe" alt="logo" src={logo3Jpeg} /></a>}
                 extra={[
                     // <Link key={1} className="headerLink" to="/login">Login</Link>,
-                    <Link key={2} className="headerLink" to="/swipe">Swipe</Link>,
+                    <Link key={1} className="headerLink" to="/swipe">Swipe</Link>,
                     // <Link key={3} className="headerLink" to="/profile2">Profile2</Link>,
-                    <Link key={4} className="headerLink" to="/updateprofile">Profile</Link>,
-                    <Link key={5} className="headerLink" to="/matches">Matches</Link>,
+                    <Link key={2} className="headerLink" to="/updateprofile">Profile</Link>,
+                    <Link key={3} className="headerLink" to="/matches">Matches</Link>,
                     <LogoutComp/>
                 ]}
             />
