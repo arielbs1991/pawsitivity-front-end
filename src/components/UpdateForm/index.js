@@ -75,7 +75,7 @@ class UpdateForm extends Component {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
             <form className="form">
-                <h1 align="center">Update your Profile</h1>
+                <h1 align="center">Update Profile</h1>
                 <br />
                 <Input
                     value={this.state.firstName}
