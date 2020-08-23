@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Button, Select, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
-import animalAPI from "../../utils/animalAPI"
+import animalAPI from "../../../utils/animalAPI"
 
 class AnimalUpdateForm extends Component {
     state = {

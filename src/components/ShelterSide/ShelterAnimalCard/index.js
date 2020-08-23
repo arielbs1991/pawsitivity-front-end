@@ -9,24 +9,24 @@ import AnimalUpdateModal from "../AnimalUpdateModal"
 //         state: < />})
 //     }
 
-handleUpdateButtonClick = e => {
-            e.preventDefault();
-            this.setState({ state: <AnimalUpdateModal animal={props.animal} /> })
-        }
+// handleUpdateButtonClick = e => {
+//             e.preventDefault();
+//             this.setState({ state: <AnimalUpdateModal animal={props.animal} /> })
+//         }
 
-export default function ShelterAnimalCard(props) {
+export default function ShelterAnimalCard(id, type, imageSrc, name, breed, secondaryBreed, age, sex, size, bio, likesCats, LikesDogs, likesKids) {
         return (
 
-            <div className="shelterAnimalCard">
-                <img src={props.animal.imageSrc} />
-                <h1 align="center">{props.animal.name}</h1>
-                <h1 align="center">ID: {props.animal.id}</h1>
+            <div className="animalCard">
+                <img src={imageSrc} />
+                <h1 align="center">{name}</h1>
+                <h1 align="center">ID: {id}</h1>
                 <div className="pupCardOptions">
 
                     {/* <Button onClick={this.handleButtonClick} type="primary">View Matches</Button> */}
                 </div>
                 {/* <AnimalUpdateModal animal={props.animal}></AnimalUpdateModal> */}
-                <Button onClick={this.handleUpdateButtonClick} type="primary">Update Animal</Button>
+                <Button onClick={this.handleUpdateButtonClick} id={id} type="primary">Update Animal</Button>
             </div>
         )
     }

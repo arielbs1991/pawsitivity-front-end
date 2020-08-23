@@ -1,8 +1,8 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
 import { CompassOutlined } from '@ant-design/icons';
-import petAPI from "../../utils/petAPI"
-import MapContainer from '../Map'
+import petAPI from "../../../utils/petAPI"
+import MapContainer from '../../Map'
 import AnimalUpdateForm from '../AnimalUpdateForm'
 import "./style.css"
 

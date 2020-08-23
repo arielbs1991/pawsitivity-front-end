@@ -30,9 +30,9 @@ class ShelterLoginComp extends Component {
     if (!this.state.email) this.setState({ errorSpan: 'Please enter an email.' });
     if (!this.state.password) this.setState({ errorSpan: 'Please enter a password.' });
 
-    await shelterAPI.login(this.state)
+    await shelterAPI.shelterLogin(this.state)
     //TODO: decide where to redirect shelter after login
-    this.setState({ redirect: '/swipe' })
+    this.setState({ redirect: '/shelteranimals' })
   }
 
   render() {
@@ -63,9 +63,8 @@ class ShelterLoginComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <Button><Link className="signUpBtn" to="/profile2">Sign Up</Link></Button>
+            <Button><Link className="signUpBtn" to="/shelterprofile">Sign Up</Link></Button>
             <br /><br />
-            {/* //TODO: don't want to go to profile2. Want to create a page for shelter profile (I think) */}
             <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
           </div>
         </form>

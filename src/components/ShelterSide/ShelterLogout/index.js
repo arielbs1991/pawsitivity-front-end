@@ -19,15 +19,15 @@ Logout = event => {
         sessionToken:''
     });
     localStorage.clear();
-    // return <Redirect to="/Login"/>
+    // return <Redirect to="/shelterlogin"/>
 }
 
 render(){
     return(
         <div>
             <button className="headerLink" onClick={this.Logout}>
-            {/* //TODO:want to link to either shelter login or some kind of home page */}
-                <Link to="/login">Logout</Link>
+            {/* //TODO:want to link to either shelter shelterlogin or some kind of home page */}
+                <Link to="/shelterlogin">Logout</Link>
             </button>
         </div>
     )
