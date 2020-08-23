@@ -43,7 +43,7 @@ class LogInComp extends Component {
       <div className="logInForm">
         <form >
           <h1 align="center">Welcome to Pawsitivity!</h1>
-          <h5 align="center">Please Login or Sign Up</h5>
+          <h5 align="center">Please Sign Up or Login</h5>
           <Input className="input"
             value={this.state.userName}
             name="email"

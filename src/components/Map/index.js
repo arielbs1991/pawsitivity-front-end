@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import Geocode from "react-geocode";
 import "./style.css"
 let lat;

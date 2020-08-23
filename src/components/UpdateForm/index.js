@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Select, Checkbox } from 'antd';
+import { Input, Button, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
 import userAPI from "../../utils/userAPI"
-import style from "./style.css"
+import "./style.css"
 
 class UpdateForm extends Component {
     state = {

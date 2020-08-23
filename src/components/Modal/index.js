@@ -1,7 +1,7 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
 import { InfoOutlined } from '@ant-design/icons';
-import petAPI from "../../utils/petAPI"
+// import petAPI from "../../utils/petAPI"
 class ModalComp extends React.Component {
   state = { visible: false };
   showModal = () => {

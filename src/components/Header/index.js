@@ -1,8 +1,9 @@
 import React from 'react'
-import { PageHeader, Button, Avatar } from 'antd';
+import { PageHeader } from 'antd';
 import { Link } from "react-router-dom"
 import logo3Jpeg from '../Header/logo3.jpeg';
 import LogoutComp from '../Logout'
+import "./style.css"
 
 export default function HeaderComp() {
     return (

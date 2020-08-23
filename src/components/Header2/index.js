@@ -1,7 +1,7 @@
 import React from 'react'
 import { PageHeader } from 'antd';
-import { Link } from "react-router-dom"
 import logo3Jpeg from '../Header2/logo3.jpeg';
+import "./style.css"
 export default function HeaderComp2() {
     return (
             <PageHeader
