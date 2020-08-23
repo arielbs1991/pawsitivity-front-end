@@ -20,14 +20,13 @@ class Matches extends Component {
   }
 
   gatherUserAndPetfinderInfo = async () => {
-    let { data: { userId } } = await userAPI.getCurrentUserInfo()
-    let { data: { userData: { Matches } } } = await matchAPI.getMatchInfo(userId)
-    this.setState({ matchesResult: Matches })
+    let results = await matchAPI.getMatchInfo()
+    this.setState({ matchesResult: results.data.petfinderMatches })
     const queryResultCopy = [... this.state.queryResult]
     const matchesResultCopy = [... this.state.matchesResult]
-    return matchesResultCopy.forEach(async ({ id, petfinderId, isLiked }) => {
+    return matchesResultCopy.forEach(async ({ id, PetfinderId, isLiked }) => {
       if (isLiked) {
-        let { data } = await petAPI.byId(petfinderId)
+        let { data } = await petAPI.byId(PetfinderId)
         queryResultCopy.push({ ...data, id, isLiked })
         this.setState({ queryResult: queryResultCopy })
       }
@@ -38,7 +37,7 @@ class Matches extends Component {
     const queryResultCopy = [... this.state.queryResult]
     const isLikedObj = { isLiked: false }
     const id = e.target.id
-    await matchAPI.updateMatch(id, isLikedObj)
+    await matchAPI.updatePetfinderMatch(id, isLikedObj)
     let filteredResults = queryResultCopy.filter(pet => {
       if (parseInt(id) !== parseInt(pet.id)) return true
     })
@@ -70,6 +69,7 @@ class Matches extends Component {
         age={pet.animal.age}
         gender={pet.animal.gender}
         size={pet.animal.size}
+        address={pet.animal.contact.address.address1}
         handleContactClick={this.contactShelter}
         handleDislikeClick={this.unmatch}
       />)
