@@ -13,4 +13,17 @@
     width: 100%;
   }
   
-  
+  .h3 {
+    padding-bottom:1rem;
+  }
+
+  .submit {
+    background-color:#1E397E;
+    color:whitesmoke;
+    border-radius:2rem;
+  }
+
+  .center {
+    display:flex;
+    justify-content:center;
+  }

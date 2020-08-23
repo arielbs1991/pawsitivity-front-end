@@ -9,7 +9,7 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
   return (
     <div className="animalCard">
       <img src={imgSrc} className="rounded" />
-      <h1 align="center">{name}</h1>
+      <h1 className="h1" align="center">{name}</h1>
       <p><strong>Breed: </strong>{breed} {breedTwo}</p>
       <p><strong>Age: </strong>{age}</p>
       <p><strong>Gender: </strong>{gender}</p>

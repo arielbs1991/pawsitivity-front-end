@@ -1,0 +1,18 @@
+.image {
+    border-radius:1rem;
+}
+
+.h1 {
+    padding-top:1rem;
+    padding-bottom:0.3rem;
+}
+.logOutBtn {
+
+    border-radius: 10px;
+    background: rgb(11, 53, 131);
+    color: rgb(213, 213, 213);
+}
+
+Link:hover {
+    background-color: grey;
+}
