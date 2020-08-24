@@ -17,7 +17,7 @@ const success = () => {
   });
 };
 
-export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId, address1, address2, city, state, postcode, apikey }) {
+export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId, address1, address2, city, state, postcode }) {
   return (
     <div className="animalCard">
       <img src={imgSrc} className="rounded" alt={name}/>
