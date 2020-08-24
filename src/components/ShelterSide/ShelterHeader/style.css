@@ -1,20 +1,18 @@
 .site-layout-sub-header-background {
-    background: rgb(8, 40, 142);
-    justify-content: center;
-  }
-
-  .headerLink {
-    display:flex;
-    justify-content:space-around;
-  }
-
-  .logOutBtn {
-
-    border-radius: 10px;
-    background: rgb(11, 53, 131);
-    color: rgb(213, 213, 213);
+  background: rgb(8, 40, 142);
+  justify-content: center;
 }
 
-Link:hover {
-    background-color: grey;
+
+.signUpBtn3 {
+  margin-top: 1em;
+  color: whitesmoke;
+}
+
+.signUp3 {
+  border-radius:1em;
+  border-color: whitesmoke !important;
+  background-color:#1E397E;
+  color:whitesmoke;
+  padding: 10px;
 }
