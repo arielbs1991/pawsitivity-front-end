@@ -16,6 +16,7 @@ import ShelterUpdate from './pages/ShelterUpdate';
 import FooterComp from "./components/Footer"
 import Matches from "./pages/Matches"
 import CreateAnimal from "./pages/CreateAnimal"
+
 function App() {
   return (
     <Router>
@@ -68,4 +69,5 @@ function App() {
   </Router>
   );
 }
+
 export default App;
