@@ -91,13 +91,7 @@ class UpdateForm extends Component {
                     type="text"
                     placeholder="Last Name"
                 />
-                {/* <Input
-          value={this.state.email}
-          name="email"
-          onChange={this.handleInputChange}
-          type="text"
-          placeholder="E-mail"
-        /> */}
+
                 <Input
                     value={this.state.city}
                     name="city"

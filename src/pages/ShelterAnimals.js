@@ -1,11 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Layout } from 'antd';
 import './Swipe.css'
-// import ShelterAnimalsComp from "../components/ShelterAnimals";
 import animalAPI from "../utils/animalAPI";
 import ShelterHeaderComp from "../components/ShelterSide/ShelterHeader";
 import ShelterAnimalCard from "../components/ShelterSide/ShelterAnimalCard";
-// import AnimalUpdateModal from "../components/ShelterSide/AnimalUpdateModal";
 
 const { Content } = Layout;
 
@@ -50,18 +48,6 @@ class ShelterAnimals extends Component {
                 likesKids={animal.likesKids}
             />)
     }
-
-    // renderModal = () => {
-    //     return (
-
-    //         <AnimalUpdateModal id={this.animal.id} />
-
-    //     )
-    // }
-    // handleUpdateButtonClick = e => {
-    //     e.preventDefault();
-    //     this.setState({ state: <AnimalUpdateModal id={this.animal.id} /> })
-    // }
 
     render() {
         return (

@@ -1,8 +1,4 @@
 import React from 'react'
-// import { Link } from 'react-router-dom';
-// import { Button } from 'antd'
-// import matchAPI from '../../utils/matchAPI'
-// import UnmatchComp from "../Unmatch"
 import ShelterModal from "../ShelterModal"
 import "./style.css"
 import { message } from 'antd';

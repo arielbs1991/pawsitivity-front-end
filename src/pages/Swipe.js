@@ -1,10 +1,9 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Layout } from 'antd';
 import AnimalCardComp from "../components/animalCard"
 import './Swipe.css'
 import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
-// import userAPI from "../utils/userAPI";
 import HeaderComp from "../components/Header"
 
 const { Content } = Layout;

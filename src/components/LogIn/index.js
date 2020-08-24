@@ -32,6 +32,7 @@ class LogInComp extends Component {
       await userAPI.login(this.state)
       this.setState({ redirect: '/swipe' })
     }
+    
     catch {
       this.setState({ errorSpan: 'Login failed. Incorrect username or password.' })
     }

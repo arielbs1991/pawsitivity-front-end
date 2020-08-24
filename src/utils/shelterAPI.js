@@ -5,14 +5,6 @@ const baseURL = "https://pawsitivity-atack-api.herokuapp.com"
 
 const shelterAPI = {
 
-    // searchShelter: (userId) => {
-    //     return axios.get(`${baseURL}/api/shelter/${userId}`)
-    // },
-
-    // saveShelter: (shelterData) => {
-    //     return axios.post(`${baseURL}/api/shelter/`, shelterData, { withCredentials: true })
-    // },
-
     getShelterData: () => {
         return axios.get(`${baseURL}/api/shelterAPI/AnimalShelter/`, { withCredentials: true })
     },
