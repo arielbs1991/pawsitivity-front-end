@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Button } from 'antd';
 import shelterAPI from "../../../utils/shelterAPI"
 import { Link } from 'react-router-dom'
+import "./style.css";
+
 
 class ShelterProfileComp extends Component {
     state = {
@@ -57,7 +58,7 @@ class ShelterProfileComp extends Component {
                 <br />
                 <div className="center">
                 <button className="update">
-                    <Link to='/shelterupdate'>
+                    <Link className="updateBtn" to='/shelterupdate'>
                         <strong>Update Info</strong>
                     </Link>
                 </button>

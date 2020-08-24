@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout} from 'antd';
 import './Swipe.css'
-// import InitForm from "../components/InitForm";
 import AnimalInitForm from "../components/ShelterSide/AnimalInitForm";
 import ShelterHeaderComp from "../components/ShelterSide/ShelterHeader";
 

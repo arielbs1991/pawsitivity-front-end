@@ -19,18 +19,18 @@ Logout = event => {
         sessionToken:''
     });
     localStorage.clear();
-    // return <Redirect to="/Login"/>
 }
 
 render(){
     return(
         <div>
-            <button className="headerLink logOutBtn" onClick={this.Logout}>
-                <Link to="/welcome">Logout</Link>
-            </button>
+            <button className="signUp3" onClick={this.Logout}><Link className="signUpBtn3" to="/welcome">Logout</Link></button>
         </div>
     )
 }
 }
 
 export default LogoutComp;
+
+
+

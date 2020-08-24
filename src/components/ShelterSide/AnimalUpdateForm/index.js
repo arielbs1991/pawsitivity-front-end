@@ -97,13 +97,6 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Animal Type"
                 />
-                {/* <Input
-                    value={this.state.location}
-                    name="location"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="State"
-                /> */}
                 <Input
                     value={this.state.imageSrc}
                     name="imageSrc"

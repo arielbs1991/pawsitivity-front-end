@@ -11,14 +11,12 @@ export default function ShelterHeaderComp() {
                 className="site-page-header-responsive" //flex className to try and justify center align space around in css
                 title={<a href="/shelteranimals"><img className="logo" Link="/shelteranimals" alt="logo" src={logo3} /></a>}
                 extra={[
-                    // <Link key={1} className="headerLink" to="/login">Login</Link>,
-                    <Link justify='space-around' key={2} className="headerLink" to="/shelteranimals">Animals</Link>,
-                    // <Link key={3} className="headerLink" to="/profile2">Profile2</Link>,
-                    <Link justify='space-around' key={4} className="headerLink" to="/shelterprofile">Profile</Link>,
-                    <Link justify='space-around' key={5} className="headerLink" to="/createanimal">Add Animals</Link>,
-                    // <Link key={6} className="headerLink" to="/petdetails">Pet Details</Link>,
+                    <button className="signUp3"><Link className="signUpBtn3" justify='space-around' key={2} to="/shelteranimals">Pet List</Link></button>,
+                    <button className="signUp3"><Link className="signUpBtn3" justify='space-around' key={4} to="/shelterprofile">Profile</Link></button>,
+                    <button className="signUp3"><Link className="signUpBtn3" justify='space-around' key={5} to="/createanimal">Add Pet</Link></button>,
                     <ShelterLogoutComp/>
                 ]}
             />
     )
 }
+

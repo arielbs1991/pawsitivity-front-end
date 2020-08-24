@@ -8,10 +8,6 @@ const animalAPI = {
         return axios.get(`${baseURL}/api/animals/search/`, { withCredentials: true })
     },
 
-    // findAnimalsByState: () => {
-    //     return axios.get(`${baseURL}/api/animals/searchWithState/`, { withCredentials: true })
-    // },
-
     createAnimal: (animalObj) => {
         return axios.post(`${baseURL}/api/animals/animal/`, animalObj, { withCredentials: true })
     },

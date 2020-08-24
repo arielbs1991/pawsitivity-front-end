@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Checkbox, Button } from 'antd'
+import { Input, Checkbox } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
 import animalAPI from "../../../utils/animalAPI";
@@ -131,26 +131,22 @@ class AnimalInitForm extends Component {
         />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesKids}
           name="likesKids"
           onChange={this.handleCheckboxInput}
         >Good around children!
         </Checkbox> <br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesCats}
           name="likesCats"
           onChange={this.handleCheckboxInput}
         >Good around cats!
         </Checkbox><br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesDogs}
           name="likesDogs"
           onChange={this.handleCheckboxInput}
         >Good around dogs!
         </Checkbox>
-        
         <div className="center">
         <button className="input submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
         </div>

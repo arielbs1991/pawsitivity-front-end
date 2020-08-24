@@ -3,7 +3,6 @@ import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
 import shelterAPI from '../../../utils/shelterAPI.js'
-import { Button } from 'antd'
 
 
 class ShelterLoginComp extends Component {

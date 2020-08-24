@@ -68,7 +68,6 @@ class InitForm extends Component {
     return (
 
       <form className="form">
-        {/* <h1 align="center">Welcome To Pawsitivity</h1> */}
         <h3 className="h3" align="center"><strong>Create Your Profile</strong></h3>
       
         <Input
@@ -130,32 +129,22 @@ class InitForm extends Component {
         <br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.hasKids}
           name="hasKids"
           onChange={this.handleCheckboxInput}
         >I have children at home.
         </Checkbox> <br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.hasCats}
           name="hasCats"
           onChange={this.handleCheckboxInput}
         >I have cats at home.
         </Checkbox><br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.hasDogs}
           name="hasDogs"
           onChange={this.handleCheckboxInput}
         >I have dogs at home.
         </Checkbox>
-        {/* <Checkbox
-          type="checkbox"
-          checked={this.state.species}
-          name="species"
-          onChange={this.handleCheckboxInput}
-        >I'm looking for a dog.
-        </Checkbox> */}
 
         <br />
         <br />
