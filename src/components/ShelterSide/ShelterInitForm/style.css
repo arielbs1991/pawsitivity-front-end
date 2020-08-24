@@ -1,0 +1,18 @@
+.form {
+    margin: 2em;
+    padding: 2em;
+    width: 300px;
+    background: whitesmoke;
+    border-radius: 15px;
+  }
+  
+  .form input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .submit {
+    outline: none;
+  }

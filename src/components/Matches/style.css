@@ -1,0 +1,31 @@
+.animalCard {
+    margin-bottom:2rem;
+    padding-bottom:1rem;
+}
+
+.rounded {
+    border-radius:1rem;
+}
+
+.unmatch {
+    background-color:red;
+    border-radius:2rem;
+    color:whitesmoke;
+    font-weight:bold;
+    padding:0.5rem;
+}
+
+.contact {
+    background-color: #1E397E;
+    border-radius:2rem;
+    color:whitesmoke;
+    font-weight:bold;
+}
+
+button:hover{
+    background-color: grey;
+}
+
+.h1 {
+    padding-top:1rem;
+}

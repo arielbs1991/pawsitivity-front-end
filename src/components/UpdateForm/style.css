@@ -1,0 +1,13 @@
+.update {
+        background-color:#1E397E;
+        color:whitesmoke;
+        border-radius:2rem;
+        padding:0.5rem;
+        margin-top:0.5rem;
+        outline: none;
+}
+
+.center {
+    display:flex;
+    justify-content:center;
+  }

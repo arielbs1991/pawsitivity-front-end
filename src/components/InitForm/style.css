@@ -1,0 +1,30 @@
+.form {
+    margin: 2em;
+    padding: 2em;
+    width: 300px;
+    background: whitesmoke;
+    border-radius: 15px;
+  }
+  
+  .form input {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+  
+  .h3 {
+    padding-bottom:1rem;
+  }
+
+  .submit {
+    background-color:#1E397E;
+    color:whitesmoke;
+    border-radius:2rem;
+    padding:0.5rem;
+  }
+
+  .center {
+    display:flex;
+    justify-content:center;
+  }

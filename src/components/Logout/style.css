@@ -1,0 +1,13 @@
+
+  .signUpBtn3 {
+    margin-top: 1em;
+    color: whitesmoke;
+  }
+  
+  .signUp3 {
+    border-radius:1em;
+    border-color: whitesmoke !important;
+    background-color:#1E397E;
+    color:whitesmoke;
+    padding:1rem;
+  }

@@ -1,0 +1,41 @@
+.logInForm {
+    width: 300px;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    border-radius: 15px;
+    padding: 2em;
+  }
+
+
+.loginBtns {
+  display: flex;
+  justify-content: space-between;
+  outline: none;
+
+}
+
+.loginButton {
+  width: 40%;
+  border-radius:2rem;
+  background-color:#1E397E;
+  color:whitesmoke;
+  outline: none;
+}
+
+.signUpBtn {
+  margin-top: 1em;
+  color: whitesmoke;
+  outline: none;
+}
+
+.signUp {
+  border-radius:2rem;
+  background-color:#1E397E;
+  color:whitesmoke;
+  padding:1rem;
+  outline: none;
+}
+
+.input {
+  margin-top:1rem;
+}

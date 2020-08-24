@@ -1,0 +1,45 @@
+.welcomeCard {
+    width: 300px;
+    border: 1px solid lightgray;
+    background: whitesmoke;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* padding: 2em; */
+    text-align: center;
+}
+
+.welcomeCard>img {
+    width: 280px;
+    max-height: 400px;
+  }
+
+.button {
+    background-color:#1E397E;
+    color:whitesmoke;
+    border-radius:2rem;
+    padding:0.5rem;
+    font-weight:bold;
+    outline: none;
+}
+
+.h1welcome {
+    /* padding:1rem; */
+    font-size:30pt;
+}
+
+.welcomeimage {
+    border-radius:2rem;
+    height:125px;
+    width:200px;
+}
+
+.bottom {
+    margin-bottom:1rem;
+    
+}
+
+.welcomeBtn {
+    color: whitesmoke;
+}

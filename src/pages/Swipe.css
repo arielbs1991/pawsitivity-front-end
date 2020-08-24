@@ -1,0 +1,126 @@
+.animalCard {
+  width: 300px;
+  border: 1px solid lightgray;
+  background: whitesmoke;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.animalCard>img {
+  width: 280px;
+  max-height: 400px;
+}
+
+.site-layout-sub-header-background {
+  background: rgb(8, 40, 142);
+}
+
+.site-layout-background {
+  background-color: #2b1331;
+  background-image: linear-gradient(315deg, #0a0576 0%, #2a5683 74%);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pupCardOptions {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}
+
+.ant-layout {
+    background-color: rgb(146, 164, 198);
+}
+
+.card {
+  padding: 2em;
+  background: whitesmoke;
+  border-radius: 15px;
+}
+
+.headerLink {
+  border: 1px solid rgb(213, 213, 213);
+  padding: 10px;
+  border-radius: 10px;
+  background: rgb(11, 53, 131);
+  color: rgb(213, 213, 213)!important;
+}
+
+.ant-page-header, .site-page-header-responsive, .ant-page-header-ghost, .ant-layout-footer {
+  background: rgb(8, 0, 48);
+  color: whitesmoke;
+  padding: 2em
+}
+
+.ant-page-header-heading-title ,.ant-page-header-heading-sub-title {
+  color: rgb(213, 213, 213);
+}
+
+
+
+
+.ant-modal-header, .ant-modal-footer {
+  background: rgb(232, 232, 233);
+}
+
+.ant-modal-title {
+  font-size: x-large;
+}
+
+.ant-card, .ant-card-bordered {
+  padding: 1em;
+  background: whitesmoke;
+  border-radius: 15px;
+}
+
+.tableImage {
+  width: 100px;
+}
+
+.petDetails {
+  margin: 2em;
+  padding: 2em;
+  width: 300px;
+  background: whitesmoke;
+  border-radius: 15px;
+}
+
+.allPetDetials {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.detailsImg {
+  width: 250px;
+}
+
+.logo {
+  width: 100%;
+  margin-left:5px;
+}
+
+
+.matchMe {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+.ant-page-header-heading-extra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+}
+
+a {
+  color: #D5D5D5;
+}
+a:hover {
+  color: #D5D5D5
+}
