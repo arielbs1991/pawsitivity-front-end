@@ -27,6 +27,7 @@ class ShelterModal extends React.Component {
   render() {
     return (
       <>
+       {console.log(this.props)}
         <Button onClick={this.showModal} align="center" shape="circle" icon={<CompassOutlined />}></Button>
         <Modal className="shelterModalContainer"
           title={"Shelter Location"}
