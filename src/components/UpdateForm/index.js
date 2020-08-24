@@ -157,7 +157,7 @@ class UpdateForm extends Component {
                 <br />
                 <br></br>
                 <div className="center">
-                <Button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></Button>
+                <button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></button>
                 </div>
             </form>
         )

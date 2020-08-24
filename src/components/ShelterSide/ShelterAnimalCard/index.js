@@ -21,21 +21,21 @@ export default function ShelterAnimalCard({ id, type, imageSrc, location, name, 
         <div className="animalCard">
             <img src={imageSrc} />
             <h1 align="center">{name}</h1>
-            <h5 align="center">ID: {id}</h5>
-            <h5 align="center">Breeds: {breed}, {secondaryBreed}</h5>
-            <h5 align="center">Age: {age}</h5>
-            <h5 align="center">Gender: {sex}</h5>
-            <h5 align="center">Size: {size}</h5>
-            <h5 align="center">Bio: {bio}</h5>
+            <p align="center"><strong>ID:</strong> {id}</p>
+            <p align="center"><strong>Breed(s):</strong> {breed}, {secondaryBreed}</p>
+            <p align="center"><strong>Age:</strong> {age}</p>
+            <p align="center"><strong>Gender:</strong> {sex}</p>
+            <p align="center"><strong>Size:</strong> {size}</p>
+            <p align="center"><strong>Bio:</strong> {bio}</p>
             <div className="pupCardOptions">
 
                 {/* <Button onClick={this.handleButtonClick} type="primary">View Matches</Button> */}
             </div>
             {/* <AnimalUpdateModal animal={props.animal}></AnimalUpdateModal> */}
-            <Button id={id} type="primary"><Link to='/updateanimal'>
-                Update Animal
+            <button className="update" id={id}><Link to='/updateanimal'>
+                <strong>Update Animal</strong>
             </Link>
-            </Button>
+            </button>
         </div>
     )
 }

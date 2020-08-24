@@ -110,10 +110,11 @@ class ShelterUpdateForm extends Component {
                     type="text"
                     placeholder="Phone Number"
                 />
-
-                <Button onClick={this.handleFormSubmit}>
-                        Update
-                </Button>
+                <div className="center">
+                <button className="update" onClick={this.handleFormSubmit}>
+                        <strong>Update</strong>
+                </button>
+                </div>
             </form>
         )
     }

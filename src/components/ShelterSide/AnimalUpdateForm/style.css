@@ -4,7 +4,13 @@
     border-radius:2rem;
 }
 
+
+
 .center {
 display:flex;
 justify-content:center;
+}
+
+.remove {
+    margin-top:0.5rem;
 }
