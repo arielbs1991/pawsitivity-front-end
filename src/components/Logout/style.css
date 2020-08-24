@@ -1,10 +1,13 @@
-.logOutBtn {
 
-    border-radius: 10px;
-    background: rgb(11, 53, 131);
-    color: rgb(213, 213, 213);
-}
-
-button:hover {
-    background-color:#0B3583;
-}
+  .signUpBtn3 {
+    margin-top: 1em;
+    color: whitesmoke;
+  }
+  
+  .signUp3 {
+    border-radius:1em;
+    border-color: whitesmoke !important;
+    background-color:#1E397E;
+    color:whitesmoke;
+    padding:1rem;
+  }

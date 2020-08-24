@@ -21,6 +21,7 @@
     border-radius:2rem;
     padding:0.5rem;
     font-weight:bold;
+    outline: none;
 }
 
 .h1welcome {
@@ -36,6 +37,7 @@
 
 .bottom {
     margin-bottom:1rem;
+    
 }
 
 .welcomeBtn {

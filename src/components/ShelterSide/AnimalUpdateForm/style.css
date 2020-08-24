@@ -13,4 +13,9 @@ justify-content:center;
 
 .remove {
     margin-top:0.5rem;
+
+}
+
+.unmatch {
+    outline: none;
 }
