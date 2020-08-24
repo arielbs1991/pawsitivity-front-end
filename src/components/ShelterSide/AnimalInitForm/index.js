@@ -18,7 +18,7 @@ class InitForm extends Component {
     likesKids: 'false',
     likesCats: 'false',
     likesDogs: 'false',
-    AnimalMatchId: this.AnimalMatchId
+    // AnimalMatchId: this.AnimalMatchId
   };
 
 

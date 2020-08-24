@@ -2,8 +2,8 @@ import React, { Component, useState } from "react";
 import { Layout } from 'antd';
 import './Swipe.css'
 // import UserMatchesComp from "../components/UserMatches";
-import matchAPI from "../utils/matchAPI";
-import HeaderComp from "../components/Header";
+import matchAPI from "../../utils/matchAPI";
+import HeaderComp from "../../components/Header";
 import ShelterAnimalCard from "../components/ShelterAnimalCard";
 
 const { Content } = Layout;
@@ -11,25 +11,19 @@ const { Content } = Layout;
 class UserMatches extends Component {
 
     state = {
-        animalsResult: []
+        usersResult: []
     }
 
     componentDidMount() {
         this.gatherUserMatches()
     }
 
-    gatherUserMatches = async () => {
-        await matchAPI.getMatchesForUniquePet()
-            .then(res => {
-                this.setState({ results: res.data.data });
-                console.log(results);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+    gatherUserMatches = async (id) => {
+        let results = await matchAPI.getMatchesForUniquePet(id)
+        this.setState({ usersResult: results.data })
     }
 
-   
+
 
     renderUserMatches = () => {
         return this.state.results.map(user =>
@@ -47,7 +41,7 @@ class UserMatches extends Component {
                 hasCats={user.hasCats}
                 hasDogs={user.hasDogs}
                 whichSpecies={user.whichSpecies}
-                
+
             />)
     }
 
