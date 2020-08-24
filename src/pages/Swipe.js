@@ -9,7 +9,6 @@ import HeaderComp from "../components/Header"
 
 const { Content } = Layout;
 
-
 class Swipe extends Component {
   state = {
     pets: [],
@@ -79,7 +78,7 @@ class Swipe extends Component {
                 :
                 "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
 
-            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" alt="whoops"/>}
+            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" alt="whoops" />}
           </div>
         </Content>
       </Layout>
