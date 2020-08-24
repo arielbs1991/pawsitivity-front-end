@@ -155,7 +155,7 @@ class InitForm extends Component {
         <br />
         <br />
         <div className="center">
-        <Button className="submit" onClick={this.handleFormSubmit}><strong>Submit</strong></Button>
+        <button className="submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
         </div>
       </form>
 
