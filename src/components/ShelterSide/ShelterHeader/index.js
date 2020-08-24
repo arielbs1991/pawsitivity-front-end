@@ -14,7 +14,7 @@ export default function ShelterHeaderComp() {
                     // <Link key={1} className="headerLink" to="/login">Login</Link>,
                     <Link justify='space-around' key={2} className="headerLink" to="/shelteranimals">Animals</Link>,
                     // <Link key={3} className="headerLink" to="/profile2">Profile2</Link>,
-                    <Link justify='space-around' key={4} className="headerLink" to="/shelterupdate">Profile</Link>,
+                    <Link justify='space-around' key={4} className="headerLink" to="/shelterprofile">Profile</Link>,
                     <Link justify='space-around' key={5} className="headerLink" to="/createanimal">Add Animals</Link>,
                     // <Link key={6} className="headerLink" to="/petdetails">Pet Details</Link>,
                     <ShelterLogoutComp/>

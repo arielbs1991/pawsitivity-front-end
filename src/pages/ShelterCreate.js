@@ -1,19 +1,19 @@
 import React from "react";
 import { Layout } from 'antd';
 import './Swipe.css'
-import ShelterProfileComp from "../components/ShelterSide/ShelterProfileComp";
-import ShelterHeaderComp from "../components/ShelterSide/ShelterHeader";
+import ShelterInitForm from "../components/ShelterSide/ShelterInitForm";
+import HeaderComp2 from "../components/Header2";
 
 const { Content } = Layout;
 
 
-export default function ShelterProfile() {
+export default function ShelterCreate() {
     return (
         <Layout>
-            <ShelterHeaderComp />
+            <HeaderComp2 />
             <Content>
                 <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
-                    <ShelterProfileComp />
+                    <ShelterInitForm />
                 </div>
             </Content>
         </Layout>

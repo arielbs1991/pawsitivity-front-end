@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Input, Button } from 'antd';
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import shelterAPI from "../../../utils/shelterAPI"
 
 class ShelterUpdateForm extends Component {
@@ -18,7 +18,7 @@ class ShelterUpdateForm extends Component {
     }
 
     componentDidMount() {
-        shelterAPI.findshelterSettings().then(res => {
+        shelterAPI.getShelterData().then(res => {
             this.setState({
                 orgId: res.data.orgId,
                 AnimalshelterName: res.data.AnimalshelterName,
@@ -41,11 +41,11 @@ class ShelterUpdateForm extends Component {
         })
     }
 
-    handleFormSubmit = event => {
+    handleFormSubmit = async event => {
         event.preventDefault();
-        shelterAPI.editAll(this.state);
-        //TODO: decide which page to redirect to after update
-        this.setState({ redirect: '/swipe' })
+        await shelterAPI.shelterUpdateAll(this.state);
+        this.setState({ redirect: '/shelterprofile' })
+        window.location.reload()
     }
 
     render() {
@@ -110,8 +110,10 @@ class ShelterUpdateForm extends Component {
                     type="text"
                     placeholder="Phone Number"
                 />
-              
-                <Button onClick={this.handleFormSubmit}>Update</Button>
+
+                <Button onClick={this.handleFormSubmit}>
+                        Update
+                </Button>
             </form>
         )
     }

@@ -63,7 +63,7 @@ class ShelterLoginComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <Button><Link className="signUpBtn" to="/shelterprofile">Sign Up</Link></Button>
+            <Button><Link className="signUpBtn" to="/sheltercreate">Sign Up</Link></Button>
             <br /><br />
             <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
           </div>

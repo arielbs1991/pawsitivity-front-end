@@ -26,7 +26,7 @@ render(){
     return(
         <div>
             <button className="headerLink logOutBtn" onClick={this.Logout}>
-                <Link to="/login">Logout</Link>
+                <Link to="/welcome">Logout</Link>
             </button>
         </div>
     )
