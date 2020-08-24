@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import './Swipe.css'
 // import UserMatchesComp from "../components/UserMatches";
 import matchAPI from "../../utils/matchAPI";
-import HeaderComp from "../../components/Header";
+import ShelterHeaderComp from "../../components/ShelterSide/ShelterHeader";
 import ShelterAnimalCard from "../components/ShelterAnimalCard";
 
 const { Content } = Layout;
@@ -46,7 +46,7 @@ class UserMatches extends Component {
     render() {
         return (
             <Layout>
-                <HeaderComp />
+                <ShelterHeaderComp />
                 <Content >
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                         <div className="matchMe"
