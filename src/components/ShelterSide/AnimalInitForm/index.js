@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom'
 import "./style.css";
 import animalAPI from "../../../utils/animalAPI";
 
-class InitForm extends Component {
+class AnimalInitForm extends Component {
   state = {
     name: "",
     type: "",
@@ -18,7 +18,7 @@ class InitForm extends Component {
     likesKids: 'false',
     likesCats: 'false',
     likesDogs: 'false',
-    AnimalMatchId: this.AnimalMatchId
+    // AnimalMatchId: this.AnimalMatchId
   };
 
 
@@ -59,7 +59,7 @@ class InitForm extends Component {
 
     await animalAPI.createAnimal(this.state)
     //TODO:Decide which page to redirect to after animal creation
-    this.setState({ redirect: '/swipe' })
+    this.setState({ redirect: '/shelteranimals' })
   };
 
   render() {
@@ -178,4 +178,4 @@ class InitForm extends Component {
   }
 }
 
-export default InitForm;
+export default AnimalInitForm;

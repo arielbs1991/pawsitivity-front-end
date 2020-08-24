@@ -12,22 +12,21 @@ class ShelterLogoutComp extends Component {
 
 Logout = event => {
     event.preventDefault()
-    shelterAPI.logout(this.state).then(res => {
+    shelterAPI.shelterLogout(this.state).then(res => {
         console.log(res.data)
     })
     this.setState({
         sessionToken:''
     });
     localStorage.clear();
-    // return <Redirect to="/shelterlogin"/>
+    // return <Redirect to="/welcome"/>
 }
 
 render(){
     return(
         <div>
             <button className="headerLink" onClick={this.Logout}>
-            {/* //TODO:want to link to either shelter shelterlogin or some kind of home page */}
-                <Link to="/shelterlogin">Logout</Link>
+                <Link to="/welcome">Logout</Link>
             </button>
         </div>
     )

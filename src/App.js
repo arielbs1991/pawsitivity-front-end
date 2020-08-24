@@ -10,9 +10,11 @@ import Profile2 from './pages/Profile2';
 import ShelterProfile from './pages/ShelterProfile';
 import Welcome from './pages/Welcome';
 import UpdateProfile from './pages/UpdateProfile';
+import ShelterUpdate from './pages/ShelterUpdate';
 // import HeaderComp from "./components/Header"
 import FooterComp from "./components/Footer"
 import Matches from "./pages/Matches"
+import CreateAnimal from "./pages/CreateAnimal"
 function App() {
   return (
     <Router> 
@@ -39,6 +41,9 @@ function App() {
       <Route path ="/matches">
         <Matches/>
       </Route>
+      <Route path ="/createanimal">
+        <CreateAnimal/>
+      </Route>
       <Route path = "/profile2">
         <Profile2/>
       </Route>
@@ -47,6 +52,9 @@ function App() {
       </Route>
       <Route path = "/updateprofile">
         <UpdateProfile/>
+      </Route>
+      <Route path = "/shelterupdate">
+        <ShelterUpdate/>
       </Route>
       <Route exact path="/">
         <Welcome/>

@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import './Swipe.css'
 // import ShelterAnimalsComp from "../components/ShelterAnimals";
 import animalAPI from "../utils/animalAPI";
-import HeaderComp from "../components/Header";
+import ShelterHeaderComp from "../components/ShelterSide/ShelterHeader";
 import ShelterAnimalCard from "../components/ShelterSide/ShelterAnimalCard";
 import AnimalUpdateModal from "../components/ShelterSide/AnimalUpdateModal";
 
@@ -62,7 +62,7 @@ class ShelterAnimals extends Component {
     render() {
         return (
             <Layout>
-                <HeaderComp />
+                <ShelterHeaderComp />
                 <Content >
                     <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                         <div className="matchMe"
