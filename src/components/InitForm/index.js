@@ -150,8 +150,8 @@ class InitForm extends Component {
         <br />
         <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
         <span>Looking For: </span>
-        <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
-        <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
+        <button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></button>
+        <button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></button>
         <br />
         <br />
         <div className="center">

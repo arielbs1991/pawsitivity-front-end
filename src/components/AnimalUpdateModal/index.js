@@ -54,4 +54,3 @@ class AnimalUpdateModal extends React.Component {
   }
 }
 export default AnimalUpdateModal;
-

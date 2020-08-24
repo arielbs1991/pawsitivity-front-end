@@ -23,6 +23,10 @@ const animalAPI = {
     findAllShelterAnimals: () => {
         return axios.get(`${baseURL}/api/animals/all/`, { withCredentials: true })
     },
+    
+    findOneShelterAnimal: (id) => {
+        return axios.get(`${baseURL}/api/animals/shelterAnimal/${id}`, { withCredentials: true })
+    },
 
 }
 export default animalAPI

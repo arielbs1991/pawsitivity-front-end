@@ -49,7 +49,6 @@ class AnimalInitForm extends Component {
     if (!this.state.bio) this.setState({ errorSpan: "Please enter a brief bio for this animal."});
 
     await animalAPI.createAnimal(this.state)
-    //TODO:Decide which page to redirect to after animal creation
     this.setState({ redirect: '/shelteranimals' })
   };
 
@@ -148,7 +147,6 @@ class AnimalInitForm extends Component {
           onChange={this.handleCheckboxInput}
         >Good around dogs!
         </Checkbox>
-
         <div className="center">
         <button className="input submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
         </div>

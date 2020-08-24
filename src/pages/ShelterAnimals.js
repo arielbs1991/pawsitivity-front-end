@@ -11,7 +11,6 @@ class ShelterAnimals extends Component {
 
     state = {
         animalsResult: [],
-        // queryResult: []
     }
 
     componentDidMount() {
@@ -26,7 +25,6 @@ class ShelterAnimals extends Component {
     handleFormUpdateButtonClick = async (e) => {
         const id = e.target.id
     }
-
 
     renderShelterAnimals = () => {
         return this.state.animalsResult.map(animal =>
