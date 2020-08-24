@@ -6,6 +6,7 @@ import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
 // import userAPI from "../utils/userAPI";
 import HeaderComp from "../components/Header"
+import animalAPI from "../utils/animalAPI";
 
 const { Content } = Layout;
 
@@ -25,12 +26,14 @@ class Swipe extends Component {
     let { data: { petfinderMatches, shelterMatches } } = await matchAPI.getMatchInfo()
     petfinderMatches.push(shelterMatches)
     this.setState({ matchedPets: petfinderMatches })
-    let { data } = await petAPI.petSearch()
-    this.setState({ pets: data })
+    let { petfinderPets } = await petAPI.petSearch()
+    let { customPets } = await animalAPI.findAnimals()
+    petfinderPets.push(customPets)
+    this.setState({ pets: petfinderPets })
 
     const petCopy = [...this.state.pets]
     const matchedPetsCopy = [...this.state.matchedPets]
-    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
+    matchedPetsCopy.forEach(match => matchArr.push(match.PetfinderId))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
     })

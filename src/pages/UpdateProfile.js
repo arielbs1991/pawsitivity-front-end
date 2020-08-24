@@ -8,7 +8,7 @@ import HeaderComp from "../components/Header";
 const { Content } = Layout;
 
 
-export default function Login() {
+export default function UpdateProfile() {
   return (
     <Layout>
       <HeaderComp/>
