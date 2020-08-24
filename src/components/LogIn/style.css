@@ -10,6 +10,7 @@
 .loginBtns {
   display: flex;
   justify-content: space-between;
+  outline: none;
 
 }
 
@@ -18,11 +19,13 @@
   border-radius:2rem;
   background-color:#1E397E;
   color:whitesmoke;
+  outline: none;
 }
 
 .signUpBtn {
   margin-top: 1em;
   color: whitesmoke;
+  outline: none;
 }
 
 .signUp {
@@ -30,6 +33,7 @@
   background-color:#1E397E;
   color:whitesmoke;
   padding:1rem;
+  outline: none;
 }
 
 .input {

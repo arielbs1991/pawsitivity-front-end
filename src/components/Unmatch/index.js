@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'antd'
 import userAPI from '../../utils/userAPI';
+import "./style.css"
+
 
 class UnmatchComp extends Component {
     state= {
@@ -18,7 +20,7 @@ class UnmatchComp extends Component {
     render() {
         return (
             <div>
-                <Button onClick={this.Unmatch}>Unmatch</Button>
+                <Button className="unmatchBtn" onClick={this.Unmatch}>Unmatch</Button>
             </div>
         )
     }

@@ -3,18 +3,17 @@
     justify-content: center;
   }
 
-  .headerLink {
-    display:flex;
-    justify-content:space-around;
+
+  .signUpBtn3 {
+    margin-top: 1em;
+    color: whitesmoke;
   }
-
-  .logOutBtn {
-
-    border-radius: 10px;
-    background: rgb(11, 53, 131);
-    color: rgb(213, 213, 213);
-}
-
-Link:hover {
-    background-color: grey;
-}
+  
+  .signUp3 {
+    border-radius:1em;
+    border-color: whitesmoke !important;
+    background-color:#1E397E;
+    color:whitesmoke;
+    padding: 10px;
+    outline: none;
+  }
