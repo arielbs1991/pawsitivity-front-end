@@ -12,22 +12,26 @@ class ShelterModal extends React.Component {
       visible: true,
     });
   };
+
   handleOk = e => {
-    console.log(e);
+    // console.log(e);
     this.setState({
       visible: false,
     });
   };
+
   handleCancel = e => {
-    console.log(e);
+    // console.log(e);
     this.setState({
       visible: false,
     });
   };
+
   render() {
+
     return (
       <>
-       {console.log(this.props)}
+       {/* {console.log(this.props)} */}
         <Button onClick={this.showModal} align="center" shape="circle" icon={<CompassOutlined />}></Button>
         <Modal className="shelterModalContainer"
           title={"Shelter Location"}
@@ -43,5 +47,5 @@ class ShelterModal extends React.Component {
     );
   }
 }
-export default ShelterModal;
 
+export default ShelterModal;

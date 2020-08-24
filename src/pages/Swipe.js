@@ -27,14 +27,14 @@ class Swipe extends Component {
     petfinderMatches.push(shelterMatches)
     this.setState({ matchedPets: petfinderMatches })
     let { data } = await petAPI.petSearch()
-    // let results = await animalAPI.findAnimals()
-    // console.log(results)
-    // if (results.data) data.push(results.data)
+    // let shelterPets = await animalAPI.findAnimals()
+    // console.log(shelterPets.data)
+    // if (shelterPets.data) data.push(shelterPets.data)
     this.setState({ pets: data })
 
     const petCopy = [...this.state.pets]
     const matchedPetsCopy = [...this.state.matchedPets]
-    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
+    // matchedPetsCopy.forEach(match => matchArr.unshift(parseInt(match.PetfinderId)))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
     })

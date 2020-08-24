@@ -16,27 +16,28 @@ import ShelterUpdate from './pages/ShelterUpdate';
 import FooterComp from "./components/Footer"
 import Matches from "./pages/Matches"
 import CreateAnimal from "./pages/CreateAnimal"
+
 function App() {
   return (
-    <Router> 
+    <Router>
       {/* <HeaderComp/> */}
-    <Switch>
-      <Route path="/welcome">
-        <Welcome/>
-      </Route>
-      <Route path="/login">
-        <Login/>
-      </Route>
-      <Route path="/shelterlogin">
-        <ShelterLogin/>
-      </Route>
-      <Route path = "/swipe">
-        <Swipe/>
-      </Route>
-      <Route path = "/shelteranimals">
-        <ShelterAnimals/>
-      </Route>
-      {/* <Route path ="/petdetails">
+      <Switch>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/shelterlogin">
+          <ShelterLogin />
+        </Route>
+        <Route path="/swipe">
+          <Swipe />
+        </Route>
+        <Route path="/shelteranimals">
+          <ShelterAnimals />
+        </Route>
+        {/* <Route path ="/petdetails">
         <PetDetails/>
       </Route> */}
       <Route path ="/matches">
@@ -68,4 +69,5 @@ function App() {
   </Router>
   );
 }
+
 export default App;
