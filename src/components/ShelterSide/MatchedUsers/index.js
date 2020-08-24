@@ -23,8 +23,6 @@ class UserMatches extends Component {
         this.setState({ usersResult: results.data })
     }
 
-
-
     renderUserMatches = () => {
         return this.state.results.map(user =>
             <UserCard

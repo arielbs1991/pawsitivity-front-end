@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Layout } from 'antd';
 import './Swipe.css'
 import MatchesComp from "../components/Matches";
@@ -20,10 +20,10 @@ class Matches extends Component {
   }
 
   gatherUserAndPetfinderInfo = async () => {
-    let {data:{petfinderMatches}} = await matchAPI.getMatchInfo()
+    let { data: { petfinderMatches } } = await matchAPI.getMatchInfo()
     this.setState({ matchesResult: petfinderMatches })
-    const queryResultCopy = [... this.state.queryResult]
-    const matchesResultCopy = [... this.state.matchesResult]
+    const queryResultCopy = [...this.state.queryResult]
+    const matchesResultCopy = [...this.state.matchesResult]
     return matchesResultCopy.forEach(async ({ id, PetfinderId, isLiked }) => {
       if (isLiked) {
         let { data } = await petAPI.byId(PetfinderId)
@@ -34,18 +34,18 @@ class Matches extends Component {
   }
 
   unmatch = async (e) => {
-    const queryResultCopy = [... this.state.queryResult]
+    const queryResultCopy = [...this.state.queryResult]
     const isLikedObj = { isLiked: false }
     const id = e.target.id
     await matchAPI.updatePetfinderMatch(id, isLikedObj)
     let filteredResults = queryResultCopy.filter(pet => {
       if (parseInt(id) !== parseInt(pet.id)) return true
     })
-    this.setState({queryResult:filteredResults})
+    this.setState({ queryResult: filteredResults })
   }
 
   contactShelter = async (e) => {
-    const queryResultCopy = [... this.state.queryResult]
+    const queryResultCopy = [...this.state.queryResult]
     const selectedPet = queryResultCopy.filter(pet => {
       if (parseInt(e.target.id) === parseInt(pet.animal.id)) return true
     })
