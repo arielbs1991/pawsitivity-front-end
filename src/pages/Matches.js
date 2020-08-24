@@ -12,7 +12,7 @@ class Matches extends Component {
 
   state = {
     matchesResult: [],
-    queryResult: [],
+    queryResult: []
   }
 
   componentDidMount() {
