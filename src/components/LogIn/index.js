@@ -3,7 +3,6 @@ import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
 import userAPI from '../../utils/userAPI.js'
-import { Button } from 'antd'
 
 
 class LogInComp extends Component {
