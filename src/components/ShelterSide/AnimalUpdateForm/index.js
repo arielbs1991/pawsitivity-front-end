@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Select, Checkbox } from 'antd';
+import { Input, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
 import animalAPI from "../../../utils/animalAPI"
 import "./style.css"
@@ -23,25 +23,25 @@ class AnimalUpdateForm extends Component {
     }
 
     componentDidMount() {
-        animalAPI.findAllShelterAnimals().then(res => {
-            console.log(res.data)
-            this.setState({
-                name: res.data[0].name,
-                type: res.data[0].type,
-                location: res.data[0].location,
-                imageSrc: res.data[0].imageSrc,
-                breed: res.data[0].breed,
-                secondaryBreed: res.data[0].secondaryBreed,
-                age: res.data[0].age,
-                sex: res.data[0].sex,
-                size: res.data[0].size,
-                bio: res.data[0].bio,
-                likesKids: res.data[0].likesKids,
-                likesCats: res.data[0].likesCats,
-                likesDogs: res.data[0].likesDogs,
-                id: res.data[0].id
-            })
+        // animalAPI.findOneShelterAnimal().then(res => {
+        //     console.log(res.data)
+        this.setState({
+            name: this.props.name,
+            type: this.props.type,
+            location: this.props.location,
+            imageSrc: this.props.imageSrc,
+            breed: this.props.breed,
+            secondaryBreed: this.props.secondaryBreed,
+            age: this.props.age,
+            sex: this.props.sex,
+            size: this.props.size,
+            bio: this.props.bio,
+            likesKids: this.props.likesKids,
+            likesCats: this.props.likesCats,
+            likesDogs: this.props.likesDogs,
+            id: this.props.id
         })
+        // })
     }
 
     handleInputChange = event => {
@@ -54,7 +54,7 @@ class AnimalUpdateForm extends Component {
 
     handleFormSubmit = async event => {
         event.preventDefault();
-        await animalAPI.updateAnimal(this.state.id);
+        await animalAPI.updateAnimal(this.state.id, this.state);
         this.setState({ redirect: '/shelteranimals' })
         window.location.reload()
     }
@@ -67,7 +67,6 @@ class AnimalUpdateForm extends Component {
     handleDeleteButton = async event => {
         event.preventDefault();
         await animalAPI.deleteAnimal(this.state.id);
-        //TODO: decide where to redirect after updating animal
         this.setState({ redirect: '/shelteranimals' })
         window.location.reload();
     }
@@ -79,9 +78,11 @@ class AnimalUpdateForm extends Component {
     render() {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
-            <form className="form">
-                <h3 align="center">Update Animal Details</h3>
-                <br />
+            <form 
+            // className="form"
+            >
+                {/* <h3 align="center">Update Animal Details</h3>
+                <br /> */}
                 <Input
                     value={this.state.name}
                     name="name"
@@ -174,10 +175,10 @@ class AnimalUpdateForm extends Component {
                 >Good with dogs
         </Checkbox>
                 <div className="center remove">
-                <button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></button>
+                    <button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></button>
                 </div>
                 <div className="center remove">
-                <button className="unmatch" onClick={this.handleDeleteButton}>REMOVE ANIMAL</button>
+                    <button className="unmatch" onClick={this.handleDeleteButton}>REMOVE ANIMAL</button>
                 </div>
             </form>
         )

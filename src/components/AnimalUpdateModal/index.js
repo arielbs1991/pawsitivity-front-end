@@ -1,8 +1,5 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
-import { CompassOutlined } from '@ant-design/icons';
-import petAPI from "../../../utils/petAPI"
-import MapContainer from '../../Map'
 import AnimalUpdateForm from '../AnimalUpdateForm'
 import "./style.css"
 
@@ -50,8 +47,6 @@ class AnimalUpdateModal extends React.Component {
         likesCats={this.props.likesCats}
         likesDogs={this.props.likesDogs}
         />
-        {/* <p>Address: {this.props.address1} </p>
-        <MapContainer address1={this.props.address1} address2={this.props.address2} city={this.props.city} state={this.props.state} postcode={this.props.postcode}/> */}
         
         </Modal>
       </>
@@ -59,4 +54,3 @@ class AnimalUpdateModal extends React.Component {
   }
 }
 export default AnimalUpdateModal;
-

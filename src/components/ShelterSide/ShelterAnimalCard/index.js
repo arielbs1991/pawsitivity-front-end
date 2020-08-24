@@ -1,41 +1,72 @@
-import React from 'react'
-import { Button } from 'antd';
-import AnimalUpdateModal from "../AnimalUpdateModal"
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Modal } from 'antd';
+import AnimalUpdateForm from '../AnimalUpdateForm'
+require('./style.css');
 
-// handleButtonClick = e => {
-//     e.preventDefault();
-//     // this.setState({ redirect: '/shelterAnimals' })
-//     this.setState({
-//         state: < />})
-//     }
 
-// handleUpdateButtonClick = e => {
-//             e.preventDefault();
-//             this.setState({ state: <AnimalUpdateModal animal={props.animal} /> })
-//         }
+export default class ShelterAnimalCard extends Component {
+    state = { visible: false };
 
-export default function ShelterAnimalCard({ id, type, imageSrc, location, name, breed, secondaryBreed, age, sex, size, bio, likesCats, LikesDogs, likesKids }) {
-    return (
+    showModal = () => {
+        this.setState({
+            visible: true,
+        });
+    }
+    handleOk = e => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    };
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+            visible: false,
+        });
+    };
 
-        <div className="animalCard">
-            <img src={imageSrc} />
-            <h1 align="center">{name}</h1>
-            <p align="center"><strong>ID:</strong> {id}</p>
-            <p align="center"><strong>Breed(s):</strong> {breed}, {secondaryBreed}</p>
-            <p align="center"><strong>Age:</strong> {age}</p>
-            <p align="center"><strong>Gender:</strong> {sex}</p>
-            <p align="center"><strong>Size:</strong> {size}</p>
-            <p align="center"><strong>Bio:</strong> {bio}</p>
-            <div className="pupCardOptions">
 
-                {/* <Button onClick={this.handleButtonClick} type="primary">View Matches</Button> */}
-            </div>
-            {/* <AnimalUpdateModal animal={props.animal}></AnimalUpdateModal> */}
-            <button className="update" id={id}><Link to='/updateanimal'>
-                <strong>Update Animal</strong>
-            </Link>
-            </button>
-        </div>
-    )
+    render() {
+        return (
+            <div className="animalCard">
+                <img src={this.props.imageSrc} />
+                <h1 align="center">{this.props.name}</h1>
+                <p align="center"><strong>ID:</strong> {this.props.id}</p>
+                <p align="center"><strong>Breed(s):</strong> {this.props.breed}, {this.props.secondaryBreed}</p>
+                <p align="center"><strong>Age:</strong> {this.props.age}</p>
+                <p align="center"><strong>Gender:</strong> {this.props.sex}</p>
+                <p align="center"><strong>Size:</strong> {this.props.size}</p>
+                <p align="center"><strong>Bio:</strong> {this.props.bio}</p>
+                <div className="pupCardOptions">
+
+                    {/* <Button onClick={this.handleButtonClick} type="primary">View Matches</Button> */}
+                </div>
+                <button className="update" onClick={this.showModal} id={this.props.id}>
+                    <strong>Update Animal</strong>
+                </button>
+                <Modal className="animalUpdateModalContainer"
+                    title={"Update Animal"}
+                    visible={this.state.visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <AnimalUpdateForm
+                        id={this.props.id}
+                        name={this.props.name}
+                        type={this.props.type}
+                        location={this.props.location}
+                        imageSrc={this.props.imageSrc}
+                        breed={this.props.breed}
+                        secondaryBreed={this.props.secondaryBreed}
+                        age={this.props.age}
+                        sex={this.props.sex}
+                        size={this.props.size}
+                        bio={this.props.bio}
+                        likesKids={this.props.likesKids}
+                        likesCats={this.props.likesCats}
+                        likesDogs={this.props.likesDogs}
+                    />
+                </Modal>
+            </div>)
+    }
 }

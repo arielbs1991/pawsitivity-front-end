@@ -19,7 +19,6 @@ class AnimalInitForm extends Component {
     likesKids: 'false',
     likesCats: 'false',
     likesDogs: 'false',
-    // AnimalMatchId: this.AnimalMatchId
   };
 
 
@@ -36,16 +35,6 @@ class AnimalInitForm extends Component {
     });
   };
 
-//   catButton = (e) => {
-//     e.preventDefault()
-//     this.setState({ AnimalMatchId: 'cat' })
-//   }
-
-//   dogButton = (e) => {
-//     e.preventDefault()
-//     this.setState({ AnimalMatchId: 'dog' })
-//   }
-
   handleFormSubmit = async (event) => {
     event.preventDefault();
     if (!this.state.name) this.setState({ errorSpan: 'Please enter a name.' });
@@ -60,7 +49,6 @@ class AnimalInitForm extends Component {
     if (!this.state.bio) this.setState({ errorSpan: "Please enter a brief bio for this animal."});
 
     await animalAPI.createAnimal(this.state)
-    //TODO:Decide which page to redirect to after animal creation
     this.setState({ redirect: '/shelteranimals' })
   };
 
@@ -70,7 +58,6 @@ class AnimalInitForm extends Component {
 
       <form className="form">
         <h3 align="center">Available for Adoption</h3>
-        {/* <h3>Let's Learn A Little More About You </h3> */}
         <br />
         <Input
           value={this.state.name}
@@ -163,22 +150,7 @@ class AnimalInitForm extends Component {
           onChange={this.handleCheckboxInput}
         >Good around dogs!
         </Checkbox>
-        {/* <p>*If unsure, leave unchecked</p> */}
-        {/* <Checkbox
-          type="checkbox"
-          checked={this.state.species}
-          name="species"
-          onChange={this.handleCheckboxInput}
-        >I'm looking for a dog.
-        </Checkbox> */}
-{/* 
-        <br />
-        <br />
-        <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
-        <span>I am looking for a: </span>
-        <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
-        <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
-        <br /> */}
+        
         <div className="center">
         <button className="input submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
         </div>
