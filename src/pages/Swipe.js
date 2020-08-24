@@ -28,6 +28,7 @@ class Swipe extends Component {
     this.setState({ matchedPets: petfinderMatches })
     let { data } = await petAPI.petSearch()
     // let results = await animalAPI.findAnimals()
+    // console.log(results)
     // if (results.data) data.push(results.data)
     this.setState({ pets: data })
 
