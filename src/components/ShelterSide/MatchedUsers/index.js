@@ -11,25 +11,18 @@ const { Content } = Layout;
 class UserMatches extends Component {
 
     state = {
-        animalsResult: []
+        usersResult: []
     }
 
     componentDidMount() {
         this.gatherUserMatches()
     }
 
-    gatherUserMatches = async () => {
-        await matchAPI.getMatchesForUniquePet()
-            .then(res => {
-                this.setState({ results: res.data.data });
-                console.log(results);
-            })
-            .catch(err => {
-                console.log(err);
-            })
+    gatherUserMatches = async (id) => {
+        let results = await matchAPI.getMatchesForUniquePet(id)
+        this.setState({ usersResult: results.data })
     }
 
-   
 
     renderUserMatches = () => {
         return this.state.results.map(user =>
