@@ -38,6 +38,7 @@ class AnimalUpdateModal extends React.Component {
         <AnimalUpdateForm 
         name={this.props.name} 
         type={this.props.type}
+        location={this.props.location}
         imageSrc={this.props.imageSrc}
         breed={this.props.breed}
         secondaryBreed={this.props.secondaryBreed}
