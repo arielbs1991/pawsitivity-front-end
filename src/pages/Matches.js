@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Layout } from 'antd';
+import { Layout, message } from 'antd';
 import './Swipe.css'
 import MatchesComp from "../components/Matches";
 import userAPI from "../utils/userAPI";
 import matchAPI from "../utils/matchAPI";
 import petAPI from "../utils/petAPI";
 import HeaderComp from "../components/Header";
+
 const { Content } = Layout;
 
 class Matches extends Component {
@@ -32,7 +33,15 @@ class Matches extends Component {
       }
     })
   }
-
+  success = () => {
+    message.success({
+      content: 'We have notified the shelter of your interest!',
+      className: 'custom-class',
+      style: {
+        marginTop: '50vh'
+      },
+    });
+  };
   unmatch = async (e) => {
     const queryResultCopy = [...this.state.queryResult]
     const isLikedObj = { isLiked: false }
@@ -53,7 +62,12 @@ class Matches extends Component {
       petName: selectedPet[0].animal.name,
       shelterEmail: selectedPet[0].animal.contact.email
     }
-    return await userAPI.sendEmail(petObject)
+    try {
+      await userAPI.sendEmail(petObject);
+      this.success();
+    } catch(err) {
+      console.log(err);
+    }
   }
 
   renderPets = () => {
@@ -76,6 +90,7 @@ class Matches extends Component {
         postcode={pet.animal.contact.address.postcode}
         handleContactClick={this.contactShelter}
         handleDislikeClick={this.unmatch}
+        success={this.success}
       />)
   }
 
