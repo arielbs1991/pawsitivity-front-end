@@ -7,6 +7,7 @@ class AnimalUpdateForm extends Component {
     state = {
         name: "",
         type: "",
+        location: "",
         imageSrc: "",
         breed: '',
         secondaryBreed: "",
@@ -25,6 +26,7 @@ class AnimalUpdateForm extends Component {
     //         this.setState({
     //             name: res.data.name,
     //             type: res.data.type,
+    // location: res.data.location,
     //             imageSrc: res.data.imageSrc,
     //             state: res.data.state,
     //             secondaryBreed: res.data.secondaryBreed,
@@ -88,6 +90,13 @@ class AnimalUpdateForm extends Component {
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="Animal Type"
+                />
+                <Input
+                    value={this.state.location}
+                    name="location"
+                    onChange={this.handleInputChange}
+                    type="text"
+                    placeholder="State"
                 />
                 <Input
                     value={this.state.imageSrc}

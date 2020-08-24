@@ -22,16 +22,8 @@ class ShelterAnimals extends Component {
 
     gatherShelterAnimals = async () => {
         let results = await animalAPI.findAllShelterAnimals()
-      this.setState({ animalsResult: results.data })
-        
-        // .then(res => {
-        //     this.setState({ animalsResult: res.data.data });
-        //     // console.log(animalsResult);
-        // })
-        // .catch(err => {
-        //     console.log(err);
-        // })
-}
+        this.setState({ animalsResult: results.data })
+    }
 
 
     renderShelterAnimals = () => {
@@ -51,12 +43,19 @@ class ShelterAnimals extends Component {
                 likesCats={animal.likesCats}
                 likesDogs={animal.city}
                 likesKids={animal.likesKids}
-                AnimalMatchId={animal.AnimalMatchId}
             />)
+    }
+
+    renderModal = () => {
+        return (
+
+            <AnimalUpdateModal id={this.animal.id} />
+
+        )
     }
     // handleUpdateButtonClick = e => {
     //     e.preventDefault();
-    //     this.setState({ state: <AnimalUpdateModal id={id} /> })
+    //     this.setState({ state: <AnimalUpdateModal id={this.animal.id} /> })
     // }
 
     render() {

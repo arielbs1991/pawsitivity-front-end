@@ -8,6 +8,7 @@ class AnimalInitForm extends Component {
   state = {
     name: "",
     type: "",
+    location: "",
     imageSrc: "",
     breed: '',
     secondaryBreed: "",
@@ -50,6 +51,7 @@ class AnimalInitForm extends Component {
     if (!this.state.name) this.setState({ errorSpan: 'Please enter a name.' });
     if (!this.state.type) this.setState({ errorSpan: 'Please enter the type of animal.' });
     if (!this.state.imageSrc) this.setState({ errorSpan: 'Please enter an image or link to an image' });
+    if (!this.state.location) this.setState({ errorSpan: 'Please enter the state this animal is in' });
     if (!this.state.breed) this.setState({ errorSpan: 'Please enter a primary breed' });
     if (!this.state.secondaryBreed) this.setState({ errorSpan: 'Please enter a secondary breed.' });
     if (!this.state.age) this.setState({ errorSpan: "Please enter animal's age." });
@@ -83,6 +85,13 @@ class AnimalInitForm extends Component {
           onChange={this.handleInputChange}
           type="text"
           placeholder="Animal Type"
+        />
+        <Input
+          value={this.state.location}
+          name="location"
+          onChange={this.handleInputChange}
+          type="text"
+          placeholder="State"
         />
         <Input
           value={this.state.imageSrc}
