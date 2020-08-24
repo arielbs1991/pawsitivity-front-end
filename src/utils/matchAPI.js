@@ -12,6 +12,10 @@ const matchAPI = {
         return axios.get(`${baseURL}/api/matches/mapAPI/`, { withCredentials: true })
     },
 
+    createShelterMatch: () => {
+        return axios.put(`${baseURL}/api/animals/shelterMatch`, { withCredentials: true})
+    },
+
     // getMatchbyId: (petfinderId) => {
     //     return axios.get(`${baseURL}/api/matches/petfinderId/${petfinderId}`)
     // },

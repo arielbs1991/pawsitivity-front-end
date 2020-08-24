@@ -17,7 +17,7 @@ const success = () => {
   });
 };
 
-export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId, address1, address2, city, state, postcode }) {
+export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId, address1, address2, city, state, postcode, apikey }) {
   return (
     <div className="animalCard">
       <img src={imgSrc} className="rounded" alt={name}/>
@@ -30,7 +30,7 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
       <button className="contact" id={id} onClick={handleContactClick, success}>Contact Shelter</button>
       <br></br>
       <div>
-      <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode}/>
+      <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode} apikey={apikey}/>
       </div>
       <div>
         <br></br>

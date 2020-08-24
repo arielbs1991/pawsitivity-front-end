@@ -17,51 +17,51 @@ import Matches from "./pages/Matches"
 import CreateAnimal from "./pages/CreateAnimal"
 function App() {
   return (
-    <Router> 
+    <Router>
       {/* <HeaderComp/> */}
-    <Switch>
-      <Route path="/welcome">
-        <Welcome/>
-      </Route>
-      <Route path="/login">
-        <Login/>
-      </Route>
-      <Route path="/shelterlogin">
-        <ShelterLogin/>
-      </Route>
-      <Route path = "/swipe">
-        <Swipe/>
-      </Route>
-      <Route path = "/shelteranimals">
-        <ShelterAnimals/>
-      </Route>
-      {/* <Route path ="/petdetails">
+      <Switch>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/shelterlogin">
+          <ShelterLogin />
+        </Route>
+        <Route path="/swipe">
+          <Swipe />
+        </Route>
+        <Route path="/shelteranimals">
+          <ShelterAnimals />
+        </Route>
+        {/* <Route path ="/petdetails">
         <PetDetails/>
       </Route> */}
-      <Route path ="/matches">
-        <Matches/>
-      </Route>
-      <Route path ="/createanimal">
-        <CreateAnimal/>
-      </Route>
-      <Route path = "/profile2">
-        <Profile2/>
-      </Route>
-      <Route path = "/shelterprofile">
-        <ShelterProfile/>
-      </Route>
-      <Route path = "/updateprofile">
-        <UpdateProfile/>
-      </Route>
-      <Route path = "/shelterupdate">
-        <ShelterUpdate/>
-      </Route>
-      <Route exact path="/">
-        <Welcome/>
-      </Route>
-    </Switch>
-    <FooterComp />
-  </Router>
+        <Route path="/matches">
+          <Matches />
+        </Route>
+        <Route path="/createanimal">
+          <CreateAnimal />
+        </Route>
+        <Route path="/profile2">
+          <Profile2 />
+        </Route>
+        <Route path="/shelterprofile">
+          <ShelterProfile />
+        </Route>
+        <Route path="/updateprofile">
+          <UpdateProfile />
+        </Route>
+        <Route path="/shelterupdate">
+          <ShelterUpdate />
+        </Route>
+        <Route exact path="/">
+          <Welcome />
+        </Route>
+      </Switch>
+      <FooterComp />
+    </Router>
   );
 }
 export default App;

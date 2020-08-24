@@ -20,6 +20,10 @@ const userAPI = {
         return axios.put(`${baseURL}/api/users/updateAll/`, userData, { withCredentials: true })
     },
 
+    getMapKey: () => {
+        return axios.get(`${baseURL}/api/matches/mapAPI/`, { withCredentials: true })
+    },
+
     // editUserName: (userData) => {
     //     return axios.put(`${baseURL}/api/users/userName/`, userData, { withCredentials: true })
     // },

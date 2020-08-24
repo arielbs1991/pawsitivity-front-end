@@ -12,7 +12,7 @@ class Matches extends Component {
 
   state = {
     matchesResult: [],
-    queryResult: []
+    queryResult: [],
   }
 
   componentDidMount() {
@@ -59,6 +59,7 @@ class Matches extends Component {
   renderPets = () => {
     return this.state.queryResult.map(pet =>
       <MatchesComp
+        apikey={this.state.key}
         key={pet.animal.id}
         id={pet.animal.id}
         matchId={pet.id}
