@@ -34,7 +34,7 @@ class Swipe extends Component {
 
     const petCopy = [...this.state.pets]
     const matchedPetsCopy = [...this.state.matchedPets]
-    matchedPetsCopy.forEach(match => matchArr.push(match.PetfinderId))
+    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
     })
