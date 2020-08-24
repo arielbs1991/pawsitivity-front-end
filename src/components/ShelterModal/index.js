@@ -1,7 +1,6 @@
 import React from 'react'
 import { Modal, Button } from 'antd';
 import { CompassOutlined } from '@ant-design/icons';
-// import petAPI from "../../utils/petAPI"
 import MapContainer from '../Map'
 import "./style.css"
 
@@ -14,14 +13,12 @@ class ShelterModal extends React.Component {
   };
 
   handleOk = e => {
-    // console.log(e);
     this.setState({
       visible: false,
     });
   };
 
   handleCancel = e => {
-    // console.log(e);
     this.setState({
       visible: false,
     });
@@ -31,7 +28,6 @@ class ShelterModal extends React.Component {
 
     return (
       <>
-       {/* {console.log(this.props)} */}
         <Button onClick={this.showModal} align="center" shape="circle" icon={<CompassOutlined />}></Button>
         <Modal className="shelterModalContainer"
           title={"Shelter Location"}

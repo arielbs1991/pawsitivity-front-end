@@ -1,8 +1,6 @@
 import React from 'react'
 import { Button} from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
-// import petAPI from "../../utils/petAPI"
-// import matchAPI from "../../utils/matchAPI";
 import ModalComp from "../Modal"
 import "./style.css"
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Input, Button } from 'antd';
-import { Redirect, Link } from 'react-router-dom'
+import { Input } from 'antd';
+import { Redirect } from 'react-router-dom'
 import shelterAPI from "../../../utils/shelterAPI"
 
 class ShelterUpdateForm extends Component {

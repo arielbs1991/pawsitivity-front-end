@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Input, Checkbox, Button } from 'antd'
+import { Input, Checkbox } from 'antd'
 import { Redirect } from 'react-router-dom'
 import "./style.css";
 import animalAPI from "../../../utils/animalAPI";
@@ -19,7 +19,6 @@ class AnimalInitForm extends Component {
     likesKids: 'false',
     likesCats: 'false',
     likesDogs: 'false',
-    // AnimalMatchId: this.AnimalMatchId
   };
 
 
@@ -35,16 +34,6 @@ class AnimalInitForm extends Component {
       [name]: value
     });
   };
-
-//   catButton = (e) => {
-//     e.preventDefault()
-//     this.setState({ AnimalMatchId: 'cat' })
-//   }
-
-//   dogButton = (e) => {
-//     e.preventDefault()
-//     this.setState({ AnimalMatchId: 'dog' })
-//   }
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -70,7 +59,6 @@ class AnimalInitForm extends Component {
 
       <form className="form">
         <h3 align="center">Available for Adoption</h3>
-        {/* <h3>Let's Learn A Little More About You </h3> */}
         <br />
         <Input
           value={this.state.name}
@@ -144,41 +132,23 @@ class AnimalInitForm extends Component {
         />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesKids}
           name="likesKids"
           onChange={this.handleCheckboxInput}
         >Good around children!
         </Checkbox> <br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesCats}
           name="likesCats"
           onChange={this.handleCheckboxInput}
         >Good around cats!
         </Checkbox><br />
         <Checkbox
           type="checkbox"
-          // checked={this.state.likesDogs}
           name="likesDogs"
           onChange={this.handleCheckboxInput}
         >Good around dogs!
         </Checkbox>
-        {/* <p>*If unsure, leave unchecked</p> */}
-        {/* <Checkbox
-          type="checkbox"
-          checked={this.state.species}
-          name="species"
-          onChange={this.handleCheckboxInput}
-        >I'm looking for a dog.
-        </Checkbox> */}
-{/* 
-        <br />
-        <br />
-        <span style={{ color: 'red' }}>{this.state.errorSpan}</span>
-        <span>I am looking for a: </span>
-        <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
-        <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
-        <br /> */}
+
         <div className="center">
         <button className="input submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
         </div>

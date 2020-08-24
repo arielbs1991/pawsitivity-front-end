@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Input } from 'antd'
 import { Redirect } from 'react-router-dom'
-import { Button } from 'antd'
 import "./style.css";
 import shelterAPI from "../../../utils/shelterAPI";
 
@@ -53,7 +52,6 @@ class ShelterInitForm extends Component {
         return (
 
             <form className="form">
-                {/* <h1 align="center">Welcome To Pawsitivity</h1> */}
                 <h3 align="center">Please Enter Shelter Information </h3>
                 <br />
                 <Input

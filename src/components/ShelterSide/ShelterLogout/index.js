@@ -19,7 +19,6 @@ Logout = event => {
         sessionToken:''
     });
     localStorage.clear();
-    // return <Redirect to="/welcome"/>
 }
 
 render(){
