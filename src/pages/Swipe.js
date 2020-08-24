@@ -6,6 +6,7 @@ import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
 // import userAPI from "../utils/userAPI";
 import HeaderComp from "../components/Header"
+import animalAPI from "../utils/animalAPI";
 
 const { Content } = Layout;
 
@@ -26,6 +27,9 @@ class Swipe extends Component {
     petfinderMatches.push(shelterMatches)
     this.setState({ matchedPets: petfinderMatches })
     let { data } = await petAPI.petSearch()
+    // let results = await animalAPI.findAnimals()
+    // console.log(results)
+    // if (results.data) data.push(results.data)
     this.setState({ pets: data })
 
     const petCopy = [...this.state.pets]
