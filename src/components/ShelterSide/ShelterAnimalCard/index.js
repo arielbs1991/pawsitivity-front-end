@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'antd';
 import AnimalUpdateModal from "../AnimalUpdateModal"
+import { Link } from 'react-router-dom';
 
 // handleButtonClick = e => {
 //     e.preventDefault();
@@ -14,7 +15,7 @@ import AnimalUpdateModal from "../AnimalUpdateModal"
 //             this.setState({ state: <AnimalUpdateModal animal={props.animal} /> })
 //         }
 
-export default function ShelterAnimalCard({ id, type, imageSrc, name, breed, secondaryBreed, age, sex, size, bio, likesCats, LikesDogs, likesKids, renderModal }) {
+export default function ShelterAnimalCard({ id, type, imageSrc, location, name, breed, secondaryBreed, age, sex, size, bio, likesCats, LikesDogs, likesKids }) {
     return (
 
         <div className="animalCard">
@@ -31,7 +32,10 @@ export default function ShelterAnimalCard({ id, type, imageSrc, name, breed, sec
                 {/* <Button onClick={this.handleButtonClick} type="primary">View Matches</Button> */}
             </div>
             {/* <AnimalUpdateModal animal={props.animal}></AnimalUpdateModal> */}
-            <Button onClick={renderModal} id={id} type="primary">Update Animal</Button>
+            <Button id={id} type="primary"><Link to='/updateanimal'>
+                Update Animal
+            </Link>
+            </Button>
         </div>
     )
 }

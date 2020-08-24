@@ -16,7 +16,7 @@ import ShelterUpdate from './pages/ShelterUpdate';
 import FooterComp from "./components/Footer"
 import Matches from "./pages/Matches"
 import CreateAnimal from "./pages/CreateAnimal"
-
+import UpdateAnimal from "./pages/UpdateAnimal"
 function App() {
   return (
     <Router>
@@ -57,6 +57,9 @@ function App() {
       </Route>
       <Route path = "/updateprofile">
         <UpdateProfile/>
+      </Route>
+      <Route path = "/updateanimal">
+        <UpdateAnimal/>
       </Route>
       <Route path = "/shelterupdate">
         <ShelterUpdate/>
