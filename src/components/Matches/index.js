@@ -30,7 +30,7 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
       <button className="contact" id={id} onClick={handleContactClick, success}>Contact Shelter</button>
       <br></br>
       <div>
-      <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode} apikey={apikey}/>
+      <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode}/>
       </div>
       <div>
         <br></br>
