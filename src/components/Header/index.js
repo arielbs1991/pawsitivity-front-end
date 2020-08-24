@@ -7,7 +7,7 @@ import "./style.css"
 
 export default function HeaderComp() {
     return (
-            <PageHeader key={1}
+            <PageHeader
                 className="site-page-header-responsive" //flex className to try and justify center align space around in css
                 title={<a href="/swipe"><img className="logo" Link="/swipe" alt="logo" src={logo3Jpeg} /></a>}
                 extra={[
