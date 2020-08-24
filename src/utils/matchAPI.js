@@ -12,8 +12,8 @@ const matchAPI = {
         return axios.get(`${baseURL}/api/matches/mapAPI/`, { withCredentials: true })
     },
 
-    createShelterMatch: () => {
-        return axios.put(`${baseURL}/api/animals/shelterMatch`, { withCredentials: true})
+    createShelterMatch: (id) => {
+        return axios.put(`${baseURL}/api/animals/shelterMatch/${id}`, { withCredentials: true})
     },
 
     // getMatchbyId: (petfinderId) => {
