@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Input } from 'antd'
 import { Redirect } from 'react-router-dom'
+import { Button } from 'antd'
 import "./style.css";
 import shelterAPI from "../../../utils/shelterAPI";
 
@@ -52,8 +53,8 @@ class ShelterInitForm extends Component {
         return (
 
             <form className="form">
-                <h1 align="center">Welcome To Pawsitivity</h1>
-                <h3>Please Enter Shelter Information </h3>
+                {/* <h1 align="center">Welcome To Pawsitivity</h1> */}
+                <h3 align="center">Please Enter Shelter Information </h3>
                 <br />
                 <Input
                     value={this.state.AnimalshelterName}
@@ -118,7 +119,7 @@ class ShelterInitForm extends Component {
                     type="text"
                     placeholder="Phone Number"
                 />
-                <p>If you know your shelter's Organization ID on PetFinder, please enter it here:</p>
+                <p>Do you know your PetFinder Organization ID? If so, enter below:</p>
                 <Input
                     value={this.state.orgId}
                     name="orgId"
@@ -127,8 +128,9 @@ class ShelterInitForm extends Component {
                     placeholder={"Organization ID"}
                 />
                 <br />
-                <button onClick={this.handleFormSubmit}>Submit</button>
-
+                <div className="center">
+                <button className="submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
+                </div>
             </form>
 
         );

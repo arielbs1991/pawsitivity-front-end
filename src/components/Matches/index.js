@@ -27,14 +27,14 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
       <p><strong>Gender: </strong>{gender}</p>
       <p><strong>Size: </strong>{size}</p>
 
-      <button className="contact" id={id} onClick={handleContactClick, success}>Contact Shelter</button>
+      <button className="contact update" id={id} onClick={handleContactClick, success}>Contact Shelter</button>
       <br></br>
       <div>
       <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode}/>
       </div>
       <div>
         <br></br>
-        <button className="unmatch" id={matchId} onClick={e=>handleDislikeClick(e)}>Unmatch</button>
+        <button className="unmatch remove" id={matchId} onClick={e=>handleDislikeClick(e)}>Unmatch</button>
       </div>
     </div>
   )

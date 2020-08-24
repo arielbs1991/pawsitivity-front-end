@@ -43,16 +43,16 @@ class ShelterLoginComp extends Component {
 
       <div className="logInForm">
         <form >
-          <h1>Welcome to Pawsitivity</h1>
-          <h5>Please Login or Sign Up</h5>
-          <Input
+          <h1 align="center">Welcome to Pawsitivity!</h1>
+          <h5 align="center">Please Sign Up or Login</h5>
+          <Input className="input"
             value={this.state.userName}
             name="email"
             onChange={this.handleInputChange}
             type="text"
             placeholder="Email"
           />
-          <Input
+          <Input className="input"
             value={this.state.password}
             name="password"
             onChange={this.handleInputChange}
@@ -63,9 +63,9 @@ class ShelterLoginComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-            <Button><Link className="signUpBtn" to="/sheltercreate">Sign Up</Link></Button>
+            <button  className="signUp"><Link className="signUpBtn" to="/sheltercreate"><strong>Sign Up</strong></Link></button>
             <br /><br />
-            <Button className="loginButton" onClick={this.handleFormSubmit}>Login</Button>
+            <button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></button>
           </div>
         </form>
       </div>

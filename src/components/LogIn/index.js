@@ -62,9 +62,9 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-          <Button className="signUp"><Link className="signUpBtn" to="/profile2"><strong>Sign Up</strong></Link></Button>
+          <button className="signUp"><Link className="signUpBtn" to="/profile2"><strong>Sign Up</strong></Link></button>
             <br /><br />
-          <Button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></Button>
+          <button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></button>
           </div>
         </form>
       </div>

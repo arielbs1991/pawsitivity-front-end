@@ -69,7 +69,7 @@ class AnimalInitForm extends Component {
     return (
 
       <form className="form">
-        <h1 align="center">Enter A New Animal Available for Adoption</h1>
+        <h3 align="center">Available for Adoption</h3>
         {/* <h3>Let's Learn A Little More About You </h3> */}
         <br />
         <Input
@@ -142,28 +142,28 @@ class AnimalInitForm extends Component {
           type="text"
           placeholder="Brief Bio"
         />
-        <br />
         <Checkbox
           type="checkbox"
           // checked={this.state.likesKids}
           name="likesKids"
           onChange={this.handleCheckboxInput}
-        >This animal is good with children. If unsure, leave unchecked.
+        >Good around children!
         </Checkbox> <br />
         <Checkbox
           type="checkbox"
           // checked={this.state.likesCats}
           name="likesCats"
           onChange={this.handleCheckboxInput}
-        >This animal is good with cats. If unsure, leave unchecked.
+        >Good around cats!
         </Checkbox><br />
         <Checkbox
           type="checkbox"
           // checked={this.state.likesDogs}
           name="likesDogs"
           onChange={this.handleCheckboxInput}
-        >This animal is good with dogs. If unsure, leave unchecked.
+        >Good around dogs!
         </Checkbox>
+        {/* <p>*If unsure, leave unchecked</p> */}
         {/* <Checkbox
           type="checkbox"
           checked={this.state.species}
@@ -179,8 +179,9 @@ class AnimalInitForm extends Component {
         <Button style={{ margin: '.25rem' }} onClick={this.catButton}><i className="fas fa-cat"></i></Button>
         <Button style={{ margin: '.25rem' }} onClick={this.dogButton}><i className="fas fa-dog"></i></Button>
         <br /> */}
-        <Button onClick={this.handleFormSubmit}>Submit</Button>
-
+        <div className="center">
+        <button className="input submit" onClick={this.handleFormSubmit}><strong>Submit</strong></button>
+        </div>
       </form>
 
     );

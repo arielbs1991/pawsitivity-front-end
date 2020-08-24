@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form, Input, Button, Select, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
 import animalAPI from "../../../utils/animalAPI"
+import "./style.css"
 
 class AnimalUpdateForm extends Component {
     state = {
@@ -79,7 +80,7 @@ class AnimalUpdateForm extends Component {
         if (this.state.redirect) return <Redirect to={this.state.redirect} />
         return (
             <form className="form">
-                <h1 align="center">Update Animal Details</h1>
+                <h3 align="center">Update Animal Details</h3>
                 <br />
                 <Input
                     value={this.state.name}
@@ -95,13 +96,13 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Animal Type"
                 />
-                <Input
+                {/* <Input
                     value={this.state.location}
                     name="location"
                     onChange={this.handleInputChange}
                     type="text"
                     placeholder="State"
-                />
+                /> */}
                 <Input
                     value={this.state.imageSrc}
                     name="imageSrc"
@@ -130,7 +131,6 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Animal Age"
                 />
-                <br />
                 <Input
                     value={this.state.sex}
                     name="sex"
@@ -138,7 +138,6 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Sex"
                 />
-                <br />
                 <Input
                     value={this.state.size}
                     name="size"
@@ -146,7 +145,6 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Size"
                 />
-                <br />
                 <Input
                     value={this.state.bio}
                     name="bio"
@@ -154,33 +152,33 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Brief Bio"
                 />
-                <br />
                 <Checkbox
                     type="checkbox"
                     checked={this.state.likesKids}
                     name="likesKids"
                     onChange={this.handleCheckboxInput}
-                >Animal likes children.
+                >Good with children
         </Checkbox> <br />
                 <Checkbox
                     type="checkbox"
                     checked={this.state.likesCats}
                     name="likesCats"
                     onChange={this.handleCheckboxInput}
-                >Animal likes cats.
+                >Good with cats
         </Checkbox><br />
                 <Checkbox
                     type="checkbox"
                     checked={this.state.likesDogs}
                     name="likesDogs"
                     onChange={this.handleCheckboxInput}
-                >Animal likes dogs.
+                >Good with dogs
         </Checkbox>
-                <br />
-                <Button onClick={this.handleFormSubmit}>Update</Button>
-                <br />
-                <br />
-                <Button type="danger" onClick={this.handleDeleteButton}>REMOVE ANIMAL</Button>
+                <div className="center remove">
+                <button className="update" onClick={this.handleFormSubmit}><strong>Update</strong></button>
+                </div>
+                <div className="center remove">
+                <button className="unmatch" onClick={this.handleDeleteButton}>REMOVE ANIMAL</button>
+                </div>
             </form>
         )
     }

@@ -55,11 +55,13 @@ class ShelterProfileComp extends Component {
                     {this.state.orgId}
                 </h3>
                 <br />
-                <Button align="center" type="primary">
+                <div className="center">
+                <button className="update">
                     <Link to='/shelterupdate'>
-                        Update Info
+                        <strong>Update Info</strong>
                     </Link>
-                </Button>
+                </button>
+                </div>
             </div>
         )
     }
