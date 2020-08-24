@@ -19,25 +19,25 @@ import CreateAnimal from "./pages/CreateAnimal"
 import UpdateAnimal from "./pages/UpdateAnimal"
 function App() {
   return (
-    <Router> 
+    <Router>
       {/* <HeaderComp/> */}
-    <Switch>
-      <Route path="/welcome">
-        <Welcome/>
-      </Route>
-      <Route path="/login">
-        <Login/>
-      </Route>
-      <Route path="/shelterlogin">
-        <ShelterLogin/>
-      </Route>
-      <Route path = "/swipe">
-        <Swipe/>
-      </Route>
-      <Route path = "/shelteranimals">
-        <ShelterAnimals/>
-      </Route>
-      {/* <Route path ="/petdetails">
+      <Switch>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/shelterlogin">
+          <ShelterLogin />
+        </Route>
+        <Route path="/swipe">
+          <Swipe />
+        </Route>
+        <Route path="/shelteranimals">
+          <ShelterAnimals />
+        </Route>
+        {/* <Route path ="/petdetails">
         <PetDetails/>
       </Route> */}
       <Route path ="/matches">
@@ -72,4 +72,5 @@ function App() {
   </Router>
   );
 }
+
 export default App;
