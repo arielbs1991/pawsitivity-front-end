@@ -69,9 +69,9 @@ class Swipe extends Component {
               imageSrc={this.state.pets[0].photos && this.state.pets[0].photos.length && this.state.pets[0].photos[0] && this.state.pets[0].photos[0].small
                 ?
                 (
-                  this.state.pets[0].primary_photo_cropped.full
+                  this.state.pets[0].photos[0].full
                     ?
-                    this.state.pets[0].primary_photo_cropped.full
+                    this.state.pets[0].photos[0].large||this.state.pets[0].photos[0].medium||this.state.pets[0].photos[0].small
                     :
                     "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"
                 )
