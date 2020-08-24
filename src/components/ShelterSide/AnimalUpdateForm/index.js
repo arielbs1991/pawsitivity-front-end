@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Button, Select, Checkbox } from 'antd';
+import { Input, Checkbox } from 'antd';
 import { Redirect } from 'react-router-dom'
 import animalAPI from "../../../utils/animalAPI"
 import "./style.css"
@@ -96,13 +96,6 @@ class AnimalUpdateForm extends Component {
                     type="text"
                     placeholder="Animal Type"
                 />
-                {/* <Input
-                    value={this.state.location}
-                    name="location"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="State"
-                /> */}
                 <Input
                     value={this.state.imageSrc}
                     name="imageSrc"

@@ -1,10 +1,8 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Layout } from 'antd';
 import './Swipe.css'
-// import UserMatchesComp from "../components/UserMatches";
 import matchAPI from "../../utils/matchAPI";
 import ShelterHeaderComp from "../../components/ShelterSide/ShelterHeader";
-import ShelterAnimalCard from "../components/ShelterAnimalCard";
 
 const { Content } = Layout;
 

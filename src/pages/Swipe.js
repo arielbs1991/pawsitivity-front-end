@@ -4,11 +4,10 @@ import AnimalCardComp from "../components/animalCard"
 import './Swipe.css'
 import petAPI from "../utils/petAPI";
 import matchAPI from "../utils/matchAPI";
-// import userAPI from "../utils/userAPI";
 import HeaderComp from "../components/Header"
-import animalAPI from "../utils/animalAPI";
 
 const { Content } = Layout;
+
 
 class Swipe extends Component {
   state = {
@@ -27,14 +26,11 @@ class Swipe extends Component {
     petfinderMatches.push(shelterMatches)
     this.setState({ matchedPets: petfinderMatches })
     let { data } = await petAPI.petSearch()
-    // let shelterPets = await animalAPI.findAnimals()
-    // console.log(shelterPets.data)
-    // if (shelterPets.data) data.push(shelterPets.data)
     this.setState({ pets: data })
 
     const petCopy = [...this.state.pets]
     const matchedPetsCopy = [...this.state.matchedPets]
-    // matchedPetsCopy.forEach(match => matchArr.unshift(parseInt(match.PetfinderId)))
+    matchedPetsCopy.forEach(match => matchArr.push(parseInt(match.PetfinderId)))
     let filteredPets = petCopy.filter(pet => {
       if (!matchArr.includes(pet.id)) return true
     })
@@ -82,7 +78,7 @@ class Swipe extends Component {
                 :
                 "https://www.lotus-supplies.com/wp-content/uploads/2019/07/image-coming-soon.jpg"}
 
-            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" alt="whoops" />}
+            /> : <img src={"https://home.ask.vet/images/loading-dog.gif"} className="tableImage" alt='loading'/>}
           </div>
         </Content>
       </Layout>

@@ -1,7 +1,6 @@
 import React from "react";
 import { Layout} from 'antd';
 import './Swipe.css'
-// import InitForm from "../components/InitForm";
 import UpDateForm from "../components/UpdateForm";
 import HeaderComp from "../components/Header";
 

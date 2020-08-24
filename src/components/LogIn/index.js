@@ -3,7 +3,6 @@ import { Link, Redirect } from "react-router-dom"
 import { Input } from 'antd';
 import "./style.css";
 import userAPI from '../../utils/userAPI.js'
-import { Button } from 'antd'
 
 
 class LogInComp extends Component {
@@ -27,11 +26,15 @@ class LogInComp extends Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    if (!this.state.email) this.setState({ errorSpan: 'Please enter an email.' });
-    if (!this.state.password) this.setState({ errorSpan: 'Please enter a password.' });
 
-    await userAPI.login(this.state)
-    this.setState({ redirect: '/swipe' })
+    try {
+      await userAPI.login(this.state)
+      this.setState({ redirect: '/swipe' })
+    }
+    
+    catch {
+      this.setState({ errorSpan: 'Login failed. Incorrect username or password.' })
+    }
   }
 
   render() {
@@ -62,9 +65,9 @@ class LogInComp extends Component {
           <br />
           <br />
           <div className="loginBtns">
-          <button className="signUp"><Link className="signUpBtn" to="/profile2"><strong>Sign Up</strong></Link></button>
+            <button className="signUp"><Link className="signUpBtn" to="/profile2"><strong>Sign Up</strong></Link></button>
             <br /><br />
-          <button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></button>
+            <button className="loginButton" onClick={this.handleFormSubmit}><strong>Login</strong></button>
           </div>
         </form>
       </div>
