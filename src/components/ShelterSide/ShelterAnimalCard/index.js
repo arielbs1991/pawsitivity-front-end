@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import "./style.css"
+
 
 export default function ShelterAnimalCard({ id, type, imageSrc, location, name, breed, secondaryBreed, age, sex, size, bio, likesCats, LikesDogs, likesKids }) {
     return (
@@ -16,7 +18,7 @@ export default function ShelterAnimalCard({ id, type, imageSrc, location, name, 
             <div className="pupCardOptions">
 
             </div>
-            <button className="update" id={id}><Link to='/updateanimal'>
+            <button className="update" id={id}><Link className="btn3" to='/updateanimal'>
                 <strong>Update Animal</strong>
             </Link>
             </button>
