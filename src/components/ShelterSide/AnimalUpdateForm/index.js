@@ -21,24 +21,27 @@ class AnimalUpdateForm extends Component {
         active: false
     }
 
-    // componentDidMount() {
-    //     animalAPI.findanimalSettings().then(res => {
-    //         this.setState({
-    //             name: res.data.name,
-    //             type: res.data.type,
-    // location: res.data.location,
-    //             imageSrc: res.data.imageSrc,
-    //             state: res.data.state,
-    //             secondaryBreed: res.data.secondaryBreed,
-    //             age: res.data.age,
-    //             size: res.data.size,
-    //             bio: res.data.bio,
-    //             sex: res.data.sex,
-    //             whichSpecies: res.data.whichSpecies,
-    //             animalId: res.data.id
-    //         })
-    //     })
-    // }
+    componentDidMount() {
+        animalAPI.findAllShelterAnimals().then(res => {
+            console.log(res.data)
+            this.setState({
+                name: res.data[0].name,
+                type: res.data[0].type,
+                location: res.data[0].location,
+                imageSrc: res.data[0].imageSrc,
+                breed: res.data[0].breed,
+                secondaryBreed: res.data[0].secondaryBreed,
+                age: res.data[0].age,
+                sex: res.data[0].sex,
+                size: res.data[0].size,
+                bio: res.data[0].bio,
+                likesKids: res.data[0].likesKids,
+                likesCats: res.data[0].likesCats,
+                likesDogs: res.data[0].likesDogs,
+                id: res.data[0].id
+            })
+        })
+    }
 
     handleInputChange = event => {
         const { name, value } = event.target
@@ -48,23 +51,24 @@ class AnimalUpdateForm extends Component {
         })
     }
 
+    handleFormSubmit = async event => {
+        event.preventDefault();
+        await animalAPI.updateAnimal(this.state.id);
+        this.setState({ redirect: '/shelteranimals' })
+        window.location.reload()
+    }
+
     handleCheckboxInput = e => {
         const value = e.target.type === "checkbox" ? e.target.checked : e.target.value;
         this.setState({ [e.target.name]: value });
     }
 
-    handleFormSubmit = event => {
+    handleDeleteButton = async event => {
         event.preventDefault();
-        animalAPI.updateAnimal(this.state);
+        await animalAPI.deleteAnimal(this.state.id);
         //TODO: decide where to redirect after updating animal
-        this.setState({ redirect: '/swipe' })
-    }
-
-    handleDeleteButton = event => {
-        event.preventDefault();
-        animalAPI.deleteAnimal(this.state);
-        //TODO: decide where to redirect after updating animal
-        this.setState({ redirect: '/swipe' })
+        this.setState({ redirect: '/shelteranimals' })
+        window.location.reload();
     }
 
     setActiveButton(whichSpecies) {
@@ -117,7 +121,7 @@ class AnimalUpdateForm extends Component {
                     name="secondaryBreed"
                     onChange={this.handleInputChange}
                     type="text"
-                    placeholder="Postal Code"
+                    placeholder="Secondary Breed"
                 />
                 <Input
                     value={this.state.age}

@@ -5,7 +5,7 @@ import './Swipe.css'
 import animalAPI from "../utils/animalAPI";
 import ShelterHeaderComp from "../components/ShelterSide/ShelterHeader";
 import ShelterAnimalCard from "../components/ShelterSide/ShelterAnimalCard";
-import AnimalUpdateModal from "../components/ShelterSide/AnimalUpdateModal";
+// import AnimalUpdateModal from "../components/ShelterSide/AnimalUpdateModal";
 
 const { Content } = Layout;
 
@@ -25,6 +25,10 @@ class ShelterAnimals extends Component {
         this.setState({ animalsResult: results.data })
     }
 
+    handleFormUpdateButtonClick = async (e) => {
+        const id = e.target.id
+    }
+
 
     renderShelterAnimals = () => {
         return this.state.animalsResult.map(animal =>
@@ -32,6 +36,7 @@ class ShelterAnimals extends Component {
                 key={animal.id}
                 id={animal.id}
                 type={animal.type}
+                location={animal.location}
                 imageSrc={animal.imageSrc}
                 name={animal.name}
                 breed={animal.breed}
@@ -46,13 +51,13 @@ class ShelterAnimals extends Component {
             />)
     }
 
-    renderModal = () => {
-        return (
+    // renderModal = () => {
+    //     return (
 
-            <AnimalUpdateModal id={this.animal.id} />
+    //         <AnimalUpdateModal id={this.animal.id} />
 
-        )
-    }
+    //     )
+    // }
     // handleUpdateButtonClick = e => {
     //     e.preventDefault();
     //     this.setState({ state: <AnimalUpdateModal id={this.animal.id} /> })
