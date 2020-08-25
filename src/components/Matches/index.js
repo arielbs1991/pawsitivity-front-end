@@ -1,17 +1,6 @@
 import React from 'react'
 import ShelterModal from "../ShelterModal"
 import "./style.css"
-import { message } from 'antd';
-
-const success = () => {
-  message.success({
-    content: 'We have notified the shelter of your interest!',
-    className: 'custom-class',
-    style: {
-      marginTop: '50vh'
-    },
-  });
-};
 
 export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender, size, handleContactClick, id, handleDislikeClick, matchId, address1, address2, city, state, postcode }) {
   return (
@@ -23,7 +12,7 @@ export default function MatchesComp({ imgSrc, name, breed, breedTwo, age, gender
       <p><strong>Gender: </strong>{gender}</p>
       <p><strong>Size: </strong>{size}</p>
 
-      <button className="contact update" id={id} onClick={handleContactClick, success}>Contact Shelter</button>
+      <button className="contact update" id={id} onClick={handleContactClick}>Contact Shelter</button>
       <br></br>
       <div>
       <ShelterModal address1={address1} address2={address2} city={city} state={state} postcode={postcode}/>
