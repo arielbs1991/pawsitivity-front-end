@@ -5,6 +5,7 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
+    justify-content:space-between;
     align-items: center;
     /* padding: 2em; */
     text-align: center;
@@ -26,12 +27,12 @@
 
 .h1welcome {
     /* padding:1rem; */
-    font-size:30pt;
+    font-size:25pt;
 }
 
 .welcomeimage {
     border-radius:2rem;
-    height:125px;
+    height:100px;
     width:200px;
 }
 
